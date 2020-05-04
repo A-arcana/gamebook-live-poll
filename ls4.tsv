@@ -1,0 +1,261 @@
+indx	section	hits	choices (récupérés des fichiers html sur base de la classe "choice")	traduction auto (via google translate)	choix remaniés (manuellement à la mimine)
+1	1	2	If you wish to investigate the hut,	Si vous souhaitez enquêter sur la cabane,	explorer la cabane
+2	1	2	If you wish to ignore the hut and continue on your ride along the Ruanon Pike,	Si vous souhaitez ignorer la cabane et continuez sur votre promenade le long de la Ruanon Pike,	ignorer la cabane et continuez le long de la voie de Ruanon
+3	6	2	If you wish to investigate the wagon,	Si vous souhaitez enquêter sur le wagon,	examiner le chariot
+4	6	2	If you decide to ignore the wagon and ride south along the highway,	Si vous décidez d'ignorer le wagon et monter au sud le long de la route,	ignorer le chariot et poursuivre vers le sud par la route
+5	8	2	If you wish to enter the tunnel,	Si vous souhaitez entrer dans le tunnel,	entrer dans le tunnel
+6	8	2	If you decide not to enter the tunnel, you can return to the rowing boat and continue along the underground river by	Si vous décidez de ne pas entrer dans le tunnel, vous pouvez retourner au bateau d'aviron et continuer le long de la rivière souterraine par	ne pas entrer dans le tunnel, retourner au bateau et continuer sur la rivière souterraine
+7	9	2	If you wish to tighten your grip and brace yourself for the shock of impact,	Si vous souhaitez serrer la poignée et accrochez-vous pour le choc de l'impact,	serrer la poignée et s'accrocher pour le choc de l'impact
+8	9	2	If you decide to leap clear of the swinging bridge into the unknown depth of the mine shaft,	Si vous décidez de sauter clair du pont oscillant dans la profondeur inconnue de l'arbre de la mine,	sauter du pont et plonger dans les profondeurs inconnues du puits de la mine
+9	14	2	If you wish to evade combat at any time, you can dive into the River Xane by	Si vous souhaitez combat evade à tout moment, vous pouvez plonger dans la rivière par Xane	(à tout moment) fuir le combat en plongeant dans la rivière Xane
+13	16	2	If you wish to run straight into the forest,	Si vous souhaitez exécuter directement dans la forêt,	se précipiter dans la forêt
+14	16	2	If you wish to try to change direction as soon as the trees hide you from your pursuers,	Si vous souhaitez essayer de changer de direction dès que les arbres que vous cachez vos poursuivants,	essayer de changer de direction dès que les arbres nous cachent de nos poursuivants
+16	21	3	If you wish to follow it east,	Si vous souhaitez suivre l'est,	suivre le sentier vers l'est
+17	21	3	If you wish to it west,	Si vous souhaitez l'ouest,	suivre le sentier vers l'ouest
+18	24	3	If you have the Kai Discipline of Healing, you can help this wounded soldier by	Si vous avez le Kai Discipline de guérison, vous pouvez aider ce soldat blessé par	aider le soldat blessé (discipline Kai de guérison)
+19	24	3	If you wish to continue up the stairs to the watchtower roof,	Si vous souhaitez continuer à monter les escaliers sur le toit de mirador,	continuer à monter les escaliers vers le toit de la tour de garde
+20	24	3	If you wish to pick up the wounded archer’s bow and man his position at the arrow slit,	Si vous souhaitez prendre l'arc de l'archer et l'homme blessé sa position à la fente de flèche,	prendre l'arc de l'archer blessé et prendre son poste à la meurtrière
+21	25	2	If you wish to set up camp for the night in the shelter of the ruins,	Si vous souhaitez mettre en place le camp pour la nuit à l'abri des ruines,	établir le camp pour la nuit à l'abri des ruines
+22	25	2	If you wish to avoid the temple and continue,	Si vous souhaitez éviter le temple et continuer,	éviter le temple et continuer
+24	29	3	If you wish to continue in the dark,	Si vous souhaitez continuer dans l'obscurité,	continuer dans l'obscurité
+25	29	3	If you wish to leave the vault and attempt an entry via the guarded crypt door,	Si vous souhaitez quitter la chambre forte et de tenter une entrée par la porte gardée crypte,	quitter l'endroit et tenter d'entrer par la porte gardée de la crypte
+26	33	3	If you wish to set up camp at the edge of the forest,	Si vous souhaitez mettre en place le camp au bord de la forêt,	établir le camp au bord de la forêt
+27	33	3	If you wish to send some men into the valley to scout for bandits,	Si vous souhaitez envoyer des hommes dans la vallée de scout pour les bandits,	envoyer des hommes en éclaireur dans la vallée pour les bandits
+28	33	3	If you decide to go without food and sleep and press on to Ruanon as quickly as possible,	Si vous décidez d'aller sans nourriture et de sommeil et appuyez sur Ruanon le plus rapidement possible,	ne pas se nourrir ou dormir et poursuivre vers Ruanon le plus rapidement possible
+29	34	2	If you wish to continue along the corridor,	Si vous souhaitez continuer le long du corridor,	continuer le long du corridor
+30	34	2	If you wish to leave the vault and attempt to enter the temple via the guarded crypt door,	Si vous souhaitez quitter la chambre forte et essayez d'entrer dans le temple par la porte gardée crypte,	quitter l'endroit et essayer d'entrer dans le temple par la porte gardée de la crypte
+33	37	2	If you wish to set up camp with the troubadours,	Si vous souhaitez mettre en place le camp avec les troubadours,	établir le camp avec les troubadours
+34	37	2	If you decide to press on to Ruanon,	Si vous décidez de presse à Ruanon,	poursuivre vers Ruanon
+35	38	2	If you wish to continue along the highway, riding full speed for Ruanon,	Si vous souhaitez continuer sur la route, à cheval pleine vitesse pour Ruanon,	continuer de chevaucher à pleine vitesse vers Ruanon
+36	38	2	If you wish to avoid the main highway and continue by the eastern track,	Si vous souhaitez éviter la route principale et continuez par la piste est,	éviter la route principale et continuer par la piste est
+38	40	3	If you wish to follow the wagon track into the west tunnel,	Si vous souhaitez suivre la piste de wagon dans le tunnel ouest,	suivre les rails du wagon dans le tunnel ouest
+39	40	3	If you wish to climb the stairs to the balcony and explore the passage,	Si vous souhaitez monter les escaliers sur le balcon et d'explorer le passage,	monter les escaliers vers le balcon et explorer le passage
+45	51	3	If you wish to investigate the ridge,	Si vous souhaitez enquêter sur la crête,	explorer l'éminence
+46	51	3	If you would rather ignore the birds and press on,	Si vous préférez ignorer les oiseaux et appuyez sur,	ignorer les oiseaux et poursuivre
+48	54	3	If you do not have this skill, or if you have yet to reach the rank of Kai Warmarn, you can risk walking through the fungi by	Si vous ne possédez pas cette compétence, ou si vous avez encore atteint le rang de Kai Warmarn, vous pouvez risquer la marche à travers les champignons par	poursuivre le chemin au milieu des champignons
+49	54	3	Alternatively, if you wish, you may eat some of the fungi by	Sinon, si vous le souhaitez, vous pouvez manger des champignons par	manger des champignons
+50	55	2	If you wish to dive into one of the empty ore wagons,	Si vous souhaitez plonger dans l'un des wagons de minerai vides,	plonger dans l'un des wagons de minerai vides
+51	55	2	If you wish to hide in the shadows of the rough tunnel wall,	Si vous souhaitez cacher dans l'ombre de la paroi du tunnel rugueux,	se cacher dans l'ombre de la paroi du tunnel 
+54	58	2	If you wish to enter the large caravan,	Si vous souhaitez entrer dans la grande caravane,	entrer dans la grande caravane
+55	58	2	If you decide to investigate the smaller coach,	Si vous décidez d'enquêter sur l'entraîneur plus petit,	inspecter la plus petite
+56	61	3	If you wish to hack at the tentacle that is coiled around the ranger’s foot,	Si vous souhaitez pirater le tentacule qui est enroulé autour du pied du garde forestier,	retirer la tentacule enroulée autour du pied du patrouilleur
+57	61	3	If you wish to aid the unconscious ranger lying at your feet,	Si vous souhaitez aider le mensonge de ranger inconscient à vos pieds,	aider le patrouilleur inconscient allongé à nos pieds
+58	61	3	If you wish to grab the oars and row for the bank,	Si vous souhaitez saisir les rames et la ligne de la banque,	saisir les rames et ramer vers la berge
+59	64	2	If you wish to ascend the stairs,	Si vous souhaitez monter les escaliers,	monter les escaliers
+60	64	2	If you wish to descend the stairs,	Si vous souhaitez descendre les escaliers,	descendre les escaliers
+61	68	2	If you wish to launch the rowing boat,	Si vous souhaitez lancer le bateau à rames,	mettre le bateau à l'eau
+62	68	2	If you wish to search the boathouse for other useful items,	Si vous souhaitez rechercher le hangar à bateaux pour d'autres objets utiles,	fouiller le hangar à bateaux
+63	69	2	If you wish to pull the rope,	Si vous souhaitez tirer sur la corde,	tirer sur la corde
+64	69	2	If you wish to ignore the rope and escape into the tunnel,	Si vous souhaitez ignorer la corde et d'évasion dans le tunnel,	ignorer la corde et s'évader par le tunnel
+65	74	3	If you wish to search the wrecked wagon,	Si vous souhaitez rechercher le wagon naufragé,	fouiller les débris du chariot
+66	74	3	If you wish to ignore the wagon and continue along the highway,	Si vous souhaitez ignorer le wagon et continuer le long de la route,	ignorer le chariot et continuer sur la route
+67	74	3	If you wish to investigate the track leading into the hills,	Si vous souhaitez enquêter sur la piste menant dans les collines,	examiner le sentier menant dans les collines
+68	76	2	If you wish to search them,	Si vous souhaitez les rechercher,	les fouiller
+69	76	2	If you wish to leave the chamber,	Si vous souhaitez quitter la chambre,	quitter les lieux
+70	77	2	You may evade combat after 2 rounds by	Vous pouvez échapper à un combat après 2 tours par	(après 2 tours) fuir le combat
+72	81	2	If you wish to knock away the roof prop,	Si vous souhaitez frapper loin l'hélice du toit,	essayer d'abattre l'étai
+73	81	2	If you decide to ignore the prop and press on along the tunnel,	Si vous décidez d'ignorer l'hélice et appuyez sur le long du tunnel,	ignorer l'étai et poursuivre le long du tunnel
+74	82	3	If you wish to investigate the wagon,	Si vous souhaitez enquêter sur le wagon,	examiner le chariot
+75	82	3	If you decide to ignore the wagon and continue,	Si vous décidez d'ignorer le wagon et continuer,	ignorer le chariot et continuer sur la route
+76	82	3	If you wish to explore the hill track,	Si vous souhaitez explorer la piste de la colline,	explorer le sentier de la colline
+78	87	3	If you wish to enter the left tunnel,	Si vous souhaitez entrer dans le tunnel à gauche,	entrer dans le tunnel à gauche
+79	87	3	If you wish to enter the right tunnel,	Si vous souhaitez entrer dans le tunnel à droite,	entrer dans le tunnel à droite
+80	91	2	If you wish to climb the mound and squeeze through the gap,	Si vous souhaitez monter le monticule et se faufiler à travers l'espace,	escalader le monticule de terre et se glisser par l'étroite ouverture
+81	91	2	If you decide to call off the search, you can return to the surface, remount your horses, and descend the hill track by	Si vous décidez d'appeler au large de la recherche, vous pouvez revenir à la surface, vos chevaux remonter et descendre la piste de la colline par	renoncer à l'exploration, revenir à la surface, remonter sur les chevaux et descendre la piste de la colline
+83	92	3	If you wish to enter the tavern,	Si vous souhaitez entrer dans la taverne,	entrer dans la taverne
+84	92	3	If you decide to continue along the street,	Si vous décidez de continuer dans la rue,	continuer dans la rue
+85	95	2	If you wish to say that you are a Kai Lord and that your men are Border Rangers of Sommerlund,	Si vous voulez dire que vous êtes Kai Seigneur et que vos hommes sont Rangers frontaliers de Sommerlund,	dire que nous sommes Seigneur Kai et que nos hommes sont des Patrouilleurs frontaliers du Sommerlund
+86	95	2	If you wish to show them your Badge of Rank,	Si vous souhaitez les montrer votre insigne de grade,	leur montrer l'insigne de notre rang
+87	101	2	If you wish to row across to the other bank and take the west tunnel,	Si vous souhaitez à la ligne sur l'autre rive et prendre le tunnel ouest,	accoster sur l'autre rive et prendre le tunnel ouest
+88	101	2	If you wish to take the boat and continue south via the river,	Si vous souhaitez prendre le bateau et continuez vers le sud par la rivière,	prendre le bateau et continuez vers le sud par la rivière
+89	104	2	If you want to try to dive for the far side,	Si vous voulez essayer de plongée pour l'autre côté,	s'accrocher aux planches du pont
+90	104	2	If you wish to jump clear of the bridge and dive into the unknown depths of the mine shaft,	Si vous souhaitez sauter clair du pont et plongez dans les profondeurs inconnues de puits de mine,	sauter du pont et plonger dans les profondeurs inconnues du puits de la mine
+91	105	2	If you wish to attack the guards,	Si vous souhaitez attaquer les gardes,	attaquer les gardes
+92	105	2	If you wish to raise your hands and surrender,	Si vous souhaitez lever la main et de se rendre,	se rendre
+93	106	2	If you wish to leave Eshnar as quickly as possible,	Si vous souhaitez laisser Eshnar le plus rapidement possible,	quitter Eshnar le plus rapidement possible
+94	106	2	If you decide to investigate the stables,	Si vous décidez d'enquêter sur les écuries,	fouiller les écuries
+95	107	2	If you wish to follow him,	Si vous souhaitez le suivre,	le suivre
+96	107	2	If you wish to continue towards the watchtower,	Si vous souhaitez continuer vers le mirador,	continuer vers la tour de garde
+97	108	2	You may evade combat at any time by dashing across the bridge and	Vous pouvez échapper à un combat à tout moment par fringant à travers le pont et	(à tout moment) fuir le combat en courant à travers le pont
+99	109	2	If you wish to search the cellar,	Si vous souhaitez rechercher la cave,	fouiller la cave
+100	109	2	If you wish to leave the hut,	Si vous souhaitez quitter la cabane,	quitter la cabane
+101	111	2	If you wish to fight him,	Si vous souhaitez le combattre,	le combattre
+102	111	2	If you wish to evade combat,	Si vous souhaitez échapper à un combat,	prendre la fuite
+104	113	4	If you have yet to reach this level of Kai training, you can launch a surprise attack on the bandits and	Si vous avez encore atteint ce niveau de formation Kai, vous pouvez lancer une attaque surprise sur les bandits et	lancer une attaque surprise sur les bandits
+105	113	4	If you would rather try to sneak across the river under the cover of the many large boulders that divert the watercourse,	Si vous préférez essayer de se faufiler à travers la rivière sous le couvert de nombreux gros rochers qui dévient le cours d'eau,	traverser la rivière à l'abri des rochers
+106	113	4	If you would rather avoid crossing here and head back the way you have just come,	Si vous préférez éviter de traverser ici et retourner la façon dont vous venez de venir,	rebrousser chemin pour ne pas traverser ici
+107	115	2	If you wish to land at the steps and investigate the tunnel,	Si vous souhaitez atterrir sur les marches et enquêter sur le tunnel,	accoster au pied de l'escalier et explorer le tunnel
+108	115	2	If you wish to continue south by the river,	Si vous souhaitez continuer vers le sud par la rivière,	continuer vers le sud par la rivière
+109	118	3	If you possess an Iron Key, you may open the door by	Si vous possédez une clé de fer, vous pouvez ouvrir la porte par	ouvrir la porte avec la clé de fer
+110	118	3	If you wish to ascend the stairs,	Si vous souhaitez monter les escaliers,	monter les escaliers
+111	118	3	If you wish to descend the stairs,	Si vous souhaitez descendre les escaliers,	descendre les escaliers
+112	119	2	If you wish to enter into combat with this warrior lord,	Si vous souhaitez entrer en combat avec ce seigneur guerrier,	engager le combat avec ce Seigneur de Guerre
+113	119	2	If you wish to try to free Madelon,	Si vous souhaitez essayer de Madelon gratuitement,	essayer de libérer Madelon
+114	120	2	If you wish to continue south,	Si vous souhaitez continuer vers le sud,	continuer vers le sud
+115	120	2	If you decide to go east,	Si vous décidez d'aller à l'est,	aller vers l'est
+116	124	2	If you wish to stand and fight the horseman,	Si vous souhaitez lever et combattre le cavalier,	combattre le cavalier
+117	124	2	If you wish to run back to the watchtower,	Si vous souhaitez courir à la tour de guet,	courir à la tour de guet
+118	127	2	If you wish to help the ranger who is pinned to the floor,	Si vous souhaitez aider le ranger qui est clouée au sol,	aider le patrouilleur qui est cloué au sol
+119	127	2	If you wish to help the ranger who is fighting at the bottom of the stairs,	Si vous souhaitez aider le ranger qui se bat au bas de l'escalier,	aider le patrouilleur qui se bat au bas de l'escalier
+120	130	2	If you wish to return to the boathouse,	Si vous souhaitez revenir au hangar à bateaux,	revenir au hangar à bateaux
+121	130	2	If you wish to continue following the river towards the east,	Si vous souhaitez continuer à suivre la rivière vers l'est,	continuer à suivre la rivière vers l'est
+122	132	2	If you feel uneasy about the tavern and wish to leave town,	Si vous vous sentez mal à l'aise au sujet de la taverne et que vous souhaitez quitter la ville,	ne pas rester à la taverne
+123	132	2	If you wish to question the old woman,	Si vous souhaitez interroger la vieille femme,	interroger la vieille femme
+125	133	3	You may evade combat at any time by running towards Ruanon.	Vous pouvez échapper à un combat à tout moment en cours d'exécution vers Ruanon.	(à tout moment) fuir le combat en courant vers Ruanon
+127	134	2	If you wish to enter the mine,	Si vous souhaitez entrer dans la mine,	entrer dans la mine
+128	134	2	If you decide to call off your search, return along the hill track and	Si vous décidez d'appeler votre recherche, retour le long de la piste de colline et	renoncer à l'exploration et retourner au sentier de la colline
+129	135	3	If you wish to counterattack the bandits in the hope that your bold action will scare them off,	Si vous souhaitez contre-bandits dans l'espoir que votre action audacieuse va les effrayer,	contreattaquer les bandits en espérant les effrayer
+130	135	3	If you wish to split your company, detaching a group of ten rangers to follow you whilst sending the remainder off towards the west in the hope of luring the bulk of the bandit horde away to the Durncrag Mountains,	Si vous souhaitez partager votre entreprise, détacher un groupe de dix gardes à vous suivre tout en envoyant le reste de vers l'ouest dans l'espoir d'attirer la plus grande partie du bandit horde loin des montagnes Durncrag,	séparer les hommes en deux groupes, partir avec un groupe de dix gardes d'un côté tout en envoyant le reste vers l'ouest dans l'espoir d'attirer les bandits vers les monts Durncrag
+131	135	3	If you wish to head south at the gallop, to try to reach the shelter of the Ruanon Forest before the bandits close in,	Si vous souhaitez aller vers le sud au galop, pour essayer d'atteindre l'abri de la forêt Ruanon avant que les bandits près de,	galoper vers le sud pour atteindre l'abri de la forêt
+134	138	2	You can evade combat at any time by running into the tunnel on this level.	Vous pouvez échapper à un combat à tout moment en cours d'exécution dans le tunnel à ce niveau.	(à tout moment) fuir le combat en se précipitant dans le tunnel à ce niveau
+136	139	3	If you wish to send three more scouts into the wooded valley,	Si vous souhaitez envoyer trois éclaireurs dans la vallée boisée,	envoyer trois éclaireurs dans la vallée boisée
+137	139	3	If you wish to wait until dawn before you investigate their disappearance,	Si vous souhaitez attendre jusqu'à l'aube avant enquêtez leur disparition,	attendre l'aube avant d'enquêter sur leur disparition
+138	139	3	If you decide that it is far too dangerous to stay here, you can still ride east towards the town of Eshnar by	Si vous décidez qu'il est beaucoup trop dangereux de rester ici, vous pouvez toujours est monter vers la ville de Eshnar par	repartir vers l'est en direction de Eshnar
+139	140	2	If you wish to venture through the trees to the right of the highway,	Si vous souhaitez vous aventurer à travers les arbres à droite de l'autoroute,	s'aventurer à travers les arbres à droite de la grand-route
+140	140	2	If you wish to pass through the trees to the left,	Si vous souhaitez passer à travers les arbres à gauche,	passer à travers les arbres à gauche
+141	142	2	If you wish to try to enter the temple through the guarded crypt door,	Si vous souhaitez essayer d'entrer dans le temple par la porte gardée crypte,	essayer d'entrer dans le temple par la porte gardée de la crypte
+142	142	2	If you wish to try to enter the temple via the unguarded marble stairs,	Si vous souhaitez essayer d'entrer dans le temple par l'escalier en marbre non surveillé,	essayer d'entrer dans le temple par l'escalier en marbre non surveillé
+145	145	2	If you wish to rest in the hut,	Si vous souhaitez vous reposer dans la cabane,	se reposer dans la cabane
+146	145	2	If you wish to press on regardless of fatigue,	Si vous souhaitez presse indépendamment de la fatigue,	poursuivre, sans tenir compte de la fatigue
+147	150	3	If you wish to send your men in search of the missing horses,	Si vous souhaitez envoyer vos hommes à la recherche des chevaux disparus,	envoyer des hommes à la recherche des chevaux disparus
+148	150	3	If you wish to follow the footprints into the mine,	Si vous souhaitez suivre les traces dans la mine,	suivre les traces de pas dans la mine
+149	150	3	If you wish to call off the search, you can return along the hill track by	Si vous souhaitez annuler la recherche, vous pouvez revenir sur la piste de la colline par	renoncer à l'exploration et retourner au sentier de la colline
+150	151	2	If you wish to signal to your men to attack the guards,	Si vous souhaitez signaler à vos hommes pour attaquer les gardes,	faire signe à nos hommes pour attaquer les gardes
+151	151	2	If you wish to try to lure them into the tunnel and capture them alive,	Si vous souhaitez essayer de les attirer dans le tunnel et les capturer vivants,	essayer de les attirer dans le tunnel et de les capturer vivants
+152	156	2	If you wish to climb the ladder to the level above	Si vous souhaitez gravir les échelons au niveau supérieur	gravir les échelons vers le niveau supérieur
+153	156	2	If you decide to retrace your steps back to the previous chamber and take the south tunnel,	Si vous décidez de revenir sur vos pas en arrière à la chambre précédente et prendre le tunnel sud,	rebrousser chemin pour prendre le tunnel vers le sud
+154	160	3	If you wish to open the door and enter,	Si vous souhaitez ouvrir la porte et entrer,	ouvrir la porte et entrer
+155	160	3	If you wish to draw your weapon and kick open the door,	Si vous souhaitez attirer votre arme et coup de pied la porte,	dégainer et donner un coup de pied la porte
+156	160	3	If you wish to send your rangers into the hut,	Si vous souhaitez envoyer vos gardes dans la cabane,	envoyer des gardes dans la cabane
+157	161	3	If you wish to leap from the wagon and run to the left,	Si vous souhaitez sauter du wagon et de courir vers la gauche,	sauter du wagon et courir vers la gauche
+158	161	3	If you wish to jump from the wagon and run to the right,	Si vous souhaitez sauter du wagon et courir à droite,	sauter du wagon et courir vers la droite
+159	161	3	If you decide to ignore the command and stay where you are,	Si vous décidez d'ignorer la commande et le séjour où vous êtes,	ignorer la commande et rester sur place
+160	162	2	If you wish to go west,	Si vous souhaitez aller vers l'ouest,	aller vers l'ouest
+161	162	2	If you wish to go south,	Si vous souhaitez aller vers le sud,	aller vers le sud
+162	164	2	If you wish to rally your men to stand and fight,	Si vous souhaitez rallier vos hommes de se lever et se battre,	rassembler les hommes pour le combat
+163	164	2	If you decide to order a hasty retreat into the mine,	Si vous décidez de commander une retraite hâtive dans la mine,	ordonner une retraite dans la mine
+164	165	2	If you wish to accept the meal,	Si vous souhaitez accepter le repas,	accepter le repas
+165	165	2	If you decline the food, you must now eat a Meal from your Backpack or lose 3	Si vous refusez la nourriture, vous devez maintenant manger un repas de votre sac à dos ou perdre 3	refuser la nourriture (et manger un repas du sac à dos ou perdre 3)
+166	170	2	If you wish to descend the staircase,	Si vous souhaitez descendre l'escalier,	descendre les escaliers
+167	170	2	If you wish to continue along the passage,	Si vous souhaitez continuer le long du passage,	continuer le long du passage
+168	171	2	If you wish to stop at the tavern for the night,	Si vous souhaitez arrêter à la taverne pour la nuit,	rester à la taverne pour la nuit
+169	171	2	If you decide to brave a possible storm and continue to ride south,	Si vous décidez de braver une tempête possible et continuer à rouler au sud,	braver la tempête possible et continuer vers le sud
+171	182	3	If you do not possess these skills but still wish to give chase,	Si vous ne possédez pas ces compétences mais qui souhaitent toujours donner la chasse,	donner la chasse quand-même
+172	182	3	If you decide to let him go, return to your men by	Si vous décidez de le laisser aller, retour à vos hommes par	le laisser aller et retourner à nos hommes
+173	184	2	If you wish to fight them,	Si vous souhaitez les combattre,	les combattre
+174	184	2	If you wish to dive over the parapet of the bridge to avoid them,	Si vous souhaitez plonger sur le parapet du pont pour les éviter,	plonger sur le parapet du pont pour les éviter
+175	186	2	You can evade combat at any time by jumping from the wagon.	Vous pouvez échapper à un combat à tout moment en sautant du wagon.	(à tout moment) fuir le combat en sautant du chariot
+177	191	2	If you wish to examine the wagon,	Si vous souhaitez examiner le chariot,	examiner le chariot
+178	191	2	If you decide to ignore the wreck, you can continue your ride south along the highway, by	Si vous décidez d'ignorer l'épave, vous pouvez continuer votre sud balade le long de la route, par	ignorer l'épave, continuer vers le sud par la route
+179	195	3	If you wish to question the tavern-keeper about the nature of the bandit raids,	Si vous souhaitez interroger la tavernier sur la nature des raids de bandits,	interroger le tavernier sur les raids de bandits
+180	195	3	If you wish to question him about any news that he may have heard about Ruanon in the last month, then	Si vous souhaitez l'interroger sur des nouvelles qu'il a peut-être entendu parler Ruanon dans le dernier mois, puis	l'interroger sur ce qu'il a peut-être entendu au sujet de Ruanon dans le dernier mois
+181	195	3	If you do not wish to question the man further, you can prepare for a night’s sleep and	Si vous ne souhaitez pas interroger l'homme plus loin, vous pouvez préparer un sommeil de nuit et	ne pas interroger l'homme plus en avant et se préparer pour une bonne nuit de sommeil
+182	197	3	If you wish to search them,	Si vous souhaitez les rechercher,	les fouiller
+183	197	3	If you wish to question them,	Si vous souhaitez les interroger,	les interroger
+184	197	3	If you wish to leave them and continue on your way,	Si vous souhaitez les laisser et continuer sur votre chemin,	les laisser et continuer
+185	199	2	If you wish to sprint across the bridge,	Si vous souhaitez sprint sur le pont,	traverser le pont en courant
+186	199	2	If you wish to attack the guard to prevent him from reaching the rope,	Si vous souhaitez attaquer la garde pour l'empêcher d'atteindre la corde,	attaquer le gardien pour l'empêcher d'atteindre la corde
+188	200	3	If you wish to fight the bandits,	Si vous souhaitez combattre les bandits,	combattre les bandits
+189	200	3	If you wish to evade them, you must run across the open plain towards Ruanon—eight hundred yards away.	Si vous souhaitez les éviter, vous devez courir à travers la plaine ouverte vers Ruanon-huit cents verges.	les éviter, en courant 800m à travers la plaine ouverte vers Ruanon
+190	202	2	You can evade combat at any time by leaping from the bridge.	Vous pouvez échapper à un combat à tout moment en sautant du pont.	(à tout moment) fuir le combat en sautant du pont
+192	203	2	If you wish to fight them,	Si vous souhaitez les combattre,	les combattre
+193	203	2	If you wish to escape across the bridge,	Si vous souhaitez échapper à travers le pont,	s'échapper à travers le pont
+194	206	2	If you wish to enter the valley by the highway,	Si vous souhaitez entrer dans la vallée de l'autoroute,	entrer dans la vallée par la grand-route
+195	206	2	If you wish to enter the valley under the cover of the forest,	Si vous souhaitez entrer dans la vallée sous le couvert de la forêt,	entrer dans la vallée sous le couvert de la forêt
+198	210	3	If you wish to follow your instincts,	Si vous souhaitez suivre votre instinct,	suivre notre instinct
+199	210	3	If you wish to press on regardless of your instincts, you can investigate the tavern by	Si vous souhaitez presse quel que soit votre instinct, vous pouvez enquêter sur la taverne	ne pas suivre notre instinct et entrer dans la taverne
+200	210	3	If you wish to continue along the street,	Si vous souhaitez continuer le long de la rue,	continuer dans la rue
+202	212	2	If you do not possess this skill, search for an exit from the chamber and	Si vous ne possédez pas cette compétence, la recherche d'une sortie de la chambre et	chercher une issue à la salle
+203	214	2	If you wish to run along the tunnel to avoid the spores,	Si vous souhaitez exécuter le long du tunnel pour éviter les spores,	se précipiter dans le tunnel pour éviter les spores
+204	214	2	If you decide to go back to the chamber and take the south tunnel,	Si vous décidez de revenir à la chambre et prendre le tunnel sud,	rebrousser chemin pour prendre le tunnel vers le sud
+205	215	2	If you wish to draw your weapon and attack Barraka,	Si vous souhaitez attirer votre arme et attaquer Barraka,	dégainer et attaquer Barraka
+206	215	2	If you wish to distract his attention from the altar without attacking him,	Si vous souhaitez détourner son attention de l'autel sans l'attaquer,	détourner son attention de l'autel sans l'attaquer
+207	216	2	If you wish to help the other ranger who is now being dragged from the boat by his foot,	Si vous souhaitez aider l'autre garde qui est maintenant traîné du bateau par son pied,	aider le patrouilleur qu'une tentacule essaye de tirer hors du bateau
+208	216	2	If you wish to grab the oars and row for the other side of the river,	Si vous souhaitez saisir les rames et la ligne de l'autre côté de la rivière,	empoigner les rames et amener le bateau sur la rive opposée
+209	219	2	If you wish to examine the wagon,	Si vous souhaitez examiner le chariot,	examiner le chariot
+210	219	2	If you wish to ignore the wagon, begin to climb the steep tunnel by	Si vous souhaitez ignorer le wagon, commencer à monter le tunnel raide par	ignorer le wagon, commencer à monter le tunnel escarpé
+211	220	2	If you wish to fight the warrior,	Si vous souhaitez combattre le guerrier,	combattre le guerrier
+212	220	2	If you wish to evade combat,	Si vous souhaitez échapper à un combat,	prendre la fuite
+213	221	3	If you wish to draw your weapon and prepare for combat,	Si vous souhaitez attirer votre arme et se préparer au combat,	dégainer et se préparer au combat
+214	221	3	If you wish to flee from the bridge, run back along the tunnel and descend the stairs by	Si vous souhaitez fuir le pont, courir le long du tunnel et descendre les escaliers par	fuir le pont, courir le long du tunnel et descendre les escaliers
+215	221	3	If you would rather leap from the parapet of the bridge into the unknown depths of the chasm,	Si vous préférez sauter du parapet du pont dans les profondeurs inconnues du gouffre,	sauter du pont et plonger dans les profondeurs inconnues du gouffre
+216	223	2	If you wish to fight the warrior,	Si vous souhaitez combattre le guerrier,	combattre le guerrier
+217	223	2	If you wish to evade combat,	Si vous souhaitez échapper à un combat,	prendre la fuite
+219	224	3	If you wish to enter the left tunnel,	Si vous souhaitez entrer dans le tunnel à gauche,	entrer dans le tunnel à gauche
+220	224	3	If you wish to enter the right tunnel,	Si vous souhaitez entrer dans le tunnel à droite,	entrer dans le tunnel à droite
+221	226	2	If you wish to continue making slow progress through the forest,	Si vous souhaitez continuer à progresser lentement à travers la forêt,	continuer à progresser lentement à travers la forêt
+222	226	2	If you decide to forsake the forest and press on along the highway instead,	Si vous décidez d'abandonner la forêt et presse sur le long de la route à la place,	ignorer la forêt et poursuivre sur la route
+223	227	2	If you decide to take a closer look at what they are eating,	Si vous décidez de regarder de plus près à ce qu'ils mangent,	regarder de plus près ce qu'ils mangent
+224	227	2	If you would rather ignore them and continue your ride,	Si vous préférez les ignorer et continuer votre tour,	les ignorer et continuer
+225	228	2	If you wish to enter the hall and advance towards the door,	Si vous souhaitez entrer dans la salle et l'avance vers la porte,	entrer dans le hall et avancer vers la porte
+226	228	2	If you wish to make for the stairs,	Si vous souhaitez faire pour les escaliers,	se diriger vers les escaliers
+227	232	2	If you wish to investigate the boathouse,	Si vous souhaitez enquêter sur le hangar à bateaux,	fouiller le hangar à bateaux
+228	232	2	If you wish to continue downstream and look for some other way to cross the river,	Si vous souhaitez poursuivre en aval et chercher une autre façon de traverser la rivière,	poursuivre en aval et chercher une autre façon de traverser la rivière
+229	235	2	If you wish to investigate the torchlit cavern,	Si vous souhaitez étudier la caverne torchlit,	explorer la caverne
+230	235	2	If you wish to take a look over the low balcony,	Si vous souhaitez jeter un oeil sur le balcon bas,	jeter un coup d'oeil vers le balcon plus bas
+231	236	2	If you wish to run straight into the forest,	Si vous souhaitez exécuter directement dans la forêt,	se précipiter dans la forêt
+232	236	2	If you want to change direction as soon as you are hidden from sight,	Si vous voulez changer de direction dès que vous êtes caché de la vue,	changer de direction dès qu'hors de vue
+233	241	2	If you wish to row across to the other bank, abandon the boat and continue on foot,	Si vous souhaitez à la ligne sur l'autre rive, abandonner le bateau et continuer à pied,	accoster sur l'autre rive, abandonner le bateau et continuer à pied
+234	241	2	If you wish to continue by river,	Si vous souhaitez continuer par la rivière,	continuer sur la rivière
+236	244	3	If you do not possess either of these skills, you may enter the left tunnel by	Si vous ne possédez aucune de ces compétences, vous pouvez entrer dans le tunnel à gauche par	entrer dans le tunnel de gauche
+237	244	3	Or, if you wish, you may enter the right tunnel by	Ou, si vous le souhaitez, vous pouvez entrer dans le tunnel à droite par	entrer dans le tunnel à droite
+238	245	2	If you wish to escape from the chamber by ascending the stairs,	Si vous souhaitez échapper à la chambre en remontant l'escalier,	quitter les lieux en montant l'escalier
+239	245	2	If you wish to leave by descending the stairs,	Si vous souhaitez laisser en descendant les escaliers,	quitter les lieux en descendant les escaliers
+242	251	3	If you wish to search the highway ahead,	Si vous souhaitez rechercher la route à venir,	poursuivre sur la grand-route
+243	251	3	If you wish to examine the burnt-out wagon,	Si vous souhaitez examiner le wagon grillée,	examiner les débris du chariot
+244	251	3	If you wish to explore the eastern track,	Si vous souhaitez explorer la piste de l'Est,	explorer le sentier de l'est
+245	252	2	If you wish to investigate the boathouse,	Si vous souhaitez enquêter sur le hangar à bateaux,	fouiller le hangar à bateaux
+246	252	2	If you wish to continue downstream and look for some other way of crossing the river,	Si vous souhaitez poursuivre en aval et chercher une autre façon de traverser la rivière,	poursuivre en aval et chercher une autre façon de traverser la rivière
+250	254	3	If you do not possess this skill, you may enter the east tunnel by	Si vous ne possédez pas cette compétence, vous pouvez entrer dans le tunnel est par	entrer dans le tunnel est
+251	254	3	Alternatively you can enter the south tunnel by	Sinon, vous pouvez entrer dans le tunnel sud par	entrer dans le tunnel sud
+252	257	2	If you wish to examine the chest,	Si vous souhaitez examiner la poitrine,	examiner le coffre
+253	257	2	If you wish to ignore it and investigate the door,	Si vous souhaitez l'ignorer et d'enquêter sur la porte,	l'ignorer et étudier la porte
+256	258	3	If you do not have this Special Item or this Discipline and Kai Rank, dive into the tall crops and hide by	Si vous ne disposez pas de ce point spécial ou cette discipline et Kai Rank, plonger dans les cultures hautes et se cacher par	plonger et se cacher dans les hautes cultures
+257	263	2	If you wish to press on through the trees towards the south,	Si vous souhaitez appuyer sur à travers les arbres vers le sud,	poursuivre à travers les arbres vers le sud
+258	263	2	If you wish to change direction and head west,	Si vous souhaitez changer de direction ouest et la tête,	changer de direction et se diriger vers l'ouest
+259	264	2	If you wish to follow the prints,	Si vous souhaitez suivre les impressions,	suivre les empreintes
+260	264	2	If you wish to head in the opposite direction to the tracks,	Si vous souhaitez la tête dans la direction opposée aux pistes,	se diriger dans la direction opposée aux traces
+261	268	3	If you wish to examine the iron door,	Si vous souhaitez examiner la porte de fer,	examiner la porte de fer
+262	268	3	If you wish to ascend the spiral stairs,	Si vous souhaitez monter l'escalier en colimaçon,	monter l'escalier en colimaçon
+263	268	3	If you wish to descend the spiral stairs,	Si vous souhaitez descendre l'escalier en colimaçon,	descendre l'escalier en colimaçon
+266	270	4	If you have neither of these items, you can continue your way forward in darkness and	Si vous avez aucun de ces éléments, vous pouvez continuer votre chemin vers l'avant dans l'obscurité et	continuer vers l'avant dans l'obscurité
+267	270	4	Alternatively, you can leave the vault and attempt to enter the temple via the crypt door by	Vous pouvez également laisser la voûte et tenter d'entrer dans le temple par la porte par la crypte	quitter les lieux et tenter d'entrer le temple par la porte de la crypte
+268	273	2	If you wish to stop to question these travelling minstrels,	Si vous souhaitez arrêter de remettre en question ces ménestrels de voyage,	arrêter de questionner ces ménestrels
+269	273	2	If you wish to ignore them and let them pass,	Si vous souhaitez les ignorer et les laisser passer,	les ignorer et les laisser passer
+272	276	2	If you wish to stand and fight the Stoneworm,	Si vous souhaitez rester et combattre le Stoneworm,	rester et combattre le Ver de Pierre
+273	276	2	If you wish to escape from the chamber, you run back to the ladder and	Si vous souhaitez échapper à la chambre, vous Repartez à l'échelle et	quitter les lieux en retournant à l'échelle
+274	278	2	If you wish to press on through the trees towards the south,	Si vous souhaitez appuyer sur à travers les arbres vers le sud,	poursuivre à travers les arbres vers le sud
+275	278	2	If you wish to change direction and head west,	Si vous souhaitez changer de direction ouest et la tête,	changer de direction et se diriger vers l'ouest
+276	284	2	You can evade combat at any time by	Vous pouvez échapper à un combat à tout moment	(à tout moment) fuir le combat
+278	288	2	If you wish to climb the mound of earth and squeeze through the narrow gap between the top of the mound and the ceiling,	Si vous souhaitez monter le monticule de terre et de se faufiler à travers l'espace étroit entre le sommet de la butte et le plafond,	escalader le monticule de terre et se glisser par l'étroite ouverture
+279	288	2	If you decide to call off the search and return to the mine entrance,	Si vous décidez d'appeler de la recherche et retourner à l'entrée de la mine,	renoncer à l'exploration et retourner à l'entrée de la mine
+281	289	3	If you wish to help the captain,	Si vous souhaitez aider le capitaine,	aider le capitaine
+282	289	3	If you wish to rally the defenders before the enemy reach the barricade,	Si vous souhaitez rallier les défenseurs devant l'ennemi atteignent la barricade,	rassembler les soldats avant que l'ennemi n'atteigne la barricade
+283	290	3	If you wish to signal your men to attack the robed strangers,	Si vous souhaitez signaler vos hommes pour attaquer les étrangers robed,	faire signe à nos hommes pour attaquer les étrangers
+284	290	3	If you wish to try to capture them alive,	Si vous souhaitez essayer de les capturer vivants,	essayer de les capturer vivants
+285	290	3	If you decide to sheathe your weapon and approach them, your hand extended in a gesture of friendship,	Si vous décidez de rengainer votre arme et les approcher, votre main tendue dans un geste d'amitié,	rengainer notre arme et les approcher, main tendue dans un geste d'amitié
+287	291	3	If you do not possess this skill, you can draw your weapon, open the door, and	Si vous ne possédez pas cette compétence, vous pouvez dessiner votre arme, ouvrez la porte, et	dégainer et ouvrir la porte
+288	291	3	Alternatively you can retrace your steps back to the gallery and take the other exit by	Sinon, vous pouvez revenir sur vos pas en arrière à la galerie et de prendre l'autre par la sortie	rebrousser chemin jusqu'à la galerie et prendre l'autre sortie
+289	292	2	If you wish to press on towards the south,	Si vous souhaitez appuyer sur vers le sud,	poursuivre vers le sud
+290	292	2	If you want to change direction and head west,	Si vous voulez changer l'ouest de direction et de la tête,	changer de direction et se diriger vers l'ouest
+291	297	2	If you wish to try to cross the river further upstream to the west,	Si vous souhaitez essayer de traverser la rivière en amont à l'ouest,	essayer de traverser la rivière en amont, à l'ouest
+292	297	2	If you wish to try to cross the river downstream, to the east,	Si vous souhaitez essayer de traverser la rivière en aval, à l'est,	essayer de traverser la rivière en aval, à l'est
+293	307	2	If you wish to quicken your pace and try to outrun them,	Si vous souhaitez accélérer votre rythme et essayer de les distancer,	accélérer et essayer de les distancer
+294	307	2	If you wish to stop and fight them,	Si vous souhaitez arrêter et de les combattre,	les arrêter et les combattre
+295	311	2	If you wish to attack the bandit warrior,	Si vous souhaitez attaquer le guerrier bandit,	attaquer le Guerrier Pillard
+296	311	2	If you wish to rally the Sommlending soldiers to repel the advancing spearmen,	Si vous souhaitez rallier les soldats Sommlending pour repousser les lanciers qui avancent,	rassembler les soldats Sommerlund pour repousser l'avancée des lanciers
+297	314	2	If you wish to enter the hut,	Si vous souhaitez entrer dans la cabane,	entrer dans la cabane
+298	314	2	If you do not wish to enter the hut, continue your mission by	Si vous ne souhaitez pas entrer dans la cabane, continuer votre mission en	ne pas entrer dans la cabane et continuer la mission
+300	315	3	If you wish to go left,	Si vous souhaitez aller à gauche,	aller à gauche
+301	315	3	If you wish to go right,	Si vous souhaitez aller à droite,	aller à droite
+302	316	2	You may evade combat at any time by diving into the River Xane.	Vous pouvez échapper à un combat à tout moment en plongeant dans la rivière Xane.	(à tout moment) fuir le combat en plongeant dans la rivière Xane
+304	320	2	If you wish to search them,	Si vous souhaitez les rechercher,	les fouiller
+305	320	2	If you wish to question them,	Si vous souhaitez les interroger,	les interroger
+306	322	2	If you wish to take the west tunnel,	Si vous souhaitez prendre le tunnel ouest,	prendre le tunnel ouest
+307	322	2	If you wish to take the south tunnel,	Si vous souhaitez prendre le tunnel sud,	prendre le tunnel sud
+308	324	2	If you wish to use the front door,	Si vous souhaitez utiliser la porte d'entrée,	passer par la porte
+309	324	2	If you wish to jump from the first-floor window,	Si vous souhaitez sauter de la fenêtre du premier étage,	sauter du balcon du premier étage
+310	330	3	If you wish to search the wrecked wagon,	Si vous souhaitez rechercher le wagon naufragé,	fouiller les débris du chariot
+311	330	3	If you wish to ignore the wagon and press on along the highway,	Si vous souhaitez ignorer le chariot et appuyez sur le long de la route,	ignorer le chariot et poursuivre sur la route
+312	330	3	If you wish to investigate the track that leads up into the hills,	Si vous souhaitez enquêter sur la piste qui mène dans les collines,	explorer le sentier qui mène dans les collines
+314	331	2	If you do not have this skill, you can search for an exit from the chamber and	Si vous ne possédez pas cette compétence, vous pouvez rechercher une sortie de la chambre et	chercher une issue à la salle
