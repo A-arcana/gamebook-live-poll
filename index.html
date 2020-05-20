@@ -36,7 +36,8 @@
 				bookNo: '',
 				lastNo: ''
             },
-            lines: {}
+            lines: {},
+			pictureTimeout:{}
         };
 
         $(document).ready(function () {
@@ -149,6 +150,7 @@
             var section = $('#question').val();
             $('#display-options').html("");
             $('#display-pic').html("");
+            $('#display-smallpic').html("");
             $('#display-question').text("");
             
 			if (section && section != "none") {
@@ -159,7 +161,16 @@
                 }
 				$.get('get-html?url=https://www.projectaon.org/en/xhtml/lw/'+app.config.bookNo+'/sect'+section+'.htm',
 					function(data){
+						$('#display-pic').html("");
+						$('#display-smallpic').html("");
 						var htmlDoc = $((new DOMParser()).parseFromString(data, "text/xml").documentElement);
+						if(htmlDoc.find('img[alt="[illustration]"]').length > 0){
+							$('#display-smallpic').html(
+								htmlDoc
+									.find('img[alt="[illustration]"]')[0]
+									.outerHTML
+									.replace("src=\"", "src=\"https://www.projectaon.org/en/xhtml/lw/"+app.config.bookNo+"/"));
+						}
 						if(htmlDoc.find('img[alt=illustration]').length > 0){
 							$('#display-pic').html(
 								htmlDoc
@@ -191,15 +202,27 @@
             });
         }
 		function picture(){
-			$.get('/slobs/scenes/Live Scene',
-			scene=>{
-				if(scene){
-					var item = scene.nodes.find(n=>n.name=="placeholder");
-					$.get('/slobs/set-source/'+item.sourceId+'/'+encodeURIComponent($('#display-pic img').attr('src')));
-					$.get('/slobs/set-visibility/"'+item.sceneId+'","'+item.id+'","'+item.sourceId+'"/true');
-					setTimeout(()=>$.get('/slobs/set-visibility/"'+item.sceneId+'","'+item.id+'","'+item.sourceId+'"/false'), 60000);
-				}
-			});
+			var src = $('#display-pic img').attr('src');
+			var placeholder = "placeholder";
+			if(!src){
+				src = $('#display-smallpic img').attr('src');
+				placeholder = "small-placeholder";
+			}
+			if(src){
+				src = encodeURIComponent(src);
+				$.get('/slobs/scenes/Live Scene',
+				scene=>{
+					if(scene){
+						var item = scene.nodes.find(n=>n.name==placeholder);
+						$.get('/slobs/set-source/'+item.sourceId+'/'+src);
+						$.get('/slobs/set-visibility/"'+item.sceneId+'","'+item.id+'","'+item.sourceId+'"/true');
+						if(app.pictureTimeout[placeholder]){
+							clearTimeout(app.pictureTimeout[placeholder]);
+						}
+						app.pictureTimeout[placeholder] = setTimeout(()=>$.get('/slobs/set-visibility/"'+item.sceneId+'","'+item.id+'","'+item.sourceId+'"/false'), placeholder == "placeholder" ? 50000 : 20000);
+					}
+				});
+			}
 		}
     </script>
 </head>
@@ -234,6 +257,7 @@
 		<br/>
 		Picture :
 		<div id="display-pic"></div>
+		<div id="display-smallpic"></div>
     </div>
     <div id="error" style="border: 1px solid #800; background: #FEE; padding: 15px; display: none; color: #700;">
         <h6>Errors</h6>
