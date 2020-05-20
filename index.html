@@ -13,6 +13,14 @@
 		font-weight: bold;
 		color: red;
 	}
+	
+	#display-options-add { 
+		cursor: pointer; 
+		float: left;
+		margin: 0 35px 0 10px;
+		font-weight: bold;
+		color: green;
+	}
 	</style>
 
     <script type="text/javascript">
@@ -209,6 +217,19 @@
 		
 		function deleteOpt(section, option){
 			app.lines[section].options.splice(option, 1);
+			if( app.lines[section].options.length === 0 ){
+				$('#question option[value='+section+']').text($('#question option[value='+section+']').text().replace(" [poll]", ""));
+			}
+			display();
+		}
+		function addOpt(){
+			var section = $('#question').val();
+			var option = $('#option-add').val().trim();
+			option = option.charAt(0).toUpperCase() + option.slice(1)
+			if( app.lines[section].options.length === 0 ){
+				$('#question option[value='+section+']').text($('#question option[value='+section+']').text()+" [poll]");
+			}
+			app.lines[section].options.push(option);
 			display();
 		}
 
@@ -244,6 +265,7 @@
             $('#display-smallpic').html("");
             $('#display-question').text("");
         }
+		
 		function picture(){
             $('#question').focus();
 			var src = $('#display-pic img').attr('src');
@@ -298,6 +320,7 @@
         <br />
         Options :
         <ol style="margin: 0px 15px" id="display-options"></ol>
+		<a onclick="addOpt()" id="display-options-add">+</a> <input type="text" id="option-add">
 		<br/>
 		<div id="display-pic"></div>
 		<div id="display-smallpic"></div>
