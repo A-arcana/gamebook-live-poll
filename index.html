@@ -1,158 +1,238 @@
 <html>
 <head>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-  <title>LDVELH Facebook Poll Maker</title>
-  
-  
-<script type="text/javascript">
-	function setCookie(key, value, expiry) {
-		var expires = new Date();
-		if(!expiry) expiry = 365;
-		expires.setTime(expires.getTime() + (expiry * 24 * 60 * 60 * 1000));
-		document.cookie = key + '=' + value + ';expires=' + expires.toUTCString();
-	}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <title>LDVELH Facebook Poll Maker</title>
 
-	function getCookie(key) {
-		var keyValue = document.cookie.match('(^|;) ?' + key + '=([^;]*)(;|$)');
-		return keyValue ? keyValue[2] : null;
-	}
 
-	function eraseCookie(key) {
-		var keyValue = getCookie(key);
-		setCookie(key, keyValue, '-1');
-	}
+    <script type="text/javascript">
+        function setCookie(key, value, expiry) {
+            var expires = new Date();
+            if (!expiry) expiry = 365;
+            expires.setTime(expires.getTime() + (expiry * 24 * 60 * 60 * 1000));
+            document.cookie = key + '=' + value + ';expires=' + expires.toUTCString();
+        }
 
-</script>
-  <script>
-	var app = JSON.parse(getCookie('ldvelh-app')) || {
-		liveId: '',
-		tsv: '',
-		cols: {
-			colId: 1,
-			colQuestion: 2,
-			colOption: 3
-		},
-		lines: {}
-	};
+        function getCookie(key) {
+            var keyValue = document.cookie.match('(^|;) ?' + key + '=([^;]*)(;|$)');
+            return keyValue ? keyValue[2] : null;
+        }
 
-	$(document).ready(function() {
-		$.ajaxSetup({ cache: true });
-		$.getScript('https://connect.facebook.net/en_US/sdk.js', function(){
-			FB.init({
-				appId: 			 '360035658287515',
-				autoLogAppEvents : true,
-				xfbml            : true,
-				version          : 'v6.0'
-			});
-						
-			if(app.liveId) connect();
-			if(app.tsv) readFile();
-		});
-		
-		$('#live-id').val(app.liveId);
-		$('#tsv').val(app.tsv);
-		$('#colId').val(app.cols.colId);
-		$('#colQuestion').val(app.cols.colQuestion);
-		$('#colOption').val(app.cols.colOption);
-	});
-	
-	function connect() {				
-		app.liveId = $('#live-id').val();
-		setCookie('ldvelh-app', JSON.stringify(app));
-		
-		FB.login(function(response) {
-			if (response.status === 'connected') {
-				$('#live-id').css("color", "#090");
-				app.accessToken = response.authResponse.accessToken;
-				
-				FB.api('/'+app.liveId+'/polls?access_token='+app.accessToken, console.log);
-			}
-		}, {scope: 'publish_video'});
-	}
-	
-	function readFile(){
-		app.tsv = $('#tsv').val();
-		app.cols.colId = $('#colId').val();
-		app.cols.colQuestion = $('#colQuestion').val();
-		app.cols.colOption = $('#colOption').val();
-		setCookie('ldvelh-app', JSON.stringify(app));
-		
-		$('#question').children().remove();
-		$.get(app.tsv, function(data) {
-			app.lines = {};
-			var lines = data.split("\n");
-			for(var i in lines){
-				var cols = lines[i].replace("\r", "").split("\t");
-				var section = cols[app.cols.colId]+"";
-				var question = cols[app.cols.colQuestion]+"";
-				var str = cols[app.cols.colOption];
-				if(!app.lines[section]){
-					app.lines[section] = { 
-						question: section, 
-						options: [], 
-						access_token: app.accessToken
-					};
-					$('#question').append("<option>"+section+"</option>");
+        function eraseCookie(key) {
+            var keyValue = getCookie(key);
+            setCookie(key, keyValue, '-1');
+        }
+
+    </script>
+    <script>
+        var app = {
+            config: JSON.parse(getCookie('ldvelh-app')) || {
+                liveId: '',
+                tsv: '',
+                cols: {
+                    colId: 1,
+                    colQuestion: 2,
+                    colOption: 3
+                },
+				bookNo: ''
+            },
+            lines: {}
+        };
+
+        $(document).ready(function () {
+            $.ajaxSetup({ cache: true });
+            $.getScript('https://connect.facebook.net/en_US/sdk.js', function () {
+                FB.init({
+                    appId: '360035658287515',
+                    autoLogAppEvents: true,
+                    xfbml: true,
+                    version: 'v6.0'
+                });
+
+                fbConnect(true)
+                setInterval(fbConnect, 20*60*1000);
+
+                setTimeout(function () { if (app.config.tsv) readFile(); }, 1000);
+            });
+
+            $('#live-id').val(app.config.liveId);
+            $('#book-no').val(app.config.bookNo);
+            $('#tsv').val(app.config.tsv);
+            $('#colId').val(app.config.cols.colId);
+            $('#colQuestion').val(app.config.cols.colQuestion);
+            $('#colOption').val(app.config.cols.colOption);
+        });
+
+        function fbConnect(tryConnectPoll) {
+			app.config.bookNo = $('#book-no').val();
+            FB.getLoginStatus(function (response) {
+                fbError(response);
+                if (response && response.status == "connected") {
+                    app.accessToken = response.authResponse.accessToken;
+                    setCookie('ldvelh-app', JSON.stringify(app.config));
+                    if (tryConnectPoll && app.config.liveId) connect();
+                }
+                else {
+                    FB.login(function (response) {
+                        fbError(response);
+                        if (response.status === 'connected') {
+                            app.accessToken = response.authResponse.accessToken;
+                            setCookie('ldvelh-app', JSON.stringify(app.config));
+                            if (tryConnectPoll && app.config.liveId) connect();
+                        }
+                    }, { scope: 'publish_video,manage_pages,publish_pages' });
+                }
+            }, true);
+        }
+
+        function fbError(response) {
+            if (!response) {
+                $('#error').show();
+                $('#error').html($('#error').html() + "<hr/> Response is null");
+            }
+            else if (response.error) {
+                $('#error').show();
+                $('#error').html($('#error').html() + "<hr/>" + response.error.message);
+            }
+            else {
+                $('#error').hide();
+                $('#error').html("<h6>Errors</h6>");
+            }
+        }
+
+        function connect() {
+            app.config.liveId = $('#live-id').val();
+            setCookie('ldvelh-app', JSON.stringify(app.config));
+
+            $('#live-id').css("color", "#090");
+
+            FB.api('/' + app.config.liveId + '/polls?access_token=' + app.accessToken, fbError);
+        }
+
+        function readFile() {
+            app.config.tsv = $('#tsv').val();
+            app.config.cols.colId = $('#colId').val();
+            app.config.cols.colQuestion = $('#colQuestion').val();
+            app.config.cols.colOption = $('#colOption').val();
+            setCookie('ldvelh-app', JSON.stringify(app.config));
+
+            $('#question').children().remove();
+            $('#question').append("<option value='none'>Choose...</option>");
+            $.get(app.config.tsv, function (data) {
+                app.lines = {};
+                var lines = data.split("\n");
+                for (var i in lines) {
+                    if (i == 0) continue;
+                    var cols = lines[i].replace("\r", "").split("\t");
+                    var section = cols[app.config.cols.colId] + "";
+                    var question = cols[app.config.cols.colQuestion] + "";
+                    var str = cols[app.config.cols.colOption];
+                    if (!app.lines[section]) {
+                        app.lines[section] = {
+                            question: section,
+                            options: [],
+                            access_token: app.accessToken
+                        };
+                        $('#question').append("<option>" + section + "</option>");
+                    }
+                    app.lines[section].options.push(str.charAt(0).toUpperCase() + str.slice(1));
+                }
+                $('#tsv').css("color", "#090");
+                $('#question').val('none');
+                $('#question').focus();
+            });
+            display();
+        }
+
+        function display() {
+            var section = $('#question').val();
+            $('#display-options').html("");
+            $('#display-pic').html("");
+            $('#display-question').text("");
+            
+			if (section && section != "none") {
+				var question = app.lines[section].options;
+                $('#display-question').text(question);
+                for (var i in app.lines[section].options) {
+                    $('#display-options').append("<li>" + app.lines[section].options[i] + "</li>");
+                }
+				$.get('get-html?url=https://www.projectaon.org/en/xhtml/lw/'+app.config.bookNo+'/sect'+section+'.htm',
+					function(data){
+						var htmlDoc = $((new DOMParser()).parseFromString(data, "text/xml").documentElement);
+						if(htmlDoc.find('img[alt=illustration]').length > 0){
+							$('#display-pic').html(
+								htmlDoc
+									.find('img[alt=illustration]')[0]
+									.outerHTML
+									.replace("src=\"", "src=\"https://www.projectaon.org/en/xhtml/lw/"+app.config.bookNo+"/"));
+						}
+				    }
+				);
+            }
+        }
+
+        function poll() {
+            var question = app.lines[$('#question').val()];
+            $('#question').val('none');
+            $('#question').focus();
+            FB.api('/' + app.config.liveId + '/polls', 'post', question, function (response) {
+                fbError(response);
+
+                if (!response || !response.id) return;
+                var pollId = response.id;
+                setTimeout(function () {
+                    FB.api('/' + pollId, 'post', { action: 'SHOW_RESULTS', access_token: app.accessToken }, fbError);
+
+                    setTimeout(function () {
+                        FB.api('/' + pollId, 'post', { action: 'CLOSE', access_token: app.accessToken }, fbError);
+                    }, 30 * 1000);
+                }, 60 * 1000);
+            });
+        }
+		function picture(){
+			$.get('/slobs/scenes/Live Scene',
+			scene=>{
+				if(scene){
+					var item = scene.nodes.find(n=>n.name=="placeholder");
+					$.get('/slobs/set-source/'+item.sourceId+'/'+encodeURIComponent($('#display-pic img').attr('src')));
+					$.get('/slobs/set-visibility/"'+item.sceneId+'","'+item.id+'","'+item.sourceId+'"/true');
+					setTimeout(()=>$.get('/slobs/set-visibility/"'+item.sceneId+'","'+item.id+'","'+item.sourceId+'"/false'), 60000);
 				}
-				app.lines[section].options.push( str.charAt(0).toUpperCase() + str.slice(1) );
-			}
-			$('#tsv').css("color", "#090");
-		});
-		display();
-	}
-	
-	function display(){
-		var question = $('#question').val();
-		$('#display-options').html("");
-		if(question && question != "section"){
-			$('#display-question').text(question);
-			for(var i in app.lines[question].options){
-				$('#display-options').append("<li>"+ app.lines[question].options[i]+"</li>");
-			}
+			});
 		}
-		else{
-			$('#display-question').text("");	
-		}
-	}
-	
-	function poll(){
-		FB.api('/'+app.liveId+'/polls', 'post', app.lines[$('#question').val()], function(response){
-			var pollId = response.id;
-			setTimeout(function(){
-				FB.api('/'+pollId, 'post', {action: 'SHOW_RESULTS', access_token: app.accessToken });
-				
-				setTimeout(function(){
-					FB.api('/'+pollId, 'post', {action: 'CLOSE', access_token: app.accessToken });
-				}, 30 * 1000);
-			}, 60 * 1000);
-		});
-	}
-  </script>
+    </script>
 </head>
 <body>
-	Live Id: <input type="text" id="live-id" /> <button onclick="connect()">Connect</button>
+    Live Id : <input type="text" id="live-id" /> <button onclick="fbConnect()">Connect</button>
+    <br />
+    Book no : <input type="text" id="book-no" />
 	<br/>
-	<br/>
-	TSV file name: <input type="text" id="tsv" />
-	<br/>
-	Id Col <input type="number" id="colId" value="1" min="0" max="30"> &bull;
-	Question Col <input type="number" id="colQuestion" value="2" min="0" max="30"> &bull;
-	Option Col <input type="number" id="colOption" value="3" min="0" max="30">
-	<br/>
-	 <button onclick="readFile()">Use</button>
-	<br/>
-	<hr/>
-	<br/>
-	Section: <select id="question" onchange="display()"></select>
-	<button onclick="poll()">Poll</button>
-	<br/>
-	<hr/>
-	<br/>
-	<div style="border: 1px solid grey; background: #EEE; padding: 15px;">
-		Display Question : <b id="display-question"></b>
+    <br />
+    TSV file name : <input type="text" id="tsv" />
+    <br />
+    Id Col <input type="number" id="colId" value="1" min="0" max="30"> &bull;
+    Question Col <input type="number" id="colQuestion" value="2" min="0" max="30"> &bull;
+    Option Col <input type="number" id="colOption" value="3" min="0" max="30">
+    <br />
+    <button onclick="readFile()">Use</button>
+    <br />
+    <hr />
+    <br />
+    Section : <select id="question" onchange="display()"></select>
+    <button onclick="poll()">Poll</button><button onclick="picture()">Picture</button>
+    <br />
+    <hr />
+    <br />
+    <div style="border: 1px solid grey; background: #EEE; padding: 15px;">
+        Display Question : <b id="display-question"></b>
+        <br />
+        Options :
+        <ol style="margin: 0px 15px" id="display-options"></ol>
 		<br/>
-		Options:
-		<ol style="margin: 0px 15px" id="display-options"></ol>
-	</div>
-	<br/>
+		Picture :
+		<div id="display-pic"></div>
+    </div>
+    <div id="error" style="border: 1px solid #800; background: #FEE; padding: 15px; display: none; color: #700;">
+        <h6>Errors</h6>
+    </div>
+    <br />
 </body>
