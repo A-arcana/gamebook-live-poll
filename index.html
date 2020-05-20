@@ -2,7 +2,12 @@
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
     <title>LDVELH Facebook Poll Maker</title>
-
+	
+	<style>
+	body{font-family: arial;}
+	
+	#display-options li a { cursor: pointer; }
+	</style>
 
     <script type="text/javascript">
         function setCookie(key, value, expiry) {
@@ -67,6 +72,7 @@
 
         function fbConnect(tryConnectPoll) {
 			app.config.bookNo = $('#book-no').val();
+            app.config.liveId = $('#live-id').val();
             FB.getLoginStatus(function (response) {
                 fbError(response);
                 if (response && response.status == "connected") {
@@ -126,9 +132,9 @@
 				for(i = 1; i <= parseInt(app.config.lastNo); i++){
 					app.lines[i+""] = {
 						question: i+"",
-						options: []
+						options: [],
+						picture: {small: null, large: null}
 					}
-                    $('#question').append("<option>" + i + "</option>");
 				}
                 var lines = data.split("\n");
                 for (var i in lines) {
@@ -137,8 +143,38 @@
                     var section = cols[app.config.cols.colId] + "";
                     var question = cols[app.config.cols.colQuestion] + "";
                     var str = cols[app.config.cols.colOption];
-                    app.lines[section].options.push(str.charAt(0).toUpperCase() + str.slice(1));
+					if(str && app.lines[section]){
+						app.lines[section].options.push(str.charAt(0).toUpperCase() + str.slice(1));
+					}
                 }
+				for(let i in app.lines){
+					let line = app.lines[i];
+					$('#question').append("<option value='"+i+"'>"+line.question+(line.options.length > 0 ? " [poll]":"")+"</option>");
+					$.get('get-html?url=https://www.projectaon.org/en/xhtml/lw/'+app.config.bookNo+'/sect'+i+'.htm',
+						function(data){
+							var htmlDoc = $((new DOMParser()).parseFromString(data, "text/xml").documentElement);
+							if(htmlDoc.find('img[alt="[illustration]"]').length > 0){
+								line.picture.small = 
+									htmlDoc
+										.find('img[alt="[illustration]"]')[0]
+										.outerHTML
+										.replace("src=\"", "src=\"https://www.projectaon.org/en/xhtml/lw/"+app.config.bookNo+"/");
+							}
+							if(htmlDoc.find('img[alt=illustration]').length > 0){
+								line.picture.large =
+									htmlDoc
+										.find('img[alt=illustration]')[0]
+										.outerHTML
+										.replace("src=\"", "src=\"https://www.projectaon.org/en/xhtml/lw/"+app.config.bookNo+"/");
+							}
+							
+							if(line.picture.large || line.picture.small){
+								$('#question option[value='+i+']').css("background-color", "lightblue");
+							}
+						}
+					);
+				}
+				
                 $('#tsv').css("color", "#090");
                 $('#question').val('none');
                 $('#question').focus();
@@ -157,31 +193,18 @@
 				var question = app.lines[section].question;
                 $('#display-question').text(question);
                 for (var i in app.lines[section].options) {
-                    $('#display-options').append("<li>" + app.lines[section].options[i] + "</li>");
+					var $opt = $("<li>" + app.lines[section].options[i] + " <a onclick='deleteOpt(\""+section+"\", "+i+")'>X</a></li>");
+                    $('#display-options').append($opt);
                 }
-				$.get('get-html?url=https://www.projectaon.org/en/xhtml/lw/'+app.config.bookNo+'/sect'+section+'.htm',
-					function(data){
-						$('#display-pic').html("");
-						$('#display-smallpic').html("");
-						var htmlDoc = $((new DOMParser()).parseFromString(data, "text/xml").documentElement);
-						if(htmlDoc.find('img[alt="[illustration]"]').length > 0){
-							$('#display-smallpic').html(
-								htmlDoc
-									.find('img[alt="[illustration]"]')[0]
-									.outerHTML
-									.replace("src=\"", "src=\"https://www.projectaon.org/en/xhtml/lw/"+app.config.bookNo+"/"));
-						}
-						if(htmlDoc.find('img[alt=illustration]').length > 0){
-							$('#display-pic').html(
-								htmlDoc
-									.find('img[alt=illustration]')[0]
-									.outerHTML
-									.replace("src=\"", "src=\"https://www.projectaon.org/en/xhtml/lw/"+app.config.bookNo+"/"));
-						}
-				    }
-				);
+				$('#display-smallpic').html(app.lines[section].picture.small);
+				$('#display-pic').html(app.lines[section].picture.large);
             }
         }
+		
+		function deleteOpt(section, option){
+			app.lines[section].options.splice(option, 1);
+			display();
+		}
 
         function poll() {
             var question = app.lines[$('#question').val()];
@@ -191,17 +214,32 @@
                 fbError(response);
 
                 if (!response || !response.id) return;
+				
+				let item = null;
+				$.get('/slobs/scenes/Live Scene',
+				scene=>{
+					if(scene){
+						item = scene.nodes.find(n=>n.name=='countdown');
+						$.get('/slobs/set-visibility/"'+item.sceneId+'","'+item.id+'","'+item.sourceId+'"/true');
+					}
+				});
                 var pollId = response.id;
                 setTimeout(function () {
                     FB.api('/' + pollId, 'post', { action: 'SHOW_RESULTS', access_token: app.accessToken }, fbError);
+						$.get('/slobs/set-visibility/"'+item.sceneId+'","'+item.id+'","'+item.sourceId+'"/false');
 
                     setTimeout(function () {
                         FB.api('/' + pollId, 'post', { action: 'CLOSE', access_token: app.accessToken }, fbError);
                     }, 30 * 1000);
                 }, 60 * 1000);
             });
+            $('#display-options').html("");
+            $('#display-pic').html("");
+            $('#display-smallpic').html("");
+            $('#display-question').text("");
         }
 		function picture(){
+            $('#question').focus();
 			var src = $('#display-pic img').attr('src');
 			var placeholder = "placeholder";
 			if(!src){
@@ -255,7 +293,6 @@
         Options :
         <ol style="margin: 0px 15px" id="display-options"></ol>
 		<br/>
-		Picture :
 		<div id="display-pic"></div>
 		<div id="display-smallpic"></div>
     </div>
