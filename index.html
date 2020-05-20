@@ -33,7 +33,8 @@
                     colQuestion: 2,
                     colOption: 3
                 },
-				bookNo: ''
+				bookNo: '',
+				lastNo: ''
             },
             lines: {}
         };
@@ -56,6 +57,7 @@
 
             $('#live-id').val(app.config.liveId);
             $('#book-no').val(app.config.bookNo);
+            $('#last-no').val(app.config.lastNo);
             $('#tsv').val(app.config.tsv);
             $('#colId').val(app.config.cols.colId);
             $('#colQuestion').val(app.config.cols.colQuestion);
@@ -113,12 +115,20 @@
             app.config.cols.colId = $('#colId').val();
             app.config.cols.colQuestion = $('#colQuestion').val();
             app.config.cols.colOption = $('#colOption').val();
+			app.config.lastNo = $('#last-no').val();
             setCookie('ldvelh-app', JSON.stringify(app.config));
 
             $('#question').children().remove();
             $('#question').append("<option value='none'>Choose...</option>");
             $.get(app.config.tsv, function (data) {
                 app.lines = {};
+				for(i = 1; i <= parseInt(app.config.lastNo); i++){
+					app.lines[i+""] = {
+						question: i+"",
+						options: []
+					}
+                    $('#question').append("<option>" + i + "</option>");
+				}
                 var lines = data.split("\n");
                 for (var i in lines) {
                     if (i == 0) continue;
@@ -126,14 +136,6 @@
                     var section = cols[app.config.cols.colId] + "";
                     var question = cols[app.config.cols.colQuestion] + "";
                     var str = cols[app.config.cols.colOption];
-                    if (!app.lines[section]) {
-                        app.lines[section] = {
-                            question: section,
-                            options: [],
-                            access_token: app.accessToken
-                        };
-                        $('#question').append("<option>" + section + "</option>");
-                    }
                     app.lines[section].options.push(str.charAt(0).toUpperCase() + str.slice(1));
                 }
                 $('#tsv').css("color", "#090");
@@ -150,7 +152,7 @@
             $('#display-question').text("");
             
 			if (section && section != "none") {
-				var question = app.lines[section].options;
+				var question = app.lines[section].question;
                 $('#display-question').text(question);
                 for (var i in app.lines[section].options) {
                     $('#display-options').append("<li>" + app.lines[section].options[i] + "</li>");
@@ -208,6 +210,8 @@
 	<br/>
     <br />
     TSV file name : <input type="text" id="tsv" />
+	<br/>
+	Last no : <input type="text" id="last-no" />
     <br />
     Id Col <input type="number" id="colId" value="1" min="0" max="30"> &bull;
     Question Col <input type="number" id="colQuestion" value="2" min="0" max="30"> &bull;
