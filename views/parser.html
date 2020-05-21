@@ -16,7 +16,7 @@
 			var sectionRegex = new RegExp(sectionPattern.replace('{0}', $('#cls-sct').val()), 'gmi');
 			var textNoChoicesRegex = new RegExp(textNoChoicesPattern.replace('{0}', $('#cls-cho').val()), 'gmi');
 		
-			$.get($('#pdf').val(), function (data) {
+			$.get('get-file/'+$('#pdf').val(), function (data) {
 				var result = {};
 				var lines = data.split("\n");
 				var lastSection = 0;

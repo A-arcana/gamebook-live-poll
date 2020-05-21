@@ -1,0 +1,439 @@
+indx	section	hits	choices (récupérés des fichiers html sur base de la classe "choice")	traduction auto (via google translate)	choix remaniés (manuellement à la mimine)	nb.car	RAF	remarque
+1	1	3	If you wish to stand and fight against these overwhelming odds	Si vous souhaitez lever et se battre contre ces énormes obstacles	affronter les hommes	20	k	
+2	1	3	If you wish to surrender to Maouk and his warriors	Si vous souhaitez de se rendre à Maouk et ses guerriers	se rendre à Maouk et à ses guerriers	36	k	
+3	1	3	If you wish to run back to the galley	Si vous souhaitez courir à la cuisine	fuir vers la galère	19	k	
+4	104	3	If you wish to attack the horseman	Si vous souhaitez attaquer le cavalier	attaquer le cavalier	20	k	
+5	104	3	If you wish to evade combat by diving into the sea	Si vous souhaitez evade combat en plongeant dans la mer	fuir en plongeant dans la mer	29	k	
+6	104	3	If you decide to surrender	Si vous décidez de se rendre	se rendre	9	k	
+7	105	2	If you wish to pull the lever	Si vous souhaitez tirer le levier	tirer le levier	15	k	
+8	105	2	If you wish to close the head and continue along the corridor	Si vous souhaitez fermer la tête et continuer le long du corridor	remettre la tête et poursuivre	30	k	
+9	107	2	If you wish to search the guards’ bodies	Si vous souhaitez rechercher les corps des gardes	fouiller le corp des gardes	27	k	
+10	107	2	If you wish to ignore the bodies and escape along the corridor	Si vous souhaitez ignorer les corps et échapper le long du corridor	s'enfuir par le couloir	23	k	
+11	109	3	If you wish to enter the hall	Si vous souhaitez entrer dans la salle	entrer dans le bâtiment	23	k	
+12	109	3	If you wish to turn right and head for the archway	Si vous souhaitez tourner à droite et se diriger vers la voûte	tourner à droite vers le porche	31	k	
+13	109	3	If you decide to double back to the harbour	Si vous décidez de le double du port	retourner au port	17	k	
+14	111	3	If you have the Kai Discipline of Tracking	Si vous avez le Kai Discipline de suivi	Avec la discipline Kai de l'orientation	39	k	
+15	111	3	If you wish to leave the forge room by the north door	Si vous souhaitez quitter la salle de forge par la porte du Nord	sortir par la porte nord	24	k	
+16	111	3	If you wish to leave by the west door	Si vous souhaitez quitter par la porte ouest	sortir par la porte ouest	25	k	
+17	112	3	If you have the Kai Discipline of Animal Kinship	Si vous avez le Kai Discipline des animaux Parenté	Avec la discipline Kai de la Communication animale	50	k	
+18	112	3	If you wish to continue along the walkway	Si vous souhaitez continuer le long de la passerelle	continuer le long du trottoir	29	k	
+19	112	3	If you wish to climb a narrow stair in the left wall	Si vous souhaitez monter un escalier étroit dans le mur gauche	monter l'escalier à gauche	26	k	
+20	113	3	If you possess the Kai Discipline of Healing	Si vous possédez le Kai Discipline de la guérison	Avec la discipline Kai de la guérison	37	k	
+21	113	3	If you decide to enter the dwelling	Si vous décidez de pénétrer dans le logement	entrer dans la petite maison	28	k	
+22	113	3	If you decide to enter the tavern	Si vous décidez d'entrer dans la taverne	entrer dans la taverne	22	k	
+23	116	2	If you wish to search for a hidden exit	Si vous souhaitez rechercher une sortie cachée	chercher une sortie dérobée	27	k	
+24	116	2	If you decide to turn around and go back to the walkway	Si vous décidez de faire demi-tour et revenir à la passerelle	retourner sur le trottoir	25	k	
+25	121	2	If you wish to attack the warriors	Si vous souhaitez attaquer les guerriers	attaquer les guerriers	22	k	
+26	121	2	If you wish to evade them, you must turn back and swim across the sewer vault	Si vous souhaitez les échapper, vous devez revenir en arrière et nager dans la voûte d'égout	fuir et traverser les égoûts à la nage	38	k	
+27	122	2	If you possess the Gaoler’s Keys	Si vous possédez des clés du geôlier	Avec les clés du geôlier	24	k	
+28	122	2	If you do not have this Special Item	Si vous ne disposez pas de ce point spécial	Si vous n'avez pas les clés	27	k	
+29	123	2	You can evade the combat at any stage by escaping through the trapdoor	Vous pouvez échapper au combat à tout moment en s'échappant par la trappe	(ATM) s'échapper par la trappe	30	k	
+30	123	2	If you win the combat	Si vous gagnez le combat	Si vous gagnez le combat	24	k	
+31	126	3	If you possess the Kai Disciplines of both Camouflage and Hunting	Si vous possédez la Kai Disciplines des deux Camouflage et chasse	Avec les disciplines Kai de camouflage et chasse	48	k	
+32	126	3	If you decide to attempt to bribe the guards	Si vous décidez de tenter de corrompre les gardes	soudoyer les gardes	19	k	
+33	126	3	If you decide to attack them	Si vous décidez de les attaquer	les attaquer	12	k	
+34	128	3	If you have a Rope and decide to use it in the manner described above	Si vous avez une corde et décidez de l'utiliser de la manière décrite ci-dessus	utiliser notre corde	20	k	
+35	128	3	If you decide to try to swim across the vault to the tunnel	Si vous décidez d'essayer de nager dans la voûte du tunnel	nager jusqu'au tunnel	21	k	
+36	128	3	If you would rather turn around and make your way back to the junction	Si vous préférez faire demi-tour et votre dos de manière à la jonction	retourner au croisement	23	k	
+37	129	2	If you wish to stand and fight	Si vous souhaitez tenir debout et combat	combattre	9	k	
+38	129	2	If you wish to surrender	Si vous souhaitez de se rendre	se rendre	9	k	
+39	13	2	If you have the Kai Discipline of Animal Kinship	Si vous avez le Kai Discipline des animaux Parenté	Avec la discipline Kai de la Communication animale	50	k	
+40	13	2	If you do not possess this skill	Si vous ne possédez pas cette compétence	Si vous n'avez pas cette compétence	35	k	
+41	130	2	If you possess the Kai Discipline of Camouflage	Si vous possédez le Kai Discipline de camouflage	Avec la discipline Kai de camouflage	36	k	
+42	130	2	If you do not have this skill	Si vous ne possédez pas cette compétence	Si vous n'avez pas cette compétence	35	k	
+43	132	2	If you wish to go west, towards the noise	Si vous souhaitez aller vers l'ouest, vers le bruit	approcher de la forge	21	k	
+44	132	2	If you wish to keep moving north	Si vous souhaitez continuer à aller au nord	continuer vers le nord	22	k	
+45	133	2	If you wish to search for a hidden exit	Si vous souhaitez rechercher une sortie cachée	chercher une issue cachée	25	k	
+46	133	2	If you decide to turn around and return to the walkway	Si vous décidez de faire demi-tour et revenir à la passerelle	retourner vers le trottoir	26	k	
+47	136	3	If you have the Kai Discipline of Camouflage	Si vous avez le Kai Discipline de camouflage	Avec la discipline Kai de camouflage	36	k	
+48	136	3	If you want to attack the guard	Si vous voulez attaquer la garde	attaquer le garde	17	k	
+49	136	3	If you want to close the door and take the other passage	Si vous voulez fermer la porte et de prendre l'autre passage	fermer la porte et suivre le passage	36	k	
+50	137	3	If you have the Kai Discipline of Tracking or Sixth Sense	Si vous avez le Kai Discipline de suivi ou Sixième Sens	Avec la discipline Kai de l'orientation ou Sixième Sens	55	k	
+51	137	3	If you wish to enter the palace through the kitchens	Si vous souhaitez entrer dans le palais à travers les cuisines	entrer dans le palais par les cuisines	38	k	
+52	137	3	If you wish to enter through the <i xml:lang="x-vassagonian">Vizu-diar</i>	Si vous souhaitez entrer dans <i xml: lang = "x-vassagonian"> Vizu-diar </ i>	entrer par le Vizu-Diar	23	k	
+53	138	2	If you wish to pick up the sword	Si vous souhaitez prendre l'épée	ramasser l'épée	15	k	
+54	138	2	If you wish to ignore the sword and attack the second guard with your bare hands	Si vous souhaitez ignorer l'épée et attaquer la deuxième garde à mains nues	se battre à mains nues	22	k	
+55	14	2	If you wish to leave the chamber	Si vous souhaitez quitter la chambre	quitter l'endroit	17	k	
+56	14	2	If you wish to search the chamber for useful items	Si vous souhaitez rechercher la chambre des articles utiles	fouiller la pièce	17	k	
+57	140	2	If you wish to open the book	Si vous souhaitez ouvrir le livre	ouvrir le livre	15	k	
+58	140	2	If you wish to ignore the book and search for your confiscated equipment	Si vous souhaitez ignorer le livre et la recherche de votre matériel confisqué	rechercher notre équipement	27	k	
+59	141	2	If you wish to roll over to the trapdoor and escape	Si vous souhaitez rouler sur la trappe et d'évasion	s'enfuir par la trappe	22	k	
+60	141	2	If you decide to surrender to Maouk and his warriors	Si vous décidez de se rendre à Maouk et ses guerriers	se rendre à Maouk et à ses guerriers	36	k	
+61	142	3	If you have the Kai Discipline of Animal Kinship	Si vous avez le Kai Discipline des animaux Parenté	Avec la discipline Kai de la Communication animale	50	k	
+62	142	3	If you wish to fight the creature	Si vous souhaitez combattre la créature	combattre la créature	21	k	
+63	142	3	If you wish to evade the creature	Si vous souhaitez échapper à la créature	fuir -vite- la créature	23	k	
+64	145	2	If you wish to enter the new tunnel	Si vous souhaitez entrer dans le nouveau tunnel	entrer dans le tunnel vers l'ouest	34	k	
+65	145	2	If you wish to continue northwards	Si vous souhaitez continuer vers le nord	continuer vers le nord	22	k	
+66	147	2	If you wish to stay in his house	Si vous souhaitez rester dans sa maison	rester dans sa maison	21	k	
+67	147	2	If you wish to escape by the window	Si vous souhaitez échapper par la fenêtre	s'échapper par la fenêtre	25	k	
+68	149	2	If you wish to investigate the east door	Si vous souhaitez enquêter sur la porte est	ouvrir la porte est (mortier)	29	k	
+69	149	2	If you wish to investigate the west door	Si vous souhaitez enquêter sur la porte ouest	ouvrir la porte ouest (livre)	29	k	
+70	150	2	If you wish to go east, towards the stairs	Si vous souhaitez aller vers l'est, vers l'escalier	aller vers l'est, vers l'escalier	33	k	
+71	150	2	If you decide to go west, towards the door	Si vous décidez d'aller vers l'ouest, vers la porte	aller vers l'ouest, vers la porte	33	k	
+72	153	4	If you possess the Kai Discipline of Tracking	Si vous possédez le Kai Discipline de suivi	Avec la discipline Kai de l'orientation	39	k	
+73	153	4	If you wish to enter the gate	Si vous souhaitez entrer dans la porte	ouvrir la porte	15	k	
+74	153	4	If you wish to enter the alley	Si vous souhaitez entrer dans l'allée	suivre l'allée	14	k	
+75	153	4	If you decide to take the straight pathway through the arch	Si vous décidez de prendre la voie droite à travers l'arc	prendre la ruelle vers le porche	32	k	
+76	156	2	If you possess the Kai Disciplines of Mind Over Matter and Sixth Sense	Si vous possédez les disciplines Kai de l'esprit sur la matière et Sixième sens	Avec les disciplines Kai de la maîtrise psychique de la matière et du Sixième sens	82	k	
+77	156	2	If you do not have both of these skills	Si vous ne disposez pas de ces deux compétences	Si vous n'avez pas ces deux compétences	39	k	
+78	157	2	If you wish to hide in the cellar	Si vous souhaitez cacher dans la cave	se cacher dans la cave	22	k	
+79	157	2	If you wish to leave the hallway, return to the plaza by	Si vous souhaitez quitter le couloir, retour à la place par	retourner à la Grand-Place 	27	k	
+80	16	2	If you wish to leave the cellar by the grille	Si vous souhaitez quitter la cave par la grille	quitter la cave par la grille	29	k	
+81	16	2	If you decide to stay in the cellar, prepare for combat and	Si vous décidez de rester dans la cave, et se préparer au combat	rester et se préparer au combat	31	k	
+82	160	3	If you wish to approach the north gate	Si vous souhaitez approcher la porte du nord	s'approcher par la porte nord	29	k	
+83	160	3	If you wish to approach the west arch	Si vous souhaitez approcher l'arc ouest	s'approcher de la porte ouest	29	k	
+84	160	3	If you wish to search for some other way of entering the Grand Palace	Si vous souhaitez rechercher une autre manière d'entrer dans le Grand Palais	trouver une autre entrée	24	k	
+85	163	3	If you have the Kai Discipline of Sixth Sense	Si vous avez le Kai Discipline de sixième sens	Avec la discipline Kai du sixième sens	38	k	
+86	163	3	If you wish to attack the guards	Si vous souhaitez attaquer les gardes	attaquer les gardes	19	k	
+87	163	3	If you wish to remain as you are	Si vous souhaitez rester comme vous êtes	rester dans la cellule	22	k	
+88	164	2	If you wish to climb the ladder	Si vous souhaitez gravir les échelons	monter l'échelle	16	k	
+89	164	2	If you wish to ignore the ladder and press on along in the insect-choked tunnel	Si vous souhaitez ignorer l'échelle et appuyez sur le long dans le tunnel étranglé par les insectes	continuer par le tunnel plein d'insectes	40	k	
+90	165	2	If you wish to attack this guard	Si vous souhaitez attaquer cette garde	attaquer le garde	17	k	
+91	165	2	If you wish to overpower him and capture him alive	Si vous souhaitez le vaincre et le capturer vivant	le neutraliser	14	k	
+92	167	2	If you have the Kai Discipline of Sixth Sense	Si vous avez le Kai Discipline de sixième sens	Avec la discipline Kai du sixième sens	38	k	
+93	167	2	If you do not possess this skill	Si vous ne possédez pas cette compétence	Si vous n'avez pas cette compétence	35	k	
+94	168	2	If you win the combat and the fight lasts 3 rounds or less	Si vous gagnez le combat et le combat dure 3 rounds ou moins	Si vous gagnez en 3 rounds ou moins	35	k	
+95	168	2	If you win and the fight lasts longer than 3 rounds	Si vous gagnez et le combat dure plus de 3 tours	Si vous gagnez en plus de 3 rounds	34	k	
+96	169	2	If you wish to stop to read the poster	Si vous souhaitez arrêter de lire l'affiche	s'arrêter pour lire l'affiche	29	k	
+97	169	2	If you wish to continue along the passage	Si vous souhaitez continuer le long du passage	continuer dans la ruelle	24	k	
+98	17	4	If you possess the Kai Discipline of Sixth Sense	Si vous possédez le Kai Discipline de sixième sens	Avec la discipline Kai du sixième sens	38	k	
+99	17	4	If you wish to continue along the west channel	Si vous souhaitez continuer à l'ouest le long du canal	continuer par le tunnel ouest	29	k	
+100	17	4	If you wish to turn north into the new tunnel	Si vous souhaitez tourner vers le nord dans le nouveau tunnel	aller au nord dans le nouveau tunnel	36	k	
+101	17	4	If you wish to go south along the new tunnel	Si vous souhaitez aller vers le sud le long du nouveau tunnel	aller au sud par le nouveau tunnel	34	k	
+102	171	2	If you wish to enter the secret passage	Si vous souhaitez entrer dans le passage secret	suivre le passage secret	24	k	
+103	171	2	If you decide to avoid the passage, close the secret panel and continue along the corridor and	Si vous décidez d'éviter le passage, fermer le panneau secret et continuer le long du couloir et	continuer dans la galerie	25	k	
+104	173	3	If you wish to take the north channel	Si vous souhaitez prendre le canal au nord	suivre le canal nord	20	k	
+105	173	3	If you wish to take the south channel	Si vous souhaitez prendre le canal sud	suivre le canal sud	19	k	
+106	173	3	If you wish to take the west channel	Si vous souhaitez prendre le canal ouest	suivre le canal ouest	21	k	
+107	174	2	If you wish to pick up the sword	Si vous souhaitez prendre l'épée	ramasser l'épée	15	k	
+108	174	2	If you wish to ignore the sword and attack the second guard with your bare hands	Si vous souhaitez ignorer l'épée et attaquer la deuxième garde à mains nues	se battre à mains nues	22	k	
+109	177	2	If you wish to attack the Sharnazim	Si vous souhaitez attaquer le Sharnazim	attaquer les Sharnazims	23	k	
+110	177	2	If you wish to evade them by climbing the narrow stone stairs	Si vous souhaitez les échapper en grimpant les escaliers en pierre étroites	s'enfuir par l'escalier	23	k	
+111	178	2	If you win the combat, you may search his body and	Si vous gagnez le combat, vous pouvez chercher son corps et	fouiller le cadavre	19	k	
+112	178	2	If you would rather ignore the body and enter the armoury	Si vous préférez ne pas tenir compte du corps et entrer dans la salle d'armes	entrer dans l'armurerie	23	k	
+113	179	2	If you wish to attack Maouk	Si vous souhaitez attaquer Maouk	attaquer Maouk	14	k	
+114	179	2	If you wish to turn and run back along the street	Si vous souhaitez tourner et courir le long de la rue	fuir en courant dans la rue	27	k	
+115	181	2	If you wish to climb the steps and enter the door	Si vous souhaitez gravir les marches et entrez dans la porte	gravir l'escalier et franchir la porte	38	k	
+116	181	2	If you wish to investigate the wooden chest	Si vous souhaitez enquêter sur la poitrine en bois	ouvrir le coffre	16	k	
+117	182	2	If you wish to enter the passage	Si vous souhaitez entrer dans le passage	entrer dans le passage	22	k	
+118	182	2	If you wish to listen at the door	Si vous souhaitez écouter à la porte	écouter à la porte	18	k	
+119	186	2	If you wish to search his body	Si vous souhaitez rechercher son corps	fouiller le cadavre	19	k	
+120	186	2	If you wish to ignore the body and enter the armoury	Si vous souhaitez ignorer le corps et entrez dans la salle d'armes	entrer dans l'armurerie	23	k	
+121	188	2	If you are wearing a Black Sash	Si vous portez une ceinture noire	Si vous portez un brassard noir	31	k	
+122	188	2	If you do not possess a Black Sash	Si vous ne possédez pas une ceinture noire	Sans brassard noir	18	k	
+123	19	2	If you wish to give the guards what they demand, erase any two Backpack Items except Meals from your	Si vous souhaitez donner les gardes ce qu'ils demandent, effacer tous les deux articles Sac à dos, sauf les repas de votre	donner aux gardes ce qu'ils demandent	37	k	
+124	19	2	If you do not or cannot give the guards two Backpack Items, you must leave the gate and search for some other means of entering the palace. You may now pass through the gate and enter the palace gardens.	Si vous ne le faites pas ou ne peut pas donner les gardes deux articles Sac à dos, vous devez laisser la porte et chercher d'autres moyens d'entrer dans le palais. Vous pouvez passer à travers la porte et entrer dans les jardins du palais.	trouver un autre moyen d'entrer	31	k	
+125	191	2	If you decide to surrender to Maouk	Si vous décidez de se rendre à Maouk	se rendre à Maouk	17	k	
+126	191	2	If you wish to dive overboard and attempt an escape	Si vous souhaitez plonger par-dessus bord et tenter une évasion	plonger par-dessus bord	23	k	
+127	193	2	If you wish to attack the guard	Si vous souhaitez attaquer la garde	attaquer le garde	17	k	
+128	193	2	If you wish to overpower him and capture him alive	Si vous souhaitez le vaincre et le capturer vivant	le neutraliser	14	k	
+129	195	4	If you wish to follow the man who left by the north door	Si vous souhaitez suivre l'homme qui a quitté par la porte du Nord	suivre l'homme sorti par la porte nord	38	k	
+130	195	4	If you wish to follow the man who left by the west door	Si vous souhaitez suivre l'homme qui a quitté par la porte ouest	suivre l'homme sorti par la porte ouest	39	k	
+131	195	4	If you wish to attack the armourer working at the anvil	Si vous souhaitez attaquer le travail armurier à l'enclume	attaquer l'armurier	19	k	
+132	195	4	If you wish to leave the chamber and retrace your steps along the corridor to take the other passage	Si vous souhaitez quitter la chambre et revenir sur vos pas le long du couloir pour prendre l'autre passage	retourner prendre l'autre couloir	33	k	
+133	196	2	If you wish to eat some of this mouth-watering food	Si vous souhaitez manger une partie de cette nourriture appétissante	goûter à un plat	16	k	
+134	196	2	If you wish to leave the room by the window	Si vous souhaitez quitter la pièce par la fenêtre	quitter la pièce par la fenêtre	31	k	
+135	199	2	If you have the Kai Discipline of Sixth Sense	Si vous avez le Kai Discipline de sixième sens	Avec la discipline Kai du sixième sens	38	k	
+136	199	2	If you do not possess this skill	Si vous ne possédez pas cette compétence	Si vous n'avez pas cette compétence	35	k	
+137	20	5	If you wish to evade combat at any time by jumping into the sea	Si vous souhaitez combat evade à tout moment en sautant dans la mer	(ATM) sauter dans la mer	24	k	
+138	20	5	If you wish to evade combat by surrendering	Si vous souhaitez échapper à un combat en se rendant	se rendre	9	k	
+139	20	5	If you win the combat in three rounds or less	Si vous gagnez le combat en trois rounds ou moins	Si vous gagnez en 3 rounds ou moins	35	k	
+140	20	5	If the fight lasts longer than three rounds, do not continue the combat but	Si le combat dure plus de trois tours, ne pas continuer le combat, mais	Si le combat dure plus de trois rounds	38	k	
+141	20	5	If you lose the combat	Si vous perdez le combat	Si vous perdez le combat	24	k	
+142	201	2	If you wish to fight this creature	Si vous souhaitez lutter contre cette créature	affronter la créature	21	k	
+143	201	2	If you wish to try to evade the attack and escape	Si vous souhaitez essayer d'échapper à l'attaque et échapper	fuir l'attaque	14	k	
+144	202	3	If you wish to investigate the stables	Si vous souhaitez enquêter sur les écuries	entrer dans les écuries	23	k	
+145	202	3	If you wish to ask one of the merchants if they know where Tipasa lives	Si vous souhaitez demander à l'un des marchands s'ils savent où vit Tipasa	demander où se trouve Tipasa	28	k	
+146	202	3	If you wish to leave the marketplace, continue along the adjoining street and	Si vous souhaitez quitter le marché, continuer le long de la rue voisine et	quitter le marché	17	k	
+147	204	2	If you wish to try to grab the stone and turn it on your enemy	Si vous souhaitez essayer de saisir la pierre et tourner sur votre ennemi	s'emparer de la pierre	22	k	
+148	204	2	If you wish to ignore the stone and attack the Darklord with your own weapon	Si vous souhaitez ignorer la pierre et attaquer le Darklord avec votre propre arme	utiliser notre arme	19	k	
+149	208	2	If you possess some Oede herb, you may give it to the poor vaxeler by	Si vous possédez une herbe Oede, vous pouvez donner aux pauvres vaxeler par	donner de l'herbe aux lépreux	29	k	
+150	208	2	If you do not have any Oede, or if you do not wish to give it to the man, you can flee the cave with Banedon by	Si vous n'avez pas Oede, ou si vous ne voulez pas donner à l'homme, vous pouvez fuir la grotte avec Banedon par	fuir la caverne avec Banedon	28	k	
+151	210	2	If you have the Kai Discipline of Healing	Si vous avez le Kai Discipline de la guérison	Avec la discipline Kai de la guérison	37	k	
+152	210	2	If you do not possess this skill	Si vous ne possédez pas cette compétence	Si vous n'avez pas cette compétence	35	k	
+153	211	2	If you wish to question him about Tipasa the Wanderer	Si vous souhaitez l'interroger sur Tipasa le Wanderer	l'interroger sur Tipasa	23	k	
+154	211	2	If you wish to leave his home and continue on your way to Ikaresh	Si vous souhaitez quitter son domicile et continuer sur votre chemin à Ikaresh	poursuivre vers Ikaresh	23	k	
+155	212	2	If you possess the Sommerswerd	Si vous possédez le Glaive de Sommer	Si vous possédez le Glaive de Sommer	36	k	
+156	212	2	If you do not possess this Special Item	Si vous ne possédez pas cet article spécial	Si vous n'avez pas cet objet	28	k	
+157	215	3	If you possess a Copper Key	Si vous possédez une clé cuivre	Avec une clé de cuivre	22	k	
+158	215	3	If you do not possess this item, you can try to climb over the door by	Si vous ne possédez pas cet article, vous pouvez essayer de monter sur la porte par	escalader la porte	18	k	
+159	215	3	Alternatively, you can run back up the stairs and attempt to attack the guards before they load and fire their crossbows by	Vous pouvez courir les escaliers et tenter d'attaquer les gardes avant de charger et tirer leurs arbalètes par	remonter l'escalier vers les gardes	35	k	
+160	216	2	If you want to try to reason with the crowd of screaming fanatics that are now running towards you with their swords drawn	Si vous voulez essayer de raisonner avec la foule de fanatiques cris qui sont en cours d'exécution maintenant vers vous avec leurs épées tirées	raisonner la bande de fanatiques	32	k	
+161	216	2	If you wish to follow Banedon’s example and run for your life	Si vous souhaitez suivre l'exemple de Banedon et courir pour votre vie	fuir avec Banedon	17	k	
+162	219	2	If you have the Kai Discipline of Mindshield	Si vous avez la discipline de Kai Bouclier Psychique	Si vous avez la discipline de Kai Bouclier Psychique	52	k	
+163	219	2	If you do not possess this Kai Discipline	Si vous ne possédez pas ce Kai discipline	Si vous n'avez pas cette discipline Kai	39	k	
+164	22	2	If you are still alive and possess the Kai Discipline of Healing	Si vous êtes encore en vie et posséder les Kai Discipline de la guérison	Si vous êtes encore en vie et posséder la discipline Kai de la guérison	71	k	
+165	22	2	If you do not possess this skill	Si vous ne possédez pas cette compétence	Si vous n'avez pas cette compétence	35	k	
+166	220	2	If you wish to follow the path	Si vous souhaitez suivre le chemin	suivre le sentier	17	k	
+167	220	2	If you decide to climb the stairs to the portal	Si vous décidez de monter les escaliers au portail	monter l'escalier vers le portail	33	k	
+168	221	2	If you have ever been given a Crystal Star Pendant	Si vous avez déjà été donné une étoile de cristal Pendentif	Avec le pendentif à l'étoile de cristal	39	k	dans le bouquin que : 221 ; 288 (ok fichier) 
+169	221	2	If you do not have this Special Item	Si vous ne disposez pas de ce point spécial	Si vous n'avez pas cet objet	28	k	
+172	225	2	If you wish to follow his example and drink the strange wine	Si vous souhaitez suivre son exemple et boire le vin étrange	boire du vin	12	k	
+173	225	2	If you do not want to drink the wine, ask him where Tipasa can be found and	Si vous ne voulez pas boire le vin, demandez-lui où se trouve Tipasa et	lui demander où trouver Tipasa	30	k	
+174	226	2	If you wish to attack the guards	Si vous souhaitez attaquer les gardes	attaquer les gardes	19	k	
+175	226	2	If you do not wish to fight them, you can evade before they have a chance to strike at you by running back up to stairs	Si vous ne souhaitez pas les combattre, vous pouvez échapper avant qu'ils aient une chance de frapper vous en marche arrière jusqu'à un escalier	fuir en remontant l'escalier	28	k	
+176	227	2	If you wish to stop and question her	Si vous souhaitez arrêter et interroger	s'arrêter et l'interroger	25	k	
+177	227	2	If you wish to ignore her and continue on your way	Si vous souhaitez l'ignorer et continuer sur votre chemin	poursuivre	10	k	
+178	228	2	If you wish to climb up a vine to the walkway and escape through the open stone door	Si vous souhaitez monter par la porte ouverte en pierre d'une vigne à la passerelle et d'évasion	escalader le lierre vers le balcon	34	k	
+179	228	2	If you wish to search for an exit from the arboretum at ground level	Si vous souhaitez rechercher une sortie de l'arboretum au niveau du sol	sortir de l'arboretum par ce niveau	35	k	
+180	234	3	If you have the Kai Discipline of Tracking	Si vous avez le Kai Discipline de suivi	Avec la discipline Kai de l'orientation	39	k	
+181	234	3	If you wish to climb the stairs to the small portal	Si vous souhaitez monter les escaliers au petit portail	gravir les marches vers le portail	34	k	
+182	234	3	If you wish to follow the winding path	Si vous souhaitez suivre le chemin sinueux	suivre le sentier sinueux	25	k	
+183	235	2	If you have the Kai Discipline of Healing	Si vous avez le Kai Discipline de la guérison	Avec la discipline Kai de la guérison	37	k	
+184	235	2	If you do not possess this Kai Discipline	Si vous ne possédez pas ce Kai discipline	Si vous n'avez pas cette discipline Kai	39	k	
+185	236	2	If you wish to search the guard’s body	Si vous souhaitez rechercher le corps de la garde	fouiller le corps du garde	26	k	
+186	236	2	If you decide to ignore the body, hurry into the Itikar’s pen and	Si vous décidez d'ignorer le corps, dépêchez-vous dans la plume du Itikar et	gagner l'enclos de l'Itikar	27	k	dans le bouquin que : 236 ; 357 ; 389 ; 398 (ok dans fichier)
+187	238	2	If you wish to escape through the arch	Si vous souhaitez échapper à travers l'arc	s'enfuir par le porche	22	k	
+188	238	2	If you wish to escape by the stairs	Si vous souhaitez échapper par les escaliers	s'enfuir par l'escalier	23	k	
+189	24	2	If you have the Kai Discipline of Sixth Sense	Si vous avez le Kai Discipline de sixième sens	Avec la discipline Kai du sixième sens	38	k	
+190	24	2	If you do not possess this skill	Si vous ne possédez pas cette compétence	Si vous n'avez pas cette compétence	35	k	
+191	241	3	If you have the Kai Discipline of Sixth Sense	Si vous avez le Kai Discipline de sixième sens	Avec la discipline Kai du sixième sens	38	k	
+192	241	3	If you wish to accept his invitation	Si vous souhaitez accepter son invitation	accepter son invitation	23	k	
+193	241	3	If you decide to decline his offer and continue on your way towards Ikaresh	Si vous décidez de décliner son offre et continuer votre chemin vers Ikaresh	poursuivre vers Ikaresh	23	k	
+194	246	3	If you possess the Kai Discipline of Tracking	Si vous possédez le Kai Discipline de suivi	Avec la discipline Kai de l'orientation	39	k	
+195	246	3	If you decide to climb the stairs to the small portal	Si vous décidez de monter les escaliers au petit portail	gravir les marches vers le portail	34	k	
+196	246	3	If you would rather follow the winding path	Si vous préférez suivre le chemin sinueux	suivre le sentier sinueux	25	k	
+197	248	2	If you wish to buy the waistcoat, pay the man 5 Gold Crowns and	Si vous souhaitez acheter le gilet, payer l'homme 5 couronnes d'or et	acheter le paletot à 5 pièces d'or	34	k	
+198	248	2	If you do not want to buy the waistcoat or cannot afford to pay him 5 Gold Crowns	Si vous ne voulez pas acheter le gilet ou ne peut pas se permettre de lui payer 5 couronnes d'or	ne pas l'acheter	16	k	
+199	250	2	If you have the Kai Discipline of Healing	Si vous avez le Kai Discipline de la guérison	Avec la discipline Kai de la guérison	37	k	
+200	250	2	If you do not have this skill	Si vous ne possédez pas cette compétence	Si vous n'avez pas cette compétence	35	k	
+201	252	2	If you wish to cross the bridge and enter the Tower	Si vous souhaitez traverser le pont et entrer dans la tour	entrer dans la tour par le pont	31	k	
+202	252	2	If you decide to descend the stairs	Si vous décidez de descendre les escaliers	enter dans le jardin par l'escalier	35	k	
+203	254	2	If you wish to help the dwarf	Si vous souhaitez aider le nain	aider le nain	13	k	
+204	254	2	If you wish to leap from the outrigger onto the fortified platform	Si vous souhaitez sauter de la plate-forme Outrigger sur la fortifiée	sauter de la passerelle	23	k	
+205	256	2	If you wish to ask her if she is Soushilla only if you have heard that name before	Si vous souhaitez lui demander si elle est Soushilla que si vous avez entendu ce nom avant	lui demander si elle est Soushilla	34	k	
+206	256	2	If you wish to ask her if she knows were Tipasa the Wanderer can be found	Si vous souhaitez lui demander si elle sait avoir été le Wanderer Tipasa se trouve	lui demander où trouver Tipasa	30	k	
+207	26	3	If you have the Kai Discipline of Mind Over Matter	Si vous avez le Kai Discipline of Mind Over Matter	Avec la discipline Kai de la maîtrise psychique de la matière	61	k	
+208	26	3	If you wish to try to break down the door	Si vous souhaitez essayer de briser la porte	fracturer la porte	18	k	
+209	26	3	If you decide to leave the door and head off along the other passage towards the stairs	Si vous décidez de laisser la porte et la tête hors le long de l'autre passage vers l'escalier	s'en éloigner et aller vers l'escalier	38	k	
+210	262	2	If you wish to draw your weapon and prepare for combat	Si vous souhaitez attirer votre arme et se préparer au combat	dégainer et se préparer au combat	33	k	
+211	262	2	If you wish to try to escape from them	Si vous souhaitez essayer de leur échapper	s'enfuir	8	k	
+212	264	2	If you possess the Sommerswerd	Si vous possédez le Glaive de Sommer	Si vous possédez le Glaive de Sommer	36	k	
+213	264	2	If you do not possess this Special Item	Si vous ne possédez pas cet article spécial	Si vous n'avez pas cet objet	28	k	
+214	265	2	If you wish to give her a Gold Crown, make the adjustment to your	Si vous souhaitez lui donner une couronne d'or, faire l'ajustement à votre	lui donner 1 pièce d'or	23	k	
+215	265	2	If you do not wish, or cannot afford, to give her any gold	Si vous ne souhaitez pas, ou ne peut pas se permettre, de lui donner de l'or	ne pas lui donner de pièce	26	k	
+216	267	2	If you wish to attack the Drakkar before he lands his blow upon Banedon’s head	Si vous souhaitez attaquer le Drakkar avant qu'il atterrit son coup sur la tête de Banedon	attaquer le Drakkar	19	k	
+217	267	2	If you do not wish to attack	Si vous ne souhaitez pas attaquer	ne pas intervenir	17	k	
+218	272	3	If you wish to go north, towards the Dougga Market	Si vous souhaitez aller vers le nord, vers le marché Dougga	aller au nord, vers le marché	29	k	
+219	272	3	If you wish to go west, towards the main square	Si vous souhaitez aller vers l'ouest, en direction de la place principale	aller à l'ouest, vers la place	30	k	
+220	272	3	If you wish to go south, along the Avenue of Eagles	Si vous souhaitez aller vers le sud, le long de l'avenue des Aigles	aller au sud, par l'avenue des Aigles	37	k	
+221	273	2	If you wish to evade combat	Si vous souhaitez échapper à un combat	(ATM) fuir le combat	20	k	
+222	273	2	If you win the combat	Si vous gagnez le combat	Si vous gagnez le combat	24	k	
+223	276	2	If you wish to pay the old woman 5 Gold Crowns, erase them from your	Si vous souhaitez payer la vieille femme 5 couronnes d'or, les effacer de votre	lui donner 5 pièces d'or	24	k	
+224	276	2	If you do not have 5 Gold Crowns or do not wish to give her the money, leave the tavern and	Si vous ne disposez pas 5 couronnes d'or ou ne souhaitez pas lui donner l'argent, quitter la taverne et	quitter la taverne	18	k	
+225	278	2	If you have the Kai Discipline of Mindshield	Si vous avez la discipline de Kai Bouclier Psychique	Avec la discipline de Kai Bouclier Psychique	44	k	
+226	278	2	If you do not have this skill	Si vous ne possédez pas cette compétence	Si vous n'avez pas cette compétence	35	k	
+227	279	2	If you wish to descend to the bridge and enter the marble tower	Si vous souhaitez descendre au pont et entrez dans la tour de marbre	entrer dans la tour par le pont	31	k	
+228	279	2	If you wish to continue past the bridge, descending the stairs to the palace gardens	Si vous souhaitez continuer après le pont, descendre les escaliers dans les jardins du palais	entrer dans les jardins par l'escalier	38	k	
+229	283	2	If you wish to ask the dwarves how they came to be under Banedon’s command	Si vous souhaitez demander aux Nains comment ils sont venus à être sous le commandement de Banedon	interroger les nains	20	k	
+230	283	2	If you wish to bid them goodnight	Si vous souhaitez enchérir les bonne nuit	leur dire bonne nuit	20	k	
+231	285	2	If you wish to escape through the arch	Si vous souhaitez échapper à travers l'arc	s'enfuir par l'arche	20	k	
+232	285	2	If you wish to escape by the stairs	Si vous souhaitez échapper par les escaliers	s'enfuir par l'escalier	23	k	
+233	286	2	If you have the Kai Discipline of Mind Over Matter	Si vous avez le Kai Discipline of Mind Over Matter	Avec la discipline Kai de la maîtrise psychique de la matière	61	k	
+234	286	2	If you do not have this skill	Si vous ne possédez pas cette compétence	Si vous n'avez pas cette compétence	35	k	
+235	288	2	If you have ever been given a Crystal Star Pendant	Si vous avez déjà été donné une étoile de cristal Pendentif	Avec le pendentif à l'étoile de cristal	39	k	dans le bouquin que : 221 ; 288 (ok fichier) 
+236	288	2	If you do not have this Special Item	Si vous ne disposez pas de ce point spécial	Si vous n'avez pas cet objet	28	k	
+237	289	2	If you possess the Sommerswerd	Si vous possédez le Glaive de Sommer	Si vous possédez le Glaive de Sommer	36	k	
+238	289	2	If you do not have this Special Item	Si vous ne disposez pas de ce point spécial	Si vous n'avez pas cet objet	28	k	
+239	295	2	If you wish to search the guard’s body	Si vous souhaitez rechercher le corps de la garde	fouiller le corps du garde	26	k	dans le bouquin que : 236 ; 357 ; 389 ; 398 (ok dans fichier)
+240	295	2	If you decide to ignore the body, hurry into the Itikar’s pen and	Si vous décidez d'ignorer le corps, dépêchez-vous dans la plume du Itikar et	gagner l'enclos de l'Itikar	27	k	dans le bouquin que : 236 ; 357 ; 389 ; 398 (ok dans fichier)
+241	296	2	If you wish to accept their offer	Si vous souhaitez accepter leur offre	accepter leur offre	19	k	
+242	296	2	If you wish to decline, you can leave the eating house and continue along the avenue and	Si vous souhaitez baisse, vous pouvez quitter la maison manger et continuer sur l'avenue et	poursuivre sur l'avenue	23	k	
+243	297	2	If you are still alive and wish to fight the guards	Si vous êtes encore en vie et que vous souhaitez combattre les gardes	combattre les gardes	20	k	
+244	297	2	If you wish to try to escape by running back up the stairs	Si vous souhaitez essayer d'échapper en courant l'escalier de secours	s'enfuir par l'escalier	23	k	
+245	30	3	If you have reached the Kai rank of Guardian or higher	Si vous avez atteint le rang de Kai gardien ou supérieur	Avec le titre de Gardien Kai ou plus	36	k	
+246	30	3	If you wish to hide outside on the narrow ledge that runs round the palace wall	Si vous souhaitez masquer l'extérieur sur le rebord étroit qui tourne autour du mur du palais	se cacher à l'extérieur, sur la corniche	40	k	
+247	30	3	If you wish to attack the guards as they march past	Si vous souhaitez attaquer les gardes comme ils défilent devant	attaquer les gardes quand ils passent	37	k	
+248	300	2	If you possess a Black Crystal Cube	Si vous possédez un cube de cristal noir	Si vous avez un cube de cristal noir	36	k	
+249	300	2	If you do not have this Special Item	Si vous ne disposez pas de ce point spécial	Si vous n'avez pas cet objet	28	k	
+250	302	2	If you wish to accept a jug of the notorious ale	Si vous souhaitez accepter une cruche de bière notoire	boire de la bière	17	k	
+251	302	2	If you decide to decline the offer	Si vous décidez de décliner l'offre	ne pas en boire	15	k	
+252	31	2	If you possess a Kalte Firesphere or a Tinderbox	Si vous possédez un Kalte Firesphere ou une poudrière	Avec une pierre de feu ou un briquet	36	k	
+253	31	2	If you do not have either of these items	Si vous ne disposez pas d'un de ces éléments	Sans l'un de ces éléments	25	k	
+254	310	2	If you wish to leave the tower by a door in the north wall	Si vous souhaitez quitter la tour par une porte dans le mur nord	sortir de la tour par la porte nord	35	k	
+255	310	2	If you wish to prepare yourself for combat and wait for the Drakkarim to appear	Si vous souhaitez vous préparer pour le combat et d'attendre le Drakkarim apparaisse	affronter les Drakkars	22	k	
+256	311	3	If you wish to retrieve the Sommerswerd	Si vous souhaitez récupérer le Glaive de Sommer	aller chercher le Glaive de Sommer	34	k	
+257	311	3	If you wish to try to move to a new hiding place, under cover of the swirling dust	Si vous souhaitez essayer de passer à une nouvelle cachette, sous le couvert de la poussière tourbillonnant	gagner un autre abri	20	k	
+258	311	3	If you wish to stay where you are	Si vous souhaitez rester où vous êtes	ne pas bouger	13	k	
+259	313	2	If you possess a Blowpipe and Sleep Dart	Si vous possédez une sarbacane et sommeil Dart	Avec une sarbacane et une flèche de sommeil	43	k	
+260	313	2	If you do not have these items	Si vous ne disposez pas de ces articles	Si vous n'avez pas ces objets	29	k	
+261	314	2	If you have the Kai Discipline of Sixth Sense	Si vous avez le Kai Discipline de sixième sens	Avec la discipline Kai du sixième sens	38	k	
+262	314	2	If you do not possess this skill	Si vous ne possédez pas cette compétence	Si vous n'avez pas cette compétence	35	k	
+263	317	2	If you wish to attack the guard before he draws his weapon	Si vous souhaitez attaquer la garde avant qu'il ne tire son arme	attaquer le garde	17	k	
+264	317	2	If you wish to barge him aside and continue climbing the stairs	Si vous souhaitez le chaland de côté et continuer à monter les escaliers	le bousculer et poursuivre	26	k	
+265	321	2	If you wish to question the vaxeler about Tipasa the Wanderer	Si vous souhaitez interroger le vaxeler sur Tipasa le Wanderer	interroger le lépreux sur Tipasa	32	k	
+266	321	2	If you wish to leave the cave and press on towards Ikaresh	Si vous souhaitez quitter la grotte et appuyez sur vers Ikaresh	quitter la grotte pour Ikaresh	30	k	
+267	322	2	If you wish to push the drum down the tower stairs	Si vous souhaitez pousser le tambour dans l'escalier de la tour	précipiter le tambour dans l'escalier	37	k	
+268	322	2	If you prefer to ignore the drum and escape out onto the platform	Si vous préférez ignorer le tambour et échapper sur la plate-forme	s'échapper par la plate-forme	29	k	
+269	329	2	If you possess a Rope, you can attempt to climb down to the gardens below	Si vous possédez une corde, vous pouvez tenter de descendre dans les jardins ci-dessous	descendre dans les jardins (avec corde)	39	k	
+270	329	2	If you do not possess a Rope	Si vous ne possédez pas une corde	sans corde	10	k	
+271	33	2	If you wish to jump down the shaft	Si vous souhaitez sauter l'arbre	sauter dans le puits	20	k	
+272	33	2	If you wish to stand and fight the Sharnazim	Si vous souhaitez rester et combattre le Sharnazim	affronter les Sharnazims	24	k	
+273	330	2	If you win the combat and it lasts for 2 rounds or less	Si vous gagnez le combat et il dure 2 rounds ou moins	Si vous gagnez en 2 rounds ou moins	35	k	
+274	330	2	If the combat lasts more than 2 rounds, do not continue the combat but	Si le combat dure plus de 2 tours, ne pas continuer le combat, mais	Si le combat dure plus de 2 tours, ne pas continuer le combat	61	k	
+275	333	2	If you possess the Sommerswerd	Si vous possédez le Glaive de Sommer	Si vous possédez le Glaive de Sommer	36	k	
+276	333	2	If you do not have the Special Item	Si vous n'avez pas l'objet spécial	Si vous n'avez pas l'objet spécial	34	k	
+277	334	2	If you wish to avoid combat at any time by running back up the spiral staircase	Si vous souhaitez éviter le combat à tout moment en marche arrière jusqu'à l'escalier en colimaçon	(ATM) retourner à l'escalier	28	k	
+278	334	2	If you win the fight	Si vous gagnez le combat	Si vous gagnez le combat	24	k	
+279	335	3	If you have the Kai Discipline of Sixth Sense	Si vous avez le Kai Discipline de sixième sens	Avec la discipline Kai du sixième sens	38	k	
+280	335	3	If you wish to attempt to grab the stone	Si vous souhaitez tenter de saisir la pierre	s'emparer de la pierre	22	k	
+281	335	3	If you wish to ignore the stone and attack Haakon	Si vous souhaitez ignorer la pierre et l'attaque Haakon	attaquer Haakon	15	k	
+282	337	3	If you have the Kai Discipline of Sixth Sense	Si vous avez le Kai Discipline de sixième sens	Avec la discipline Kai du sixième sens	38	k	
+283	337	3	If you wish to accept his invitation	Si vous souhaitez accepter son invitation	accepter son invitation	23	k	
+284	337	3	If you wish to decline his offer and continue towards Ikaresh	Si vous souhaitez décliner son offre et continuer vers Ikaresh	continuer vers Ikaresh	22	k	
+285	338	2	If you wish to continue climbing the stairs towards the door of the walkway	Si vous souhaitez continuer à monter les escaliers vers la porte de la passerelle	monter vers le chemin de ronde	30	k	
+286	338	2	If you wish to enter the door through which the guard came	Si vous souhaitez entrer dans la porte par laquelle la garde est venu	entrer par la porte	19	k	
+287	34	2	If you want to try to break down the door	Si vous voulez essayer de briser la porte	fracturer la porte	18	k	
+288	34	2	If you decide to leave the door and head off along the other passage towards the stairs	Si vous décidez de laisser la porte et la tête hors le long de l'autre passage vers l'escalier	s'en éloigner et aller vers l'escalier	38	k	
+289	341	2	If you wish to escape from the guard room by this door	Si vous souhaitez échapper à la salle de garde par cette porte	fuir par la porte	17	k	
+290	341	2	If you wish to stand and fight	Si vous souhaitez tenir debout et combat	se préparer au combat	21	k	
+291	342	2	If you wish to enter the eating-house	Si vous souhaitez entrer dans la maison de manger	entrer dans l'auberge	21	k	
+292	342	2	If you wish to continue along the avenue	Si vous souhaitez continuer sur l'avenue	continuer sur l'avenue	22	k	
+293	343	2	If you wish to steer the Itikar south towards the Dahir Pass	Si vous souhaitez diriger le Itikar sud vers le col dahir	voler vers le sud (passage du Dahir)	36	k	
+294	343	2	If you wish to head east towards the town of Chula	Si vous souhaitez diriger vers l'est vers la ville de Chula	voler vers l'est (ville de Chula)	33	k	
+295	344	2	If you possess some Oede herb and wish to give it to the poor vaxeler	Si vous possédez une herbe Oede et que vous souhaitez donner aux pauvres vaxeler	donner de l'herbe aux lépreux	29	k	
+296	344	2	If you do not have any Oede herb, or if you do not wish to give it to this unfortunate wretch, flee the cave and	Si vous n'avez pas herbe Oede, ou si vous ne voulez pas donner à ce malheureux, fuyez la grotte et	sortir de la grotte	19	k	
+297	345	2	If you wish to escape through the arch	Si vous souhaitez échapper à travers l'arc	s'échapper par l'arche	22	k	
+298	345	2	If you wish to race up the stairs	Si vous souhaitez courir dans les escaliers	grimper l'escalier	18	k	
+299	350	2	If you have the Kai Discipline of Mindshield	Si vous avez la discipline de Kai Bouclier Psychique	Avec la discipline Kai de Bouclier Psychique	44	k	
+300	350	2	If you do not possess this Kai Discipline	Si vous ne possédez pas ce Kai discipline	Si vous n'avez pas cette discipline Kai	39	k	
+301	351	2	If you wish to approach her and ask where Tipasa the Wanderer may be found	Si vous souhaitez l'approcher et demander où le Wanderer Tipasa se trouve	lui demander où trouver Tipasa	30	k	
+302	351	2	If you wish to leave the tavern and continue along the street	Si vous souhaitez quitter la taverne et continuez le long de la rue	sortir et continuer notre chemin	32	k	
+303	354	2	If you have the Kai Discipline of Healing	Si vous avez le Kai Discipline de la guérison	Avec la discipline Kai de la guérison	37	k	
+304	354	2	If you do not possess the skill	Si vous ne possédez pas la compétence	Si vous n'avez pas cette compétence	35	k	
+305	357	3	If at any time during this combat you pick a 1 from the	Si, à tout moment au cours de ce combat que vous choisissez un 1 de la	(ATM) Sur un 1, c'est la chute	30	k	
+306	357	3	If you win the combat and decide to search the sentry’s body	Si vous gagnez le combat et décident de rechercher le corps de la sentinelle	fouiller le corps de la sentinelle	34	k	
+307	357	3	If you win but decide to ignore the body and hurry into the Itikar’s pen	Si vous gagnez, mais décidez d'ignorer le corps et pressé dans la plume du Itikar	gagner l'enclos de l'Itikar	27	k	dans le bouquin que : 236 ; 357 ; 389 ; 398 (ok dans fichier)
+308	358	3	If you wish to continue along the Avenue of Eagles	Si vous souhaitez continuer sur l'avenue des Aigles	continuer sur l'avenue des Aigles	33	k	
+309	358	3	If you decide to retrace your steps to the Eagle Square, you can either go north towards the Dougga Market	Si vous décidez de revenir sur vos pas à la place Eagle, vous pouvez aller vers le nord vers le marché Dougga	aller au nord vers le marché aux Douggas	40	k	
+310	358	3	Or west towards the Main Square	Ou à l'ouest vers la place principale	allez à l'ouest vers la Grand-Place	35	k	
+311	361	2	If you win and the fight lasts 3 rounds of combat or less	Si vous gagnez et le combat dure 3 rounds de combat ou moins	Si vous gagnez en 3 rounds ou moins	35	k	
+312	361	2	If the fight continues to a fourth round of combat, do not resolve it. Instead	Si la lutte se poursuit à un quatrième round de combat, ne résolvent pas. Au lieu	Fin du combat au 4è round	25	k	
+313	362	2	If you wish to purchase a cup of the delicious beverage	Si vous souhaitez acheter une tasse de la boisson délicieuse	s'offrir une tasse de Jala	26	k	
+314	362	2	If you not wish to purchase a cup of jala or do not have any gold, you must bid farewell and leave the eating-house	Si vous ne souhaitez pas acheter une tasse de Jala ou ne pas l'or, vous devez dire au revoir et quitter la maison de manger	quitter l'auberge	17	k	
+315	363	3	If you have the Kai Discipline of Tracking	Si vous avez le Kai Discipline de suivi	Avec la discipline Kai de l'orientation	39	k	
+316	363	3	If you do not possess this skill, you can either climb the stairs to the small portal by	Si vous ne possédez pas cette compétence, vous pouvez monter les escaliers au petit portail par	monter l'escalier vers le portail	33	k	
+317	363	3	Or follow the winding path into the trees	Ou suivre le chemin sinueux dans les arbres	suivre le sentier sinueux	25	k	
+318	365	2	If you wish to enter his home	Si vous souhaitez entrer dans sa maison	entrer dans sa maison	21	k	
+319	365	2	If you decide to press on towards Ikaresh	Si vous décidez de presse vers Ikaresh	poursuivre vers Ikaresh	23	k	
+320	367	2	If you wish to follow the sign	Si vous souhaitez suivre le panneau	suivre la flèche	16	k	
+321	367	2	If you wish to go back to the fork and take the other street	Si vous souhaitez revenir à la fourchette et prendre l'autre rue	retourner prendre l'autre rue	29	k	
+322	368	2	If you wish cross the bridge and enter the tower	Si vous souhaitez traverser le pont et entrez dans la tour	entrer dans la tour par le pont	31	k	
+323	368	2	If you decide to descend the stair that leads to the garden below	Si vous décidez de descendre l'escalier qui mène au jardin ci-dessous	enter dans le jardin par l'escalier	35	k	
+324	371	2	If you have the Kai Discipline of Healing	Si vous avez le Kai Discipline de la guérison	Avec la discipline Kai de la guérison	37	k	
+325	371	2	If you do not possess this skill	Si vous ne possédez pas cette compétence	Si vous n'avez pas cette compétence	35	k	
+326	374	2	If you wish to help the dwarf	Si vous souhaitez aider le nain	aider le nain	13	k	
+327	374	2	If you wish to leap from the outrigger onto the platform	Si vous souhaitez sauter de la plate-forme Outrigger sur la	sauter sur la plate-forme	25	k	
+328	376	2	If you wish to enter the tavern	Si vous souhaitez entrer dans la taverne	entrer dans la taverne	22	k	
+329	376	2	If you wish to continue along the street towards the Dougga Market	Si vous souhaitez continuer dans la rue vers le marché Dougga	continuer vers le marché aux Douggas	36	k	
+330	380	2	If you possess a Black Crystal Cube	Si vous possédez un cube de cristal noir	Si vous avez un cube de cristal noir	36	k	
+331	380	2	If you do not have this Special Item	Si vous ne disposez pas de ce point spécial	Si vous n'avez pas cet objet	28	k	
+332	382	2	If you have ever been given a Crystal Star Pendant	Si vous avez déjà été donné une étoile de cristal Pendentif	Si vous avez déjà été donné une étoile de cristal Pendentif	59	k	dans le bouquin que : 221 ; 288 (ok fichier) 
+333	382	2	If you do not have this Special Item	Si vous ne disposez pas de ce point spécial	Si vous n'avez pas cet objet	28	k	dans le bouquin que : 221 ; 288 (ok fichier) 
+334	383	2	If you wish to investigate the cave	Si vous souhaitez étudier la grotte	explorer la grotte	18	k	
+335	383	2	If you wish to press on towards Ikaresh	Si vous souhaitez appuyer sur vers Ikaresh	poursuivre vers Ikaresh	23	k	
+336	386	3	If you have the Kai Discipline of Tracking	Si vous avez le Kai Discipline de suivi	Avec la discipline Kai de l'orientation	39	k	
+337	386	3	If you wish to enter the alley and knock at the door	Si vous souhaitez entrer dans l'allée frapper à la porte	aller frapper à la porte bleue	30	k	
+338	386	3	If you wish to continue along the street	Si vous souhaitez continuer dans la rue	continuer dans la rue	21	k	
+339	387	2	If you wish to jump	Si vous souhaitez sauter	sauter pour échapper le combat	30	k	
+340	387	2	If you win the combat	Si vous gagnez le combat	Si vous gagnez le combat	24	k	
+341	388	2	If you wish to take the left street	Si vous souhaitez prendre la rue à gauche	prendre la rue à gauche	23	k	
+342	388	2	If you wish to take the right street	Si vous souhaitez prendre la rue à droite	prendre la rue à droite	23	k	
+343	389	2	If you win the combat and wish to search the sentry’s body	Si vous gagnez le combat et désir de rechercher le corps de la sentinelle	fouiller le corps de la sentinelle	34	k	
+344	389	2	If you wish to ignore the body and hurry into the Itikar’s pen	Si vous souhaitez ignorer le corps et pressé dans la plume du Itikar	gagner l'enclos de l'Itikar	27	k	dans le bouquin que : 236 ; 357 ; 389 ; 398 (ok dans fichier)
+345	39	2	If you wish to continue questioning him	Si vous souhaitez continuer à l'interroger	continuer à l'interroger	24	k	
+346	39	2	If you decide to kill him	Si vous décidez de le tuer	le tuer	7	k	
+347	391	2	If you have reached the Kai rank of Warmarn or higher	Si vous avez atteint le rang de Kai Warmarn ou supérieur	Avec le titre de Guerrier Kaï ou plus	37	k	
+348	391	2	If you not yet reached this level of Kai training	Si vous pas encore atteint ce niveau de formation Kai	Sans ce niveau	14	k	
+349	393	2	If you wish to evade combat	Si vous souhaitez échapper à un combat	fuir le combat	14	k	
+350	393	2	If you win the combat	Si vous gagnez le combat	Si vous gagnez le combat	24	k	
+351	395	3	If you possess a Prism	Si vous possédez un prisme	Si vous avez un prisme	22	k	
+352	395	3	If you possess a Blue Stone Triangle	Si vous possédez un triangle bleu pierre	Si vous avez un triangle de pierre bleue	40	k	
+353	395	3	If you have neither of these items	Si vous avez aucun de ces éléments	Si vous n'avez aucun de ces éléments	36	k	
+354	396	3	If you have the Kai Discipline of Sixth Sense	Si vous avez le Kai Discipline de sixième sens	Avec la discipline Kai du sixième sens	38	k	
+355	396	3	If you wish to ascend the spiral stairs	Si vous souhaitez monter les escaliers en spirale	monter l'escalier	17	k	
+356	396	3	If you wish to descend the spiral stairs	Si vous souhaitez descendre l'escalier en spirale	descendre l'escalier	20	k	
+357	397	2	If you wish to ask her if she is Soushilla only if you have heard that name before	Si vous souhaitez lui demander si elle est Soushilla que si vous avez entendu ce nom avant	lui demander si elle est Soushilla	34	k	
+358	397	2	If you wish to ask her if she knows where Tipasa the Wanderer can be found	Si vous souhaitez lui demander si elle sait où le Wanderer Tipasa se trouve	lui demander où trouver Tipasa	30	k	
+359	398	2	If you wish to search the body of the sleeping guard	Si vous souhaitez rechercher le corps de la garde du sommeil	fouiller le garde endormi	25	k	
+360	398	2	If you wish to ignore the guard and rush into the Itikar pen	Si vous souhaitez ignorer la garde et se précipitent dans le stylo Itikar	gagner l'enclos de l'Itikar	27	k	dans le bouquin que : 236 ; 357 ; 389 ; 398 (ok dans fichier)
+361	4	2	If you win and the fight lasts for 4 rounds of combat or less	Si vous gagnez et la lutte dure pour 4 rounds de combat ou moins	Si vous gagnez en 4 rounds ou moins	35	k	
+362	4	2	If you win and the fight lasts longer than 4 rounds of combat	Si vous gagnez et le combat dure plus de 4 rounds de combat	Si vous gagnez en plus de 4 rounds	34	k	
+363	41	2	If you now decide to rub some of the oil into your skin	Si vous décidez maintenant de se frotter de l'huile dans votre peau	se frotter la peau avec de l'huile	34	k	
+364	41	2	If you decide to forget the vile-tasting oil completely	Si vous décidez d'oublier l'huile au goût immonde complètement	ne pas utiliser l'huile	23	k	
+365	42	2	If you decide to go through the gate	Si vous décidez de passer par la porte	passer par la porte	19	k	
+366	42	2	If you decide to take the path	Si vous décidez de prendre le chemin	prendre la rue pavée	20	k	
+367	43	2	If you wish to search for a hidden exit	Si vous souhaitez rechercher une sortie cachée	rechercher une issue dérobée	28	k	
+368	43	2	If you wish to prepare yourself for combat	Si vous souhaitez vous préparer au combat	se préparer au combat	21	k	
+369	44	2	If you wish to examine the book	Si vous souhaitez examiner le livre	feuilleter le livre	19	k	
+370	44	2	If you wish to ignore the book and search for your confiscated equipment instead	Si vous souhaitez ignorer le livre et la recherche de votre matériel confisqué à la place	rechercher notre équipement confisqué	37	k	
+371	45	2	If you wish to attack the guard	Si vous souhaitez attaquer la garde	éliminer le garde	17	k	
+372	45	2	If you wish simply to overpower him and capture him alive	Si vous souhaitez simplement lui maîtriser et le capturer vivant	le neutraliser	14	k	
+373	47	2	If you wish to continue along the west tunnel	Si vous souhaitez continuer le long du tunnel ouest	continuer par le tunnel ouest	29	k	
+374	47	2	If you wish to go south along the new tunnel	Si vous souhaitez aller vers le sud le long du nouveau tunnel	prendre le tunnel sud	21	k	
+375	51	4	If you have the Kai Discipline of Tracking	Si vous avez le Kai Discipline de suivi	Avec la discipline Kai de l'orientation	39	k	
+376	51	4	If you wish to enter the left channel	Si vous souhaitez entrer dans le canal gauche	entrer dans le tunnel de gauche	31	k	
+377	51	4	If you wish to enter the right channel	Si vous souhaitez entrer dans le canal droit	entrer dans le tunnel de droite	31	k	
+378	51	4	If you wish to enter the channel straight ahead	Si vous souhaitez entrer en ligne droite le canal	entrer dans le tunnel en face	29	k	
+379	53	2	If you wish to enter the dwelling	Si vous souhaitez pénétrer dans le logement	entrer dans le monastère	24	k	
+380	53	2	If you decide to enter the tavern instead	Si vous décidez d'entrer dans la taverne à la place	entrer dans la taverne	22	k	
+381	54	3	If you need the Oede herb	Si vous avez besoin de l'herbe Oede	se procurer de l'herbe d'Oede	29	k	
+382	54	3	If you do not need this herb, but still decide to enter the shop	Si vous n'avez pas besoin cette herbe, mais toujours décider d'entrer dans la boutique	entrer dans le magasin quand même	33	k	
+383	54	3	If you wish to continue along in a new alleyway that heads off towards the Grand Palace	Si vous souhaitez continuer le long dans une nouvelle ruelle, qui se dirige vers le Grand Palais	continuer vers le Grand Palais	30	k	
+384	55	2	If you wish to climb the left chimney	Si vous souhaitez monter la cheminée gauche	monter par le conduit de gauche	31	k	
+385	55	2	If you wish to climb the right chimney	Si vous souhaitez monter la cheminée droite	monter par le conduit de droite	31	k	
+386	58	2	If you choose the wrong combination, you do not get a second guess	Si vous choisissez la mauvaise combinaison, vous ne recevez pas une seconde estimation	Avec la connaissance du numéro	30	x	
+387	58	2	If you do not know the number and do not attempt to open the door	Si vous ne connaissez pas le numéro et ne tentez pas d'ouvrir la porte	Sans la connaissance du numéro	30	x	
+388	59	2	If you wish to pick up the sword	Si vous souhaitez prendre l'épée	ramasser l'épée	15	k	
+389	59	2	If you wish to ignore the sword and attack the second guard with your bare hands	Si vous souhaitez ignorer l'épée et attaquer la deuxième garde à mains nues	se battre à mains nues	22	k	
+390	6	2	If you choose to rub the larnuma oil into your skin	Si vous choisissez de frotter l'huile de larnuma dans votre peau	se frotter la peau avec l'huile de Larnuma	42	k	
+391	6	2	If you decide not to use the oil	Si vous décidez de ne pas utiliser l'huile	ne pas utiliser l'huile	23	k	
+392	63	2	If you wish to search the bodies of the dead guards	Si vous souhaitez rechercher les corps des gardes morts	fouiller le corps des gardes	28	k	
+393	63	2	If you wish to ignore the bodies and escape along the corridor	Si vous souhaitez ignorer les corps et échapper le long du corridor	s'enfuir par le couloir	23	k	
+394	65	2	If you wish to attack the guard	Si vous souhaitez attaquer la garde	achever le garde	16	k	
+395	65	2	If you wish simply to overpower him and capture him alive	Si vous souhaitez simplement lui maîtriser et le capturer vivant	le maîtriser	12	k	
+396	66	2	If you wish to jump back into the palace gardens and try to enter the palace through the Zakhan’s trophy room	Si vous souhaitez revenir en arrière dans les jardins du palais et essayer d'entrer dans le palais par la salle des trophées du Zakhan	passer par les jardins et la chambre des trophées	49	k	
+397	66	2	If you wish to launch a surprise attack on the seated guards, before they notice you are there	Si vous souhaitez lancer une attaque surprise sur les gardes assis, avant qu'ils ne remarquent que vous êtes là	attaquer les gardes par surprise	32	k	
+398	68	2	If you wish to examine the potions	Si vous souhaitez examiner les potions	examiner les potions	20	k	
+399	68	2	If you decide to ignore them, leave the shop and continue along the alley	Si vous décidez de les ignorer, quitter la boutique et continuer le long de l'allée	les ignorer et reprendre notre chemin	37	k	
+400	69	2	If you wish to attack the guards as soon as the door opens	Si vous souhaitez attaquer les gardes dès que la porte ouvre	attaquer dès que la porte s'ouvre	33	k	
+401	69	2	If you wish to move away from the door and stand in the middle of the cell	Si vous souhaitez déplacer loin de la porte et se tenir au milieu de la cellule	se placer au centre de la cellule	33	k	
+402	70	2	If you wish to climb the steps	Si vous souhaitez gravir les marches	monter l'escalier	17	k	
+403	70	2	If you wish to wait here and fight your pursuers	Si vous souhaitez attendre ici et combattre vos poursuivants	attendre pour combattre	23	k	
+404	72	2	If you wish to fight them	Si vous souhaitez les combattre	les affronter	13	k	
+405	72	2	If you wish to surrender	Si vous souhaitez de se rendre	se rendre	9	k	
+406	74	2	If you wish to go through the west door	Si vous souhaitez passer par la porte ouest	entrer dans l'armurerie	23	k	
+407	74	2	If you wish to avoid the armoury, leave the chamber by the north door and	Si vous souhaitez éviter la salle d'armes, laissez la chambre par la porte nord et	éviter l'armurerie par la porte nord	36	k	
+408	75	3	If you wish to enter	Si vous souhaitez entrer	entrer	6	k	
+409	75	3	If you wish to refuse and climb the path towards the archway	Si vous souhaitez refuser et monter le chemin vers la voûte	remonter la rue vers le porche	30	k	
+410	75	3	If you wish to enter the alley	Si vous souhaitez entrer dans l'allée	emprunter l'allée	17	k	
+411	78	2	If you wish to leave the bodies and escape along the corridor	Si vous souhaitez laisser les corps et échapper le long du corridor	fuir sans fouiller les corps	28	k	
+412	78	2	If you wish to search them	Si vous souhaitez les chercher	les fouiller	12	k	
+413	79	3	If you possess the Kai Disciplines of both Camouflage and Hunting	Si vous possédez la Kai Disciplines des deux Camouflage et chasse	Avec les disciplines Kai de camouflage et chasse	48	k	
+414	79	3	If you decide to attempt to sneak past the drinking guards	Si vous décidez de tenter de se faufiler devant les gardes de boire	se faufiler derrière les gardes	31	k	
+415	79	3	If you decide to attack them while their backs are turned	Si vous décidez de les attaquer pendant que leurs dos tourné	les attaquer dans le dos	24	k	
+416	8	2	If you decide to choose sixty-seven	Si vous décidez de choisir soixante-sept	choisir 67	10	k	
+417	8	2	If you decide to choose seventy-six	Si vous décidez de choisir soixante-seize	choisir 76	10	k	
+418	85	2	If you wish to attack the guard who holds the sword	Si vous souhaitez attaquer la garde qui tient l'épée	attaquer le garde qui tient l'épée	34	k	
+419	85	2	If you do not wish to attack	Si vous ne souhaitez pas attaquer	s'abstenir	10	k	
+420	87	2	If you have the Kai Discipline of Sixth Sense	Si vous avez le Kai Discipline de sixième sens	Avec la discipline Kai du sixième sens	38	k	
+421	87	2	If you do not possess this skill	Si vous ne possédez pas cette compétence	Sans cette compétence	21	k	
+422	90	4	If you have the Kai Discipline of Healing	Si vous avez le Kai Discipline de la guérison	Avec la discipline Kai de la guérison	37	k	
+423	90	4	If you wish to swallow some of the purple oil	Si vous souhaitez avaler une partie de l'huile pourpre	goûter l'huile violette	23	k	
+424	90	4	If you wish to rub some into your skin	Si vous souhaitez frotter un peu dans votre peau	s'en enduire la peau	20	k	
+425	90	4	If you decide to ignore the oil	Si vous décidez d'ignorer l'huile	ne pas utiliser l'huile	23	k	
+426	91	2	If you win and the fight lasts 4 rounds of combat or less	Si vous gagnez et le combat dure 4 tours de combat ou moins	Si vous gagnez en 4 rounds ou moins	35	k	
+427	91	2	If you win and the fight lasts longer than 4 rounds of combat	Si vous gagnez et le combat dure plus de 4 rounds de combat	Si vous gagnez en plus de 4 rounds	34	k	
+428	93	2	If you wish to climb onto the table and look through the window	Si vous souhaitez monter sur la table et regarder par la fenêtre	regarder par la fenêtre	23	k	
+429	93	2	If you wish to press on along the corridor	Si vous souhaitez appuyer sur le long du corridor	poursuivre le long du couloir	29	k	
+430	95	2	If you have the Kai Discipline of Mind Over Matter	Si vous avez le Kai Discipline of Mind Over Matter	Avec la discipline Kai de la maîtrise psychique de la matière	61	k	
+431	95	2	If you do not possess this skill	Si vous ne possédez pas cette compétence	Sans cette compétence	21	k	
+432	96	2	If you wish to head west	Si vous souhaitez diriger vers l'ouest	se diriger vers l'ouest	23	k	
+433	96	2	If you wish to continue south	Si vous souhaitez continuer vers le sud	continuer vers le sud	21	k	
+434	97	2	If you wish to attack the Yas	Si vous souhaitez attaquer le Yas	attaquer le Yas	15	k	
+435	97	2	If you wish to flick shut the lid and leave the armoury by the north door	Si vous souhaitez fermer chiquenaude le couvercle et laissez le manège militaire par la porte du Nord	quitter l'armurerie par la porte nord	37	k	
+436	98	2	If you wish to attack them before the firer can reload his blowpipe	Si vous souhaitez les attaquer avant que le tireur peut recharger son sarbacane	attaquer avant qu'il ne recharge	32	k	
+437	98	2	If you do not want to attack them and decide to try to dodge the second blowpipe dart	Si vous ne voulez pas les attaquer et décider d'essayer d'esquiver la deuxième fléchette de sarbacane	attendre et esquiver le 2nd tir	31	k	
+438	99	2	If you wish to fight	Si vous souhaitez combattre	combattre	9	k	
+439	99	2	If you decide to surrender	Si vous décidez de se rendre	se rendre	9	k	
+zz	zz	zz	zz	zz	zz	zz	zz	

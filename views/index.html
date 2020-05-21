@@ -1,0 +1,47 @@
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <title>LDVELH Facebook Poll Maker</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+
+    <script type="text/javascript" src="js/cookies.js"></script>
+    <script type="text/javascript" src="js/ldvelh.js"></script>
+    <script type="text/javascript" src="js/live-app.js"></script>
+</head>
+<body>
+    Live Id : <input type="text" id="live-id" /> <button onclick="fbConnect()">Connect</button>
+    <br />
+    Book no : <input type="text" id="book-no" />
+	<br/>
+    <br />
+    TSV file name : <input type="text" id="tsv" />
+	<br/>
+	Last no : <input type="text" id="last-no" />
+    <br />
+    Id Col <input type="number" id="colId" value="1" min="0" max="30"> &bull;
+    Question Col <input type="number" id="colQuestion" value="2" min="0" max="30"> &bull;
+    Option Col <input type="number" id="colOption" value="3" min="0" max="30">
+    <br />
+    <button onclick="readFile()">Use</button>
+    <br />
+    <hr />
+    <br />
+    Section : <select id="question" onchange="display()"></select>
+    <button onclick="poll()">Poll</button>
+    <br />
+    <br />
+    <div style="border: 1px solid grey; background: #EEE; padding: 15px;">
+        Display Question : <b id="display-question"></b>
+        <br />
+        Options :
+        <ol id="display-options" class="display-option"></ol>
+		<a onclick="addOpt()" class="action add">+</a> <input type="text" id="option-add">
+		<br/>	Click on picture to display	<br/>
+		<div id="display-pic" class="action" onclick="picture()"></div>
+		<div id="display-smallpic" class="action" onclick="picture(true)"></div>
+    </div>
+    <div id="error" style="border: 1px solid #800; background: #FEE; padding: 15px; display: none; color: #700;">
+        <h6>Errors</h6>
+    </div>
+    <br />
+</body>
