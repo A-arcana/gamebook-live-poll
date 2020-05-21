@@ -5,6 +5,7 @@
   "main": "server.js",
   "dependencies": {
     "bootstrap": "^4.5.0",
+    "bootstrap-select": "^1.13.17",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "fs": "0.0.1-security",
