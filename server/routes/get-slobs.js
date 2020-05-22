@@ -1,4 +1,11 @@
 
+app.post('/slobs', function (req, res) {
+	slobs.slobs_url = req.body.url;
+	slobs.slobs_token = req.body.token;
+
+	slobs.init();
+});
+
 app.get('/slobs/scenes/:id', function (req, res) {
 	let method = req.params.method;
 	let id = req.params.id;

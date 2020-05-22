@@ -19,16 +19,19 @@ class Slobs {
     }
     actionOnSlobs(callback) {
         if (this.scene && this.lastTime + 60000 < new Date().getTime()) {
-            callback();
+            if(callback) callback();
         }
         else {
-            $.get('/slobs/scenes/Live Scene',
-                scene => {
-                    if (scene) {
-                        this.lastTime = new Date().getTime();
-                        this.scene = scene;
-                        callback();
-                    }
+            $.post('/slobs', { url: ldvelhApp.config.slobs.url, token: ldvelhApp.config.slobs.token },
+                resp => {
+                    $.get('/slobs/scenes/Live Scene',
+                        scene => {
+                            if (scene) {
+                                this.lastTime = new Date().getTime();
+                                this.scene = scene;
+                                if (callback) callback();
+                            }
+                        });
                 });
         }
     }

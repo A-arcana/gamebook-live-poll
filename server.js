@@ -18,9 +18,10 @@ dotenv.config();
 
 const app = express();
 app.use(express.static(process.env.SERVE_DIRECTORY || 'dist'));
+app.use(express.json()) // for parsing application/json
+app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
 
 slobs = new Slobs();
-slobs.init();
 
 include('server/routes.js');
 
@@ -31,4 +32,7 @@ const options = {
 };
 const server = https.createServer(options, app);
 
-server.listen(process.env.SERVER_PORT || 8443);
+const port = process.env.SERVER_PORT || 8443;
+server.listen(port, () => {
+    console.log("Server listening on " + port);
+});

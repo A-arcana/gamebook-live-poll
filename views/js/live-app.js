@@ -63,6 +63,11 @@ function fbError(response) {
         $('#live-error').parents(".card").toggleClass("d-none", true);
     }
 }
+function slobsConnect() {
+    ldvelhApp.saveDOM();
+
+    ldvelhApp.slobs.actionOnSlobs();
+}
 
 function connect() {
     ldvelhApp.saveDOM();

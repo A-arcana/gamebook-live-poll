@@ -255,6 +255,33 @@
                     </div>
                     <div class="row">
                         <div class="form-group label-floating col-md-8 bmd-form-group">
+                            <label for="live-id" class="bmd-label-floating">Streamlabs OBS url</label>
+                            <input type="text" id="slobs-url" class="form-control" placeholder="http://127.0.0.1:59650/" />
+                            <span class="form-control-feedback success">
+                                <i class="material-icons">done</i>
+                            </span>
+                            <span class="form-control-feedback danger">
+                                <i class="material-icons">clear</i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group label-floating col-md-8 bmd-form-group">
+                            <label for="live-id" class="bmd-label-floating">Streamlabs OBS Auth Token</label>
+                            <input type="text" id="slobs-token" class="form-control" placeholder="a8649154c541b927d0d29cc54adb0c53efc2ba7" />
+                            <span class="form-control-feedback success">
+                                <i class="material-icons">done</i>
+                            </span>
+                            <span class="form-control-feedback danger">
+                                <i class="material-icons">clear</i>
+                            </span>
+                        </div>
+                        <div class="form-group col-md-4 label-floating  bmd-form-group">
+                            <button onclick="slobsConnect()" class="btn btn-info">Connect</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group label-floating col-md-8 bmd-form-group">
                             <label for="book-no" class="bmd-label-floating">Delay after showing poll (seconds)</label>
                             <input type="number" id="countdown-delay" class="form-control" placeholder="3" />
                         </div>
