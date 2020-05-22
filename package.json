@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "This is a simple page that will help creating polls on facebook",
   "main": "server.js",
+  "engines": {
+    "node": "12.x"
+  },
   "dependencies": {
     "bootstrap": "^4.5.0",
     "bootstrap-select": "^1.13.17",
