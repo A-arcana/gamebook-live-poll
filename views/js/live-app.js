@@ -270,70 +270,50 @@ function pollOther() {
     $('#other')
         .val('none')
         .focus()
-        .selectpicker('refresh');        ;
+        .selectpicker('refresh');;
     $('#question')
-        .focus();
-    FB.api('/' + pollId, 'post', { action: 'SHOW_VOTING', access_token: ldvelhApp.accessToken }, function (response) {
-        fbError(response);
+        .focus(); let item = null;
 
-        if (!response) return;
+    ldvelhApp.slobs.displayItem('countdown', 60);
+    ldvelhApp.slobs.displayItem(ldvelhApp.polls[pollId].question, 30);
 
-        let item = null;
-        $.get('/slobs/scenes/Live Scene',
-            scene => {
-                if (scene) {
-                    item = scene.nodes.find(n => n.name === 'countdown');
-                    $.get('/slobs/set-visibility/"' + item.sceneId + '","' + item.id + '","' + item.sourceId + '"/true');
-                    folderItem = scene.nodes.find(n => n.name === ldvelhApp.polls[pollId].question);
-                    if (folderItem.sceneNodeType === 'folder') {
-                        let items = scene.nodes.filter(n => n.parentId === folderItem.id);
-                        for (let i in items) {
-                            $.get('/slobs/set-visibility/"' + items[i].sceneId + '","' + items[i].id + '","' + items[i].sourceId + '"/true');
-                            setTimeout(() => $.get('/slobs/set-visibility/"' + items[i].sceneId + '","' + items[i].id + '","' + items[i].sourceId + '"/false'), 30 * 1000);
-                        }
-                    }
-                }
-            });
-        setTimeout(function () {
-            FB.api('/' + pollId, 'post', { action: 'SHOW_RESULTS', access_token: ldvelhApp.accessToken }, fbError);
-            $.get('/slobs/set-visibility/"' + item.sceneId + '","' + item.id + '","' + item.sourceId + '"/false');
+    setTimeout(() =>
+        FB.api('/' + pollId, 'post', { action: 'SHOW_VOTING', access_token: ldvelhApp.accessToken }, fbError),
+        ldvelhApp.config.delay * 1000);
 
-            setTimeout(function () {
-                FB.api('/' + pollId, 'post', { action: 'CLOSE', access_token: ldvelhApp.accessToken }, fbError);
-            }, 30 * 1000);
-        }, 60 * 1000);
+    setTimeout(() => {
+        FB.api('/' + pollId, 'post', { action: 'SHOW_RESULTS', access_token: ldvelhApp.accessToken }, fbError);
 
-    });
+        setTimeout(() => FB.api('/' + pollId, 'post', { action: 'CLOSE', access_token: ldvelhApp.accessToken }, fbError)
+            , 30 * 1000);
+    }, 60 * 1000);
 }
+
 function poll() {
-    var question = ldvelhApp.lines[$('#question').val()];
+    let question = ldvelhApp.lines[$('#question').val()];
     $('#question')
         .val('none')
         .focus()
         .selectpicker('refresh');;
-    FB.api('/' + ldvelhApp.config.liveId + '/polls', 'post', question, function (response) {
-        fbError(response);
 
-        if (!response || !response.id) return;
+    ldvelhApp.slobs.displayItem('countdown', 60);
 
-        let item = null;
-        $.get('/slobs/scenes/Live Scene',
-            scene => {
-                if (scene) {
-                    item = scene.nodes.find(n => n.name === 'countdown');
-                    $.get('/slobs/set-visibility/"' + item.sceneId + '","' + item.id + '","' + item.sourceId + '"/true');
-                }
-            });
-        var pollId = response.id;
-        setTimeout(function () {
-            FB.api('/' + pollId, 'post', { action: 'SHOW_RESULTS', access_token: ldvelhApp.accessToken }, fbError);
-            $.get('/slobs/set-visibility/"' + item.sceneId + '","' + item.id + '","' + item.sourceId + '"/false');
+    setTimeout(() => {
+        FB.api('/' + ldvelhApp.config.liveId + '/polls', 'post', question, (response) => {
+            fbError(response);
+            if (!response || !response.id) return;
 
-            setTimeout(function () {
-                FB.api('/' + pollId, 'post', { action: 'CLOSE', access_token: ldvelhApp.accessToken }, fbError);
-            }, 30 * 1000);
-        }, 60 * 1000);
-    });
+            var pollId = response.id;
+            setTimeout(() => {
+                FB.api('/' + pollId, 'post', { action: 'SHOW_RESULTS', access_token: ldvelhApp.accessToken }, fbError);
+
+                setTimeout(() => FB.api('/' + pollId, 'post', { action: 'CLOSE', access_token: ldvelhApp.accessToken }, fbError)
+                    , 30 * 1000);
+            }, 60 * 1000);
+        });
+    },
+        ldvelhApp.config.delay * 1000);
+
     $('#display-options').html("");
     $('#display-pic').html("");
     $('#display-smallpic').html("");
@@ -350,17 +330,7 @@ function picture(isSmall) {
     }
     if (src) {
         src = encodeURIComponent(src);
-        $.get('/slobs/scenes/Live Scene',
-            scene => {
-                if (scene) {
-                    var item = scene.nodes.find(n => n.name === placeholder);
-                    $.get('/slobs/set-source/' + item.sourceId + '/' + src);
-                    $.get('/slobs/set-visibility/"' + item.sceneId + '","' + item.id + '","' + item.sourceId + '"/true');
-                    if (ldvelhApp.pictureTimeout[isSmall]) {
-                        clearTimeout(ldvelhApp.pictureTimeout[isSmall]);
-                    }
-                    ldvelhApp.pictureTimeout[isSmall] = setTimeout(() => $.get('/slobs/set-visibility/"' + item.sceneId + '","' + item.id + '","' + item.sourceId + '"/false'), !isSmall ? 50000 : 20000);
-                }
-            });
+        ldvelhApp.slobs.setItemSource(placeholder, src);
+        ldvelhApp.slobs.displayItem(placeholder, isSmall ? 20 : 50);
     }
 }
