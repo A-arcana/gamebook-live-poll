@@ -1,0 +1,248 @@
+[core]
+	autocrlf = true
+	editor = 'C:/Program Files/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin
+	longpaths = true
+	ignorecase = false
+[user]
+	name = Pierre Godichal
+	email = pierre.godichal@moodys.com
+[push]
+	default = simple
+# 
+# This config can be added to your local .gitconfig file(c:\users\[youruser]/.gitconfig)
+# It contains multiple aliases that can ease your git work
+# 
+[alias]
+	#
+	# LOG SECTION
+	#
+	; logs your current head with the branching decoration
+	; usage: git lga
+	lga = log --decorate --oneline --graph --all
+	
+	; logs your current head with more infos on each commits
+	; usage: git lgp
+	lgp = log --graph --pretty=format:'%C(yellow)%h%Creset -%C(red bold)%d%Creset %s %Cgreen(%cd) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	
+	; logs all the commits that are on master but not on develop (should probably be fixed)
+	; usage: git lgc
+	lgc = !CURRENT=$(git cherry -v origin/develop origin/master|grep \"^+\"|cut -d\" \" -f2) && git log --no-walk --oneline --pretty=format:'%C(yellow)%h%Creset -%C(red bold)%d%Creset %s %Cgreen(%cd) %C(bold blue)<%an>%Creset' --date=iso $CURRENT
+
+	; logs all the commits that are on master but not on develop (should probably be fixed) - will try to find a message match on develop
+	; usage: git lgcm
+	lgcm = "!printf \"\\x1b[31mNot cherry-picked or merged commit on master - possible matches on develop\n\" && CURRENT=$(git cherry -v origin/develop origin/master|grep '^+'|cut -d' ' -f2) && git log --no-walk --oneline --pretty=format:'%h %s' $CURRENT | while read commitSha commitMsg; do ((git log --oneline --date=iso --pretty=format:\"%C(bold blue)MASTER: %Creset$commitSha\t%C(bold yellow)DEVELOP:%Creset%h\t%C(bold green)%s%Creset%Cgreen (%cd) %C(bold blue)<%an>%Creset\" --grep=\"$commitMsg\" origin/develop | grep .) || (git log --oneline --no-walk --date=iso --pretty=format:\"%C(green)MASTER: %h\tDEVELOP:-------\t%s (%cd) <%an>\" $commitSha | grep -i 'bump') || (git log --oneline --no-walk --date=iso --pretty=format:\"%C(bold red)MASTER: %Creset%h\t%C(bold red)DEVELOP:-------%Creset\t%C(bold green)%s%Creset %Cgreen(%cd) %C(bold blue)<%an>%Creset\" $commitSha;)) done"
+	
+	; finds all the commits containing the given message.
+	; usage: git lgrep "<message to search>"
+	; useful to search all commits related to a ticket: 
+	; usage: git lgrep "DE 123456"
+	lgrep = "!f() { git log -i --oneline --pretty=format:'%C(yellow)%h%Creset -%C(red bold)%d%Creset %s %Cgreen(%cd) %C(bold blue)<%an>%Creset' --grep=\"${1}\"; }; f"
+	
+	; only retrieve the first log with full message, useful to get a specific commit details
+	; usage: git l1 <commit-sha1>
+	l1 = log -1
+	
+	; only retrieve the first log with full message and full diff, useful to get a specific commit details
+	; usage: git lp1 <commit-sha1>
+	lp1 = log -p -1
+	
+	#
+	# BRANCHING & COMMIT OPERATIONS SECTION
+	#
+	; shortcut to git rebase
+	; usage: git r <other-branch>
+	r = rebase
+		
+	; shortcut to interactive rebase
+	; usage: git ri <other-branch>
+	ri = rebase -i
+
+	; shortcut to git rebase continue
+	; usage: git rcontinue
+	rcontinue = rebase --continue
+	
+	; shortcut to allow an empty git and rebase continue
+	; usage: git rec
+	rec = !git commit --allow-empty --allow-empty-message && git rebase --continue
+	
+	; shortcut to abort an ongoing rebase
+	; usage: rabort
+	rabort = rebase --abort
+	
+	; shortcut to cherry-pick a specific commit
+	; usage: git cp <commit-sha>
+	cp = cherry-pick
+	
+	; shortcut to add all modified/created/deleted files and commit with a message
+	; usage: git cam "<my message>"
+	cam = !git add -A && git commit -m
+	
+	; shortcut to git commit --amend
+	; usage: git camend
+	camend = commit --amend
+	
+	; shortcut to add all modifications and then git commit --amend
+	; usage: git camendall
+	camendall = !git add -A && git commit --amend
+	
+	; shortcut to git checkout
+	; usage: git c <other-branch>
+	c = checkout
+	
+	; shortcut to git checkout
+	; usage: git p
+	p = push
+	
+	; shortcut to push the current branch
+	; usage: git pcurrent
+	pcurrent = push origin HEAD
+
+	; this will get all the local branches that were pushed once, but their origin is now removed (removed on server not locally)
+	; and it will remove them locally
+	; WARNING: this will delete some local branches
+	; usage: git cleanbranches
+	cleanbranches = !CURRENT=$(git branch -vv | grep 'origin/.*: gone]' | awk '{print $1}' | xargs git branch -D)
+
+	; this will get the branch where the current branch originates
+	; usage: git origbranch
+	origbranch = "!f() { git show-branch -a | grep '\\*' | grep -v `git rev-parse --abbrev-ref HEAD` | head -n1 | sed 's/.*\\[\\(.*\\)\\].*/\\1/' | sed 's/[\\^~].*//';}; f"
+
+	#
+	# CONFIG SECTION
+	#
+	; get all the available git aliases
+	; usage: git alist
+	alist = config --get-regexp alias
+
+	#
+	# CREDIT LENS SPECIFICS SECTION
+	#	
+	; This will commit with a CreditLens formatted specific message - cl_version and ticket_type are optional and will be defaulted if not present
+	; CL message format: CL [module] [cl_version] | [ticket_type] [ticket_nb] | [message of commit]
+	; rendered example: CL FA 20.21 | DE 123456 | my message
+	; usage: git ccl <module> [<ticket_type:DE>] <ticket_nb> "<message of commit>" [<cl_version:20.21>]
+	; example: git ccl FA 123456 "I fixed this and that"
+	; example: git ccl FA US 123456 "This is a new user story"
+	; example: git ccl RG NF 789456 "new stuff" 20.01 
+	ccl = "!f() { \
+		echo 'This will commit with a CreditLens formatted specific message - cl_version and ticket_type are optional and will be defaulted if not present' ; \
+		echo 'usage:   git ccl <module> [<ticket_type:DE>] <ticket_nb> \"<message of commit>\" [<cl_version:20.21>]' ; \
+		echo 'example: git ccl FA 123456 \"I fixed this and that\"' ; \
+		echo 'example: git ccl FA US 123456 \"This is a new user story\"' ; \
+		echo 'example: git ccl RG NF 789456 \"new stuff\" 20.01 \n ' ; \
+		if ! [[ ${2} =~ ^[0-9]+$ ]] ; then \
+			git commit -m \"CL ${1} ${5:-20.21} | ${2} ${3} | ${4}\"; \
+		else \
+			git commit -m \"CL ${1} ${4:-20.21} | DE ${2} | ${3}\"; \
+		fi ; \
+	}; f"
+	
+	; this will commit all modified/created/deleted with a CreditLens formatted specific message - cl_version and ticket_type are optional and will be defaulted if not present
+	; CL message format: CL [module] [cl_version] | [ticket_type] [ticket_nb] | [message of commit]
+	; rendered example: CL FA 20.21 | DE 123456 | my message
+	; usage: git cclall <module> [<ticket_type:DE>] <ticket_nb> "<message of commit>" [<cl_version:20.21>]
+	; example: git cclall FA 123456 "I fixed this and that"
+	; example: git cclall FA US 123456 "This is a new user story"
+	; example: git cclall RG NF 789456 "new stuff" 20.01 
+	cclall = "!f() { \
+		echo 'This will commit all modified/created/deleted with a CreditLens formatted specific message - cl_version and ticket_type are optional and will be defaulted if not present' ; \
+		echo 'usage:   git cclall <module> [<ticket_type:DE>] <ticket_nb> \"<message of commit>\" [<cl_version:20.21>]' ; \
+		echo 'example: git cclall FA 123456 \"I fixed this and that\"' ; \
+		echo 'example: git cclall FA US 123456 \"This is a new user story\"' ; \
+		echo 'example: git cclall RG NF 789456 \"new stuff\" 20.01 \n ' ; \
+		if ! [[ ${2} =~ ^[0-9]+$ ]] ; then \
+			git cam \"CL ${1} ${5:-20.21} | ${2} ${3} | ${4}\"; \
+		else \
+			git cam \"CL ${1} ${4:-20.21} | DE ${2} | ${3}\"; \
+		fi ; \
+	}; f"
+	
+	; this will commit with a CreditLens FinancialAnalysis formatted specific message - cl_version and ticket_type are optional and will be defaulted if not present
+	; CL message format: CL [module] [cl_version] | [ticket_type] [ticket_nb] | [message of commit]
+	; rendered example: CL FA 20.21 | DE 123456 | my message
+	; usage: git cfa [<ticket_type:DE>] <ticket_nb> "<message of commit>" [<cl_version:20.21>]
+	; example: git cfa 123456 "I fixed this and that"
+	; example: git cfa NF 789456 "new stuff" 20.01
+	cfa = "!f() { echo 'Shortcut to git ccl FA [<ticket_type:DE>] <ticket_nb> "<message of commit>" [<cl_version:20.21>]' ; git ccl FA \"${1}\" \"${2}\" \"${3}\" ${4} ; }; f"
+		
+	; this will commit all modified/created/deleted with a CreditLens FinancialAnalysis formatted specific message - cl_version and ticket_type are optional and will be defaulted if not present
+	; CL message format: CL [module] [cl_version] | [ticket_type] [ticket_nb] | [message of commit]
+	; rendered example: CL FA 20.21 | DE 123456 | my message
+	; usage: git cfaall [<ticket_type:DE>] <ticket_nb> "<message of commit>" [<cl_version:20.21>]
+	; example: git cfaall 123456 "I fixed this and that"
+	; example: git cfaall NF 789456 "new stuff" 20.01
+	cfaall = "!f() { echo 'Shortcut to git cclall FA [<ticket_type:DE>] <ticket_nb> "<message of commit>" [<cl_version:20.21>]' ; git cclall FA \"${1}\" \"${2}\" \"${3}\" ${4} ; }; f"
+	
+	; this will commit with a CreditLens RiskGrading formatted specific message - cl_version and ticket_type are optional and will be defaulted if not present
+	; CL message format: CL [module] [cl_version] | [ticket_type] [ticket_nb] | [message of commit]
+	; rendered example: CL RG 20.21 | DE 123456 | my message
+	; usage: git cfa [<ticket_type:DE>] <ticket_nb> "<message of commit>" [<cl_version:20.21>]
+	; example: git cfa 123456 "I fixed this and that"
+	; example: git cfa NF 789456 "new stuff" 20.01
+	crg = "!f() { echo 'Shortcut to git ccl RG [<ticket_type:DE>] <ticket_nb> "<message of commit>" [<cl_version:20.21>]' ; git ccl RG \"${1}\" \"${2}\" \"${3}\" ${4} ; }; f"
+		
+	; this will commit all modified/created/deleted with a CreditLens RiskGrading formatted specific message - cl_version and ticket_type are optional and will be defaulted if not present
+	; CL message format: CL [module] [cl_version] | [ticket_type] [ticket_nb] | [message of commit]
+	; rendered example: CL RG 20.21 | DE 123456 | my message
+	; usage: git cfaall [<ticket_type:DE>] <ticket_nb> "<message of commit>" [<cl_version:20.21>]
+	; example: git cfaall 123456 "I fixed this and that"
+	; example: git cfaall NF 789456 "new stuff" 20.01
+	crgall = "!f() { echo 'Shortcut to git cclall RG [<ticket_type:DE>] <ticket_nb> "<message of commit>" [<cl_version:20.21>]' ; git cclall RG \"${1}\" \"${2}\" \"${3}\" ${4} ; }; f"
+	
+	cdev = checkout develop
+	rdev = rebase origin/develop
+	pdev = push origin develop
+	ridev = rebase -i origin/develop
+	cmaster = checkout master
+	rmaster = rebase origin/master
+	pmaster = push origin master
+	rimaster = rebase -i origin/master
+
+	fixup = "!f() { TARGET=$(git rev-parse $1); git commit --fixup=$TARGET ${@:2} && EDITOR=true git rebase -i --autostash --autosquash $TARGET^; }; f"
+	csupport = "!f() { git checkout support/${1}; }; f"
+	csup = csupport
+	
+	; This will make a difference between 2 branches, filtering by file type *.resx or *.restext, and only showing the modified lines
+	; It can be very useful to check wheter the modified resources are present in the translation package
+	; usage: git diffres <branchA> <branchB>
+	; example: git diffres 2.6.0 2.7.0
+	diffres= "!f() { \
+		git diff origin/${1}..origin/${2} --name-only  | \
+		egrep '.resx|.restext' | \
+		xargs -L1 -I {} sh -c \"git diff -U0 -a --no-prefix --no-ext-diff --no-color origin/$1..origin/$2 {} | grep '^[\\+\\-][a-zA-Z0-9 ]' \" ; \
+	}; f"
+
+[pull]
+	ff = only
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	required = true
+	process = git-lfs filter-process
+[http]
+	sslcainfo = C:/Program Files/Git/mingw64/ssl/certs/ca-bundle.crt
+	proxy = http://proxy-sfo:80/
+	sslVerify = false
+[credential]
+	helper = wincred
+[diff]
+    tool = diffmerge
+[difftool "diffmerge"]
+    cmd = C:/Program\\ Files/SourceGear/Common/DiffMerge/sgdm.exe \"$LOCAL\" \"$REMOTE\"
+[merge]
+	tool = diffmerge
+	renamelimit = 50000
+[mergetool "diffmerge"]
+    trustExitCode = true
+	cmd = C:/Program\\ Files/SourceGear/Common/DiffMerge/sgdm.exe -merge -result=\"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
+[git-tfs]
+	disable-gitignore-support = false
+[gui]
+	recentrepo = C:/Git/support_4.12
+[filesystem "Oracle Corporation|1.8.0_144|1084948169"]
+	timestampResolution = 1001 microseconds
+	minRacyThreshold = 0 nanoseconds
+[https]
+	proxy = http://proxy-sfo:80/
+[hub]
+	protocol = https

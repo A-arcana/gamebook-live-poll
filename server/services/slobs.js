@@ -1,6 +1,7 @@
 const sockjs = require('sockjs-client');
 
 class Slobs {
+
 	socket = null;
 	interval = null;
 	requests = {};
@@ -21,7 +22,7 @@ class Slobs {
 		this.socket.onclose = function () {
 			console.log("streamlabs disconnected");
 			this.socket = null;
-			this.interval = setInterval(this.init, 2000);
+			this.interval = setInterval(()=>this.init, 2000);
 		};
 
 		this.socket.onmessage = (e) => {
