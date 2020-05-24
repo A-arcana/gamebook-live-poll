@@ -28,8 +28,10 @@ class LDVELH {
     saveDOM() {
         this.config.liveId = $('#live-id').val();
 
-        this.config.slobs.url = $('#slobs-url').val();
-        this.config.slobs.token = $('#slobs-token').val();
+        this.config.slobs = {
+            url: $('#slobs-url').val(),
+            token: $('#slobs-token').val()
+        };
 
         this.config.delay = parseInt($('#countdown-delay').val());
 
@@ -51,11 +53,11 @@ class LDVELH {
             .parent().toggleClass("is-filled", this.config.liveId);
 
         $('#slobs-url')
-            .val(this.config.slobs.url)
-            .parent().toggleClass("is-filled", this.config.slobs.url);
+            .val(this.config.slobs?.url)
+            .parent().toggleClass("is-filled", this.config.slobs?.url);
         $('#slobs-token')
-            .val(this.config.slobs.token)
-            .parent().toggleClass("is-filled", this.config.slobs.token);
+            .val(this.config.slobs?.token)
+            .parent().toggleClass("is-filled", this.config.slobs?.token);
 
         $('#countdown-delay')
             .val(this.config.delay)

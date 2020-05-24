@@ -105,13 +105,15 @@
     </script>
 </head>
 <body>
-    PDF TO HTML filename : <input type="text" id="pdf" value="t06-pdf.html" /> <button onclick="convert()">Convert to sections</button>
-	<br/>
-	Section class : <input type="text" id="cls-sct" value="cls_014"/>
+	PDF TO HTML filename : <input type="text" id="pdf" value="t06-pdf.html" /> <button onclick="convert()">Convert to sections</button>
+	<br />
+	Section class : <input type="text" id="cls-sct" value="cls_014" />
 	Choice class : <input type="text" id="cls-cho" value="cls_020">
-	<br/><hr/><br/>
+	<br />
+	book label projectaon.org : <input type="text" id="book-label" value="cls_020">
+	<br /><hr /><br />
 	<select id="sections" onchange="display()"></select> <a id="export">ExportCsv</a>
-    <div style="border: 1px solid grey; background: #DDD; padding: 15px;" id="display"></div>
-    <ul style="border: 1px solid grey; background: #EEE; padding: 15px;" id="choices"></ul>
+	<div style="border: 1px solid grey; background: #DDD; padding: 15px;" id="display"></div>
+	<ul style="border: 1px solid grey; background: #EEE; padding: 15px;" id="choices"></ul>
 </body>
 </html>

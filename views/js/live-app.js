@@ -134,7 +134,7 @@ function readFile() {
             for (let i in ldvelhApp.lines) {
                 let line = ldvelhApp.lines[i];
                 let icons = line.question + " ";
-                icons += (line.options.length > 0 ? '<i class="material-icons">poll</i>' : '');
+                icons += line.options.length > 0 ? '<i class="material-icons">poll</i>' : '';
                 let $opt = $("<option value='" + i + "' data-content='" + icons + "'>" + line.question + "</option>");
                 $('#question').append($opt);
                 line.req = $.get('get-html?url=https://www.projectaon.org/en/xhtml/lw/' + ldvelhApp.config.bookNo + '/sect' + i + '.htm',
@@ -262,7 +262,7 @@ function addOpt() {
     var section = $('#question').val();
     var option = $('#option-add').val().trim();
     $('#option-add').val("");
-    option = option.charAt(0).toUpperCase() + option.slice(1)
+    option = option.charAt(0).toUpperCase() + option.slice(1);
     if (ldvelhApp.lines[section].options.length === 0) {
         $('#question option[value=' + section + ']').text($('#question option[value=' + section + ']').text() + " [poll]");
     }
@@ -275,7 +275,7 @@ function pollOther() {
     $('#other')
         .val('none')
         .focus()
-        .selectpicker('refresh');;
+        .selectpicker('refresh');
     $('#question')
         .focus(); let item = null;
 
@@ -299,7 +299,7 @@ function poll() {
     $('#question')
         .val('none')
         .focus()
-        .selectpicker('refresh');;
+        .selectpicker('refresh');
 
     ldvelhApp.slobs.displayItem('countdown', 60);
 
