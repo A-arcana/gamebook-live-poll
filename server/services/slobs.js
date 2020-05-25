@@ -13,18 +13,14 @@ class Slobs {
     init() {
         console.log("initialize Streamlabs OBS on ", this.slobs_url);
         this.socket = new sockjs(this.slobs_url + "/api");
-        if (this.slobs_token) {
-            console.log("authorize Streamlabs OBS with Token",);
-            this.request("TcpServerService", this.slobs_token);
-        }
 
         clearInterval(this.interval);
 
-        this.socket.onopen = function () {
+        this.socket.onopen = () => {
             console.log("streamlabs connected");
         };
 
-        this.socket.onclose = function () {
+        this.socket.onclose = () => {
             console.log("streamlabs disconnected");
             this.socket = null;
             this.interval = setInterval(() => this.init(), 2000);
@@ -33,6 +29,11 @@ class Slobs {
         this.socket.onmessage = (e) => {
             this.messageHandler(e.data);
         };
+
+        if (this.slobs_token) {
+            console.log("authorize Streamlabs OBS with Token");
+            this.request("TcpServerService", this.slobs_token);
+        }
     }
     messageHandler(data) {
         let message = JSON.parse(data);

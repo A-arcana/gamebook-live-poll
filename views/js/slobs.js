@@ -13,7 +13,7 @@ class Slobs {
     }
     setItemSource(name, src) {
         this.actionOnSlobs(() => {
-            var item = this.scene.nodes.find(n => n.name === name);
+            let item = this.scene.nodes.find(n => n.name === name);
             $.get('/slobs/set-source/' + item.sourceId + '/' + src);
         });
     }
@@ -22,7 +22,7 @@ class Slobs {
             if(callback) callback();
         }
         else {
-            $.post('/slobs', { url: ldvelhApp.config.slobs.url, token: ldvelhApp.config.slobs.token },
+            $.post('/slobs', { url: app.ldvelh.config.slobs.url, token: app.ldvelh.config.slobs.token },
                 resp => {
                     $.get('/slobs/scenes/Live Scene',
                         scene => {
