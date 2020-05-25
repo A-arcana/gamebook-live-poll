@@ -107,7 +107,7 @@ function readFile() {
     $('#question').children().remove();
     $('#question').append("<option value='none'>Choose...</option>");
     $('#question').selectpicker('refresh');
-    $.get('get-file/' + ldvelhApp.config.tsv, function (data) {
+    $.get('get-file/' + ldvelhApp.config.tsv, (data) => {
         ldvelhApp.lines = {};
         try {
             for (i = 1; i <= parseInt(ldvelhApp.config.lastNo); i++) {
@@ -126,60 +126,58 @@ function readFile() {
                 var str = cols[ldvelhApp.config.cols.colOption];
                 if (str && ldvelhApp.lines[section]) {
                     ldvelhApp.lines[section].options.push(str.charAt(0).toUpperCase() + str.slice(1));
+                    ldvelhApp.lines[section].question = question;
                 }
             }
-
-            ldvelhApp.requests = 0;
             $('#requests-progress')
                 .toggleClass('d-none', false)
                 .find('.progress-bar')
                 .css('width', "0%")
                 .attr('aria-valuenow', 0);
-            for (let i in ldvelhApp.lines) {
-                let line = ldvelhApp.lines[i];
-                let icons = line.question + " ";
-                icons += line.options.length > 0 ? '<i class="material-icons">poll</i>' : '';
-                let $opt = $("<option value='" + i + "' data-content='" + icons + "'>" + line.question + "</option>");
-                $('#question').append($opt);
-                line.req = $.get('get-html?url=https://www.projectaon.org/en/xhtml/lw/' + ldvelhApp.config.bookNo + '/sect' + i + '.htm',
-                    (data) => {
-                        var htmlDoc = $((new DOMParser()).parseFromString(data, "text/xml").documentElement);
-                        if (htmlDoc.find('img[alt="[illustration]"]').length > 0) {
-                            line.picture.small =
-                                htmlDoc
-                                    .find('img[alt="[illustration]"]')[0]
-                                    .outerHTML
-                                    .replace("src=\"", "src=\"https://www.projectaon.org/en/xhtml/lw/" + ldvelhApp.config.bookNo + "/");
-                        }
-                        if (htmlDoc.find('img[alt=illustration]').length > 0) {
-                            line.picture.large =
-                                htmlDoc
-                                    .find('img[alt=illustration]')[0]
-                                    .outerHTML
-                                    .replace("src=\"", "src=\"https://www.projectaon.org/en/xhtml/lw/" + ldvelhApp.config.bookNo + "/");
-                        }
 
-                        if (line.picture.large || line.picture.small) {
-                            icons += '<i class="material-icons">wallpaper</i>';
-                        }
-                        $opt.attr('data-content', icons);
-                        ldvelhApp.requests++;
-                        perc = ldvelhApp.requests / ldvelhApp.config.lastNo * 100.0;
-                        if (perc >= 100) {
-                            $('#requests-progress').toggleClass('d-none', true);
-                            $('#question').selectpicker('refresh');
-                        }
-                        else {
-                            $('#requests-progress .progress-bar')
-                                .css('width', perc + "%")
-                                .attr('aria-valuenow', Math.round(perc));
-                            if (ldvelhApp.requests % 50 === 0) {
-                                $('#question').selectpicker('refresh');
-                            }
-                        }
+            let perc = 0;
+            let waiter = setInterval(() => {
+                perc = perc === 0 ? 100 : 0;
+                $('#requests-progress .progress-bar')
+                    .css('width', perc + "%")
+                    .attr('aria-valuenow', Math.round(perc));
+            }, 700);
+
+            $.get('get-html?url=https://www.projectaon.org/en/xhtml-less-simple/lw/' + ldvelhApp.config.bookNo + '/title.htm', aon => {
+                var htmlDoc = $((new DOMParser()).parseFromString(aon, "text/xml").documentElement);
+
+                htmlDoc.find('a[name*=sect]:not([href])').each((i, a) => {
+                    let $a = $(a);
+                    let section = $a.text();
+                    let line = ldvelhApp.lines[section];
+                    if (!line) {
+                        return;
                     }
-                );
-            }
+                    let icons = line.question + " ";
+                    icons += line.options.length > 0 ? '<i class="material-icons">poll</i>' : '';
+                    let $opt = $("<option value='" + section + "'>" + line.question + "</option>");
+                    $('#question').append($opt);
+
+                    let img = $a.parent().nextUntil('h3').find('img');
+                    if (img.is('img[alt="[illustration]"]')) {
+                        line.picture.small = img[0].outerHTML
+                            .replace("src=\"", "src=\"https://www.projectaon.org/en/xhtml/lw/" + ldvelhApp.config.bookNo + "/");
+                    }
+                    if (img.is('img[alt="illustration"]')) {
+                        line.picture.large = img[0].outerHTML
+                            .replace("src=\"", "src=\"https://www.projectaon.org/en/xhtml/lw/" + ldvelhApp.config.bookNo + "/");
+                    }
+                    if (line.picture.large || line.picture.small) {
+                        icons += '<i class="material-icons">wallpaper</i>';
+                    }
+                    $opt.attr('data-content', icons);
+                });
+
+                clearInterval(waiter);
+                $('#requests-progress').toggleClass('d-none', true);
+
+                $('#question').selectpicker('refresh');
+            });
         } catch (e) {
             $('#tsv').parent()
                 .addClass("has-danger")
