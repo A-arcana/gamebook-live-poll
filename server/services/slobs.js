@@ -10,29 +10,57 @@ class Slobs {
     slobs_url = null;
     slobs_token = null;
 
-    init() {
-        console.log("initialize Streamlabs OBS on ", this.slobs_url);
-        this.socket = new sockjs(this.slobs_url + "/api");
-        if (this.slobs_token) {
-            console.log("authorize Streamlabs OBS with Token",);
-            this.request("TcpServerService", this.slobs_token);
-        }
+    init(nbTry) {
+        return new Promise((resolve, reject) => {
+            clearTimeout(this.interval);
+            console.log("Initialize Streamlabs OBS on ", this.slobs_url + " - remaining tries: " + nbTry);
+            this.socket = new sockjs(this.slobs_url + "/api");
 
-        clearInterval(this.interval);
+            this.socket.onopen = () => {
+                console.log("streamlabs connected");
 
-        this.socket.onopen = function () {
-            console.log("streamlabs connected");
-        };
+                if (this.slobs_token) {
+                    console.log("authorize Streamlabs OBS with Token");
+                    this.request("TcpServerService", "auth", this.slobs_token)
+                        .then(resolve)
+                        .catch((r) => reject({ label: "auth", message: "Authorize failed", object: r }));
+                }
+                else {
+                    nbTry = -1;
+                    return this.request("ScenesService", "getScenes")
+                        .then(resolve)
+                        .catch(r => {
+                            let rejection = {};
+                            if (r.message.indexOf("Authorization required" >= 0)) {
+                                rejection.label = "auth";
+                            }
+                            else {
+                                rejection.label = "unknown";
+                            }
+                            rejection.message = r.message;
+                            rejection.object = r;
+                            reject(rejection);
+                        });
+                }
+            };
 
-        this.socket.onclose = function () {
-            console.log("streamlabs disconnected");
-            this.socket = null;
-            this.interval = setInterval(() => this.init(), 2000);
-        };
+            this.socket.onclose = () => {
+                console.log("streamlabs disconnected");
+                this.socket = null;
 
-        this.socket.onmessage = (e) => {
-            this.messageHandler(e.data);
-        };
+                if (nbTry === 1) {
+                    return reject();
+                }
+                else if (nbTry > 0) {
+                    nbTry--;
+                }
+                this.interval = setTimeout(() => this.init(nbTry).then(resolve).catch(() => reject({ label: "connection", message: "Too many attemps to connect" })), 2000);
+            };
+
+            this.socket.onmessage = (e) => {
+                this.messageHandler(e.data);
+            };
+        });
     }
     messageHandler(data) {
         let message = JSON.parse(data);
@@ -92,7 +120,12 @@ class Slobs {
                 reject,
                 completed: false
             };
-            this.socket.send(JSON.stringify(requestBody));
+            try {
+                this.socket.send(JSON.stringify(requestBody));
+            }
+            catch (e) {
+                reject();
+            }
         });
     }
 }

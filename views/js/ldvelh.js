@@ -20,11 +20,10 @@ class LDVELH {
 
     lines = {};
     polls = {};
-    slobs = new Slobs();
 
     save() {
         this.saveDOM();
-        setCookie('ldvelh-app', JSON.stringify(this.config));
+        Cookie.setCookie('ldvelh-app', JSON.stringify(this.config));
     }
     saveDOM() {
         this.config.title = $('#gamebook-title').text();
@@ -47,7 +46,7 @@ class LDVELH {
         this.config.cols.colOption = $('#colOption').val();
     }
     load() {
-        this.config = JSON.parse(getCookie('ldvelh-app')) || new LDVELH().config;
+        this.config = JSON.parse(Cookie.getCookie('ldvelh-app')) || new LDVELH().config;
         this.loadDOM();
     }
     loadDOM() {
@@ -55,38 +54,38 @@ class LDVELH {
 
         $('#live-id')
             .val(this.config.liveId)
-            .parent().toggleClass("is-filled", this.config.liveId);
+            .parent().toggleClass('is-filled', true);
 
         $('#slobs-url')
             .val(this.config.slobs?.url)
-            .parent().toggleClass("is-filled", this.config.slobs?.url);
+            .parent().toggleClass('is-filled', true);
         $('#slobs-token')
             .val(this.config.slobs?.token)
-            .parent().toggleClass("is-filled", this.config.slobs?.token);
+            .parent().toggleClass('is-filled', true);
 
         $('#countdown-delay')
             .val(this.config.delay)
-            .parent().toggleClass("is-filled", this.config.delay);
+            .parent().toggleClass('is-filled', true);
 
         $('#book-no')
             .val(this.config.bookNo)
-            .parent().toggleClass("is-filled", this.config.bookNo);
+            .parent().toggleClass('is-filled', true);
 
         $('#last-no')
             .val(this.config.lastNo)
-            .parent().toggleClass("is-filled", this.config.lastNo);
+            .parent().toggleClass('is-filled', true);
 
         $('#tsv')
             .val(this.config.tsv)
-            .parent().toggleClass("is-filled", this.config.tsv);
+            .parent().toggleClass('is-filled', true);
         $('#colId')
             .val(this.config.cols.colId)
-            .parent().toggleClass("is-filled", this.config.cols.colId);
+            .parent().toggleClass('is-filled', true);
         $('#colQuestion')
             .val(this.config.cols.colQuestion)
-            .parent().toggleClass("is-filled", this.config.cols.colQuestion);
+            .parent().toggleClass('is-filled', true);
         $('#colOption')
             .val(this.config.cols.colOption)
-            .parent().toggleClass("is-filled", this.config.cols.colOption);
+            .parent().toggleClass('is-filled', true);
     }
 }

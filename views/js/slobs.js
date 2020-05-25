@@ -12,32 +12,42 @@ class Slobs {
         this.timeouts[name] = setTimeout(() => this.toggleItem(name, false), time * 1000);
     }
     setItemSource(name, src) {
-        this.actionOnSlobs(() => {
-            var item = this.scene.nodes.find(n => n.name === name);
+        this.getLiveScene().then((scene) => {
+            let item = scene.nodes.find(n => n.name === name);
             $.get('/slobs/set-source/' + item.sourceId + '/' + src);
         });
     }
-    actionOnSlobs(callback) {
-        if (this.scene && this.lastTime + 60000 < new Date().getTime()) {
-            if(callback) callback();
-        }
-        else {
-            $.post('/slobs', { url: ldvelhApp.config.slobs.url, token: ldvelhApp.config.slobs.token },
-                resp => {
-                    $.get('/slobs/scenes/Live Scene',
-                        scene => {
-                            if (scene) {
-                                this.lastTime = new Date().getTime();
-                                this.scene = scene;
-                                if (callback) callback();
-                            }
-                        });
+    getLiveScene(force) {
+        return new Promise((resolve, reject) => {
+            if (!force && this.scene && this.lastTime + 60000 < new Date().getTime()) {
+                resolve(this.scene);
+            }
+            else {
+                $.post('/slobs', { url: app.ldvelh.config.slobs.url, token: app.ldvelh.config.slobs.token },
+                    resp => {
+                        if (resp.connected) {
+                            $.get('/slobs/scenes/Live Scene',
+                                scene => {
+                                    if (scene) {
+                                        this.lastTime = new Date().getTime();
+                                        this.scene = scene;
+                                        resolve(this.scene);
+                                    }
+                                });
+                        }
+                        else {
+                            reject(resp);
+                        }
+                    }
+                ).fail(resp => {
+                    reject(resp.responseJSON);
                 });
-        }
+            }
+        });
     }
 
     toggleItem(name, show) {
-        this.actionOnSlobs(() => this.toggleItemInScene(name, show));
+        this.getLiveScene().then(scene => this.toggleItemInScene(name, show));
     }
 
     toggleItemInScene(name, show) {

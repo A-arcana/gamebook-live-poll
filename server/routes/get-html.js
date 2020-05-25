@@ -1,6 +1,6 @@
 
 
-app.get('/get-html', function (req, res) {
+app.get('/get-html', (req, res) => {
 	var url = req.query.url;
 
 	let client = http;

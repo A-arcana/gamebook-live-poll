@@ -54,7 +54,7 @@
                     <div class="brand text-center">
                         <div class="container">
                             <div class="section text-center">
-                                <h1 id="gamebook-title" contenteditable="true" oninput="saveTitle()">Editable Title</h1>
+                                <h1 id="gamebook-title" contenteditable="true" oninput="app.saveTitle()">Editable Title</h1>
                             </div>
                         </div>
                     </div>
@@ -87,28 +87,28 @@
                                                 data-live-search="true"
                                                 data-style="btn-link"
                                                 id="question"
-                                                onchange="display()"></select>
+                                                onchange="app.display()"></select>
                                     </div>
-                                    <div class="form-group label-floating col-md-6">
+                                    <div class="form-group label-floating col-md-6 d-none">
                                         <label for="question">Other</label>
                                         <select class="form-control selectpiker"
                                                 data-live-search="true"
                                                 data-style="btn-link"
                                                 id="other"
-                                                onchange="displayOther()"></select>
+                                                onchange="app.displayOther()"></select>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class=" col-md-5">
+                    <div class="col-md-5 d-none">
                         <div class="card" id="live-polls">
                             <div class="card-header card-header-icon card-header-info">
                                 <div class="nav-tabs-navigation">
                                     <div class="nav-tabs-wrapper">
                                         <ul class="nav nav-tabs">
                                             <li class="nav-item">
-                                                <a class="nav-link active d-none" href="#" onclick="pollOther()" id="live-poll-button">
+                                                <a class="nav-link active" href="#" onclick="app.pollOther()" id="live-poll-button">
                                                     <i class="material-icons">poll</i>
                                                     <span class="text">Poll</span>
                                                 </a>
@@ -142,7 +142,7 @@
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link active d-none" href="#" onclick="poll()" id="poll-button">
+                                        <a class="nav-link active d-none" href="#" onclick="app.poll()" id="poll-button">
                                             <i class="material-icons">poll</i>
                                             Poll
                                         </a>
@@ -157,13 +157,13 @@
                                 <div id="display-options" class="display-option"></div>
                                 <div class="display-option">
                                     <div class="row">
-                                        <a onclick="addOpt()" class="action add col-md-1"><i class="material-icons text-success">add</i></a>
+                                        <a onclick="app.addOpt()" class="action add col-md-1"><i class="material-icons text-success">add</i></a>
                                         <input type="text" id="option-add" class="form-control col-md-8" placeholder="Option to add">
                                     </div>
                                 </div>
                                 <div class="row justify-content-center">
-                                    <div id="display-pic" class="action card d-none" onclick="picture()"></div>
-                                    <div id="display-smallpic" class="action card d-none" onclick="picture(true)"></div>
+                                    <div id="display-pic" class="action card d-none" onclick="app.picture()"></div>
+                                    <div id="display-smallpic" class="action card d-none" onclick="app.picture(true)"></div>
                                     <div class="col-md-12 text-center">Click on picture to display</div>
                                 </div>
                             </div>
@@ -249,14 +249,14 @@
                             </span>
                         </div>
                         <div class="form-group col-md-4 label-floating  bmd-form-group">
-                            <button onclick="fbConnect(true)" class="btn btn-info">Connect</button>
+                            <button onclick="app.fbConnect(true)" class="btn btn-info">Connect</button>
                         </div>
                     </div>
                     <div class="row">
                         <!-- https://stream-labs.github.io/streamlabs-obs-api-docs/ -->
                         <div class="form-group label-floating col-md-8 bmd-form-group">
                             <label for="live-id" class="bmd-label-floating">Streamlabs OBS url</label>
-                            <input type="text" id="slobs-url" class="form-control" placeholder="http://127.0.0.1:59650/" />
+                            <input type="text" id="slobs-url" class="form-control" placeholder="http://127.0.0.1:59650" />
                             <span class="form-control-feedback success">
                                 <i class="material-icons">done</i>
                             </span>
@@ -277,7 +277,7 @@
                             </span>
                         </div>
                         <div class="form-group col-md-4 label-floating  bmd-form-group">
-                            <button onclick="slobsConnect()" class="btn btn-info">Connect</button>
+                            <button onclick="app.slobsConnect()" class="btn btn-info">Connect</button>
                         </div>
                     </div>
                     <div class="row">
@@ -298,8 +298,8 @@
 
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="ldvelhApp.load()">Close</button>
-                    <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="ldvelhApp.save()">Save changes</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="app.ldvelh.load()">Close</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="app.ldvelh.save()">Save changes</button>
                 </div>
             </div>
         </div>
@@ -327,7 +327,7 @@
                             </span>
                         </div>
                         <div class="form-group col-md-4 label-floating  bmd-form-group">
-                            <button onclick="readFile()" class="btn btn-info">Read</button>
+                            <button onclick="app.readFile()" class="btn btn-info">Read</button>
                         </div>
                     </div>
                     <div class="row">
@@ -352,8 +352,8 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="ldvelhApp.load()">Close</button>
-                    <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="ldvelhApp.save()">Save changes</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="app.ldvelh.load()">Close</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="app.ldvelh.save()">Save changes</button>
                 </div>
             </div>
         </div>
@@ -372,6 +372,7 @@
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
 
     <script type="text/javascript" src="js/cookies.js"></script>
+    <script type="text/javascript" src="js/error.js"></script>
     <script type="text/javascript" src="js/slobs.js"></script>
     <script type="text/javascript" src="js/ldvelh.js"></script>
     <script type="text/javascript" src="js/live-app.js"></script>
