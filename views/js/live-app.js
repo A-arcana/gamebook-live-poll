@@ -19,6 +19,10 @@ $(document).ready(() => {
     });
 });
 
+function saveTitle() {
+    ldvelhApp.save();
+}
+
 function fbConnect(tryConnectPoll) {
     ldvelhApp.saveDOM();
     FB.getLoginStatus(function (response) {

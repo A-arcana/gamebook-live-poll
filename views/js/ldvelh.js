@@ -1,6 +1,7 @@
 class LDVELH {
 
     config = {
+        title: 'Editable Title',
         liveId: '',
         slobs: {
             url: '',
@@ -26,6 +27,8 @@ class LDVELH {
         setCookie('ldvelh-app', JSON.stringify(this.config));
     }
     saveDOM() {
+        this.config.title = $('#gamebook-title').text();
+
         this.config.liveId = $('#live-id').val();
 
         this.config.slobs = {
@@ -48,6 +51,8 @@ class LDVELH {
         this.loadDOM();
     }
     loadDOM() {
+        $('#gamebook-title').text(this.config.title);
+
         $('#live-id')
             .val(this.config.liveId)
             .parent().toggleClass("is-filled", this.config.liveId);
