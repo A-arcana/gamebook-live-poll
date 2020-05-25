@@ -50,29 +50,49 @@ class LiveApp {
             $('#live-id').parent()
                 .addClass("has-danger")
                 .removeClass("has-success");
-            $('#live-error')
-                .html($('#live-error').html() + "<hr/> Response is null")
-                .parents(".card").toggleClass("d-none", false);
+
+            Error.addError('#live-error', "Facebook: Response is null");
         }
         else if (response.error) {
             $('#live-id').parent()
                 .addClass("has-danger")
                 .removeClass("has-success");
-            $('#live-error')
-                .html($('#live-error').html() + "<hr/>" + response.error.message)
-                .parents(".card").toggleClass("d-none", false);
+
+            Error.addError('#live-error', "Facebook: " + response.error.message);
         }
         else {
             $('#live-id').parent()
                 .removeClass("has-danger")
                 .addClass("has-success");
-            $('#live-error').parents(".card").toggleClass("d-none", true);
+            Error.clearError('#live-error');
         }
     }
     slobsConnect() {
         this.ldvelh.saveDOM();
 
-        this.slobs.actionOnSlobs();
+        this.slobs.getLiveScene(true)
+            .then(scene => {
+                $('#slobs-url').parent()
+                    .removeClass("has-danger")
+                    .addClass("has-success");
+
+                $('#slobs-token').parent()
+                    .removeClass("has-danger")
+                    .addClass("has-success");
+
+                Error.clearError('#live-error');
+            })
+            .catch(resp => {
+                $('#slobs-url').parent()
+                    .toggleClass("has-danger", resp.reason !== 'auth')
+                    .removeClass("has-success");
+
+                $('#slobs-token').parent()
+                    .toggleClass("has-danger", resp.reason === 'auth')
+                    .removeClass("has-success");
+
+                Error.addError('#live-error', "Streamlabs OBS " + resp.message);
+            });
     }
 
     connect() {
@@ -189,18 +209,15 @@ class LiveApp {
                 $('#tsv').parent()
                     .addClass("has-danger")
                     .removeClass("has-success");
-                $('#file-error')
-                    .html($('#file-error').html() + "<hr/>[FAILED] parse file: " + e)
-                    .parents(".card").toggleClass("d-none", false);
+
+                Error.addError('#file-error', "[FAILED] parse file: " + e);
                 return;
             }
 
             $('#tsv').parent()
                 .removeClass("has-danger")
                 .addClass("has-success");
-            $('#file-error')
-                .html("<h6>Errors</h6>")
-                .parents(".card").toggleClass("d-none", true);
+            Error.clearError('#file-error');
 
             $('#question')
                 .val('none')
@@ -210,9 +227,7 @@ class LiveApp {
             $('#tsv').parent()
                 .addClass("has-danger")
                 .removeClass("has-success");
-            $('#file-error')
-                .html($('#file-error').html() + "<hr/>[FAILED] get file: " + textStatus)
-                .parents(".card").toggleClass("d-none", false);
+            Error.addError('#file-error', "[FAILED] get file: " + textStatus);
         });
         this.display();
     }
