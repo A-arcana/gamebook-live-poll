@@ -28,6 +28,11 @@ input, button, select {
         box-shadow: 0 5px 5px 0 rgba(0, 0, 0, .60), 0 5px 15px -2px rgba(0, 0, 0, 0.2), 0 1px 15px 0 rgba(0, 0, 0, 0.22);
     }
 
+        .action.card img {
+            width: 100%;
+            height: auto;
+        }
+
 .has-success .form-control-feedback.danger,
 .has-danger .form-control-feedback.success {
     display: none;
@@ -83,3 +88,12 @@ input, button, select {
 .bootstrap-select .dropdown-menu a:active {
     background-color: #00aec5;
 }
+
+.btn-inline {
+    display: inline-block;
+}
+
+    .nav-tabs .nav-item .btn-inline i.material-icons,
+    .btn-inline span {
+        margin: 0;
+    }

@@ -24,6 +24,7 @@ class LDVELH {
     save() {
         this.saveDOM();
         Cookie.setCookie('ldvelh-app', JSON.stringify(this.config));
+        app.focusPoll(false);
     }
     saveDOM() {
         this.config.title = $('#gamebook-title').text();

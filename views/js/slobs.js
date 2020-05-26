@@ -4,22 +4,39 @@ class Slobs {
     scene = null;
     lastTime = 0;
 
+    resetItem(name, time) {
+        if (this.timeouts[name]) {
+            clearTimeout(this.timeouts[name]);
+            this.timeouts[name] = null;
+            this.toggleItem(name, false)
+                .then(() => this.timeouts[name] = setTimeout(() => this.displayItem(name, time), 2000));
+        } else {
+            this.displayItem(name, time);
+        }
+    }
+
     displayItem(name, time) {
         this.toggleItem(name, true);
         if (this.timeouts[name]) {
             clearTimeout(this.timeouts[name]);
+            this.timeouts[name] = null;
         }
-        this.timeouts[name] = setTimeout(() => this.toggleItem(name, false), time * 1000);
+        this.timeouts[name] = setTimeout(() => {
+            this.toggleItem(name, false);
+            clearTimeout(this.timeouts[name]);
+            this.timeouts[name] = null;
+        }, time * 1000);
     }
     setItemSource(name, src) {
-        this.getLiveScene().then((scene) => {
-            let item = scene.nodes.find(n => n.name === name);
-            $.get('/slobs/set-source/' + item.sourceId + '/' + src);
-        });
+        this.getLiveScene(false)
+            .then((scene) => {
+                let item = scene.nodes.find(n => n.name === name);
+                $.get('/slobs/set-source/' + item.sourceId + '/' + src);
+            });
     }
     getLiveScene(force) {
         return new Promise((resolve, reject) => {
-            if (!force && this.scene && this.lastTime + 60000 < new Date().getTime()) {
+            if (!force && !!this.scene && this.lastTime + 60000 > new Date().getTime()) {
                 resolve(this.scene);
             }
             else {
@@ -47,7 +64,11 @@ class Slobs {
     }
 
     toggleItem(name, show) {
-        this.getLiveScene().then(scene => this.toggleItemInScene(name, show));
+        return new Promise((resolve, reject) => {
+            this.getLiveScene(false)
+                .then(scene => { this.toggleItemInScene(name, show); resolve(); })
+                .catch(reject);
+        });
     }
 
     toggleItemInScene(name, show) {

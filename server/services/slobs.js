@@ -23,7 +23,7 @@ class Slobs {
                     console.log("authorize Streamlabs OBS with Token");
                     this.request("TcpServerService", "auth", this.slobs_token)
                         .then(resolve)
-                        .catch((r) => reject({ label: "auth", message: "Authorize failed", object: r }));
+                        .catch(r => reject({ label: "auth", message: "Authorize failed", object: r }));
                 }
                 else {
                     nbTry = -1;

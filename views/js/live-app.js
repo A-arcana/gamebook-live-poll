@@ -110,6 +110,8 @@ class LiveApp {
 
             for (let i in response.data) {
                 let poll = response.data[i];
+                if (this.ldvelh.lines[poll.question]) continue;
+
                 this.ldvelh.polls[poll.id] = {
                     id: poll.id,
                     question: poll.question,
@@ -155,6 +157,15 @@ class LiveApp {
                         this.ldvelh.lines[section].options.push(str.charAt(0).toUpperCase() + str.slice(1));
                         this.ldvelh.lines[section].question = question;
                     }
+
+                    let fbPoll = Object
+                        .keys(this.ldvelh.polls)
+                        .map(k => this.ldvelh.polls[k])
+                        .find(p => p.question === question);
+                    if (fbPoll) {
+                        $('#other option[value=' + fbPoll.id + ']').remove();
+                        $('#other').selectpicker('refresh');
+                    };
                 }
                 $('#requests-progress')
                     .toggleClass('d-none', false)
@@ -186,15 +197,16 @@ class LiveApp {
                         $('#question').append($opt);
 
                         let img = $a.parent().nextUntil('h3').find('img');
-                        if (img.is('img[alt="[illustration]"]')) {
-                            line.picture.small = img[0].outerHTML
+                        if (img.is('img[alt="[illustration]"]') || img.is('img[alt="illustration"]')) {
+                            let elt = img[0].outerHTML
                                 .replace("src=\"", "src=\"https://www.projectaon.org/en/xhtml/lw/" + this.ldvelh.config.bookNo + "/");
-                        }
-                        if (img.is('img[alt="illustration"]')) {
-                            line.picture.large = img[0].outerHTML
-                                .replace("src=\"", "src=\"https://www.projectaon.org/en/xhtml/lw/" + this.ldvelh.config.bookNo + "/");
-                        }
-                        if (line.picture.large || line.picture.small) {
+                            if (img.attr('width') > 400) {
+                                line.picture.xlarge = elt;
+                            } else if (img.attr('height') > 200) {
+                                line.picture.large = elt;
+                            } else {
+                                line.picture.small = elt;
+                            }
                             icons += '<i class="material-icons">wallpaper</i>';
                         }
                         $opt.attr('data-content', icons);
@@ -219,10 +231,7 @@ class LiveApp {
                 .addClass("has-success");
             Error.clearError('#file-error');
 
-            $('#question')
-                .val('none')
-                .focus()
-                .selectpicker('refresh');
+            this.focusPoll(true);
         }).fail((jqXHR, textStatus) => {
             $('#tsv').parent()
                 .addClass("has-danger")
@@ -256,6 +265,7 @@ class LiveApp {
         $('#display-options').html("");
         $('#display-pic').html("");
         $('#display-smallpic').html("");
+        $('#display-xlpic').html("");
         $('#display-question').text("");
         $('#option-add').val("");
 
@@ -274,6 +284,9 @@ class LiveApp {
             $('#display-pic')
                 .html(this.ldvelh.lines[section].picture.large)
                 .toggleClass("d-none", !this.ldvelh.lines[section].picture.large);
+            $('#display-xlpic')
+                .html(this.ldvelh.lines[section].picture.xlarge)
+                .toggleClass("d-none", !this.ldvelh.lines[section].picture.xlarge);
         }
     }
 
@@ -287,23 +300,28 @@ class LiveApp {
     addOpt() {
         let section = $('#question').val();
         let option = $('#option-add').val().trim();
-        $('#option-add').val("");
         option = option.charAt(0).toUpperCase() + option.slice(1);
         if (this.ldvelh.lines[section].options.length === 0) {
             $('#question option[value=' + section + ']').text($('#question option[value=' + section + ']').text() + " [poll]");
         }
         this.ldvelh.lines[section].options.push(option);
         this.display();
+
+        $('#option-add').val("").focus();
+    }
+    optPressed(e) {
+        if (e.keyCode === 13) {
+            e.preventDefault();
+            this.addOpt();
+        }
     }
 
     pollOther() {
         let pollId = $('#other').val();
         $('#other')
             .val('none')
-            .focus()
             .selectpicker('refresh');
-        $('#question')
-            .focus(); let item = null;
+        this.focusPoll(false);
 
         this.slobs.displayItem('countdown', 60);
         this.slobs.displayItem(this.ldvelh.polls[pollId].question, 30);
@@ -320,12 +338,16 @@ class LiveApp {
         }, 60 * 1000);
     }
 
+    focusPoll(resetSelection, refresh) {
+        var $q = $('#question');
+        if (resetSelection) $q.val('none');
+        if (refresh) $q.selectpicker('refresh');
+        $q.focus();
+    }
+
     poll() {
         let question = this.ldvelh.lines[$('#question').val()];
-        $('#question')
-            .val('none')
-            .focus()
-            .selectpicker('refresh');
+        this.focusPoll();
 
         this.slobs.displayItem('countdown', 60);
 
@@ -346,23 +368,33 @@ class LiveApp {
             this.ldvelh.config.delay * 1000);
 
         $('#display-options').html("");
+        $('#display-xlpic').html("");
         $('#display-pic').html("");
         $('#display-smallpic').html("");
         $('#display-question').text("");
     }
 
-    picture(isSmall) {
-        $('#question').focus();
+    picture(format) {
+        this.focusPoll(false);
         let src = $('#display-pic img').attr('src');
         let placeholder = "placeholder";
-        if (isSmall) {
+        let folder = false;
+        let timing = 50;
+        if (format === 'xl') {
+            src = $('#display-xlpic img').attr('src');
+            placeholder = "xl-placeholder";
+            folder = "xl-folder";
+        }
+        else if (format === "s") {
             src = $('#display-smallpic img').attr('src');
             placeholder = "small-placeholder";
+            timing = 20;
         }
         if (src) {
             src = encodeURIComponent(src);
             this.slobs.setItemSource(placeholder, src);
-            this.slobs.displayItem(placeholder, isSmall ? 20 : 50);
+            if (folder) this.slobs.displayItem(folder, timing);
+            else this.slobs.displayItem(placeholder, timing);
         }
     }
 }
