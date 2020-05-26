@@ -1,3 +1,5 @@
+const catcher = (res) => { console.log("empty catch", res); };
+
 class LiveApp {
 
     ldvelh = new LDVELH();
@@ -47,52 +49,30 @@ class LiveApp {
 
     fbError(response) {
         if (!response) {
-            $('#live-id').parent()
-                .addClass("has-danger")
-                .removeClass("has-success");
+            $('#live-id').parent().setValid(false);
 
-            Error.addError('#live-error', "Facebook: Response is null");
+            $('#live-error').addError("Facebook: Response is null");
         }
         else if (response.error) {
-            $('#live-id').parent()
-                .addClass("has-danger")
-                .removeClass("has-success");
+            $('#live-id').parent().setValid(false);
 
-            Error.addError('#live-error', "Facebook: " + response.error.message);
+            $('#live-error').addError("Facebook: " + response.error.message);
         }
         else {
-            $('#live-id').parent()
-                .removeClass("has-danger")
-                .addClass("has-success");
-            Error.clearError('#live-error');
+            $('#live-id').parent().setValid(true);
+            $('#live-error').clearError();
         }
     }
+
+    roll() {
+        this.slobs.resetItem('Dice', 10).then(catcher).catch(catcher);
+        app.focusPoll();
+    }
+
     slobsConnect() {
         this.ldvelh.saveDOM();
 
-        this.slobs.getLiveScene(true)
-            .then(scene => {
-                $('#slobs-url').parent()
-                    .removeClass("has-danger")
-                    .addClass("has-success");
-
-                $('#slobs-token').parent()
-                    .removeClass("has-danger")
-                    .addClass("has-success");
-
-                Error.clearError('#live-error');
-            })
-            .catch(resp => {
-                $('#slobs-url').parent()
-                    .toggleClass("has-danger", resp.reason !== 'auth')
-                    .removeClass("has-success");
-
-                $('#slobs-token').parent()
-                    .toggleClass("has-danger", resp.reason === 'auth')
-                    .removeClass("has-success");
-
-                Error.addError('#live-error', "Streamlabs OBS " + resp.message);
-            });
+        this.slobs.init(true).then(catcher).catch(catcher);
     }
 
     connect() {
@@ -165,7 +145,7 @@ class LiveApp {
                     if (fbPoll) {
                         $('#other option[value=' + fbPoll.id + ']').remove();
                         $('#other').selectpicker('refresh');
-                    };
+                    }
                 }
                 $('#requests-progress')
                     .toggleClass('d-none', false)
@@ -218,25 +198,19 @@ class LiveApp {
                     $('#question').selectpicker('refresh');
                 });
             } catch (e) {
-                $('#tsv').parent()
-                    .addClass("has-danger")
-                    .removeClass("has-success");
+                $('#tsv').parent().setValid(false);
 
-                Error.addError('#file-error', "[FAILED] parse file: " + e);
+                $('#file-error').addError("[FAILED] parse file: " + e);
                 return;
             }
 
-            $('#tsv').parent()
-                .removeClass("has-danger")
-                .addClass("has-success");
-            Error.clearError('#file-error');
+            $('#tsv').parent().setValid(true);
+            $('#file-error').clearError();
 
             this.focusPoll(true);
         }).fail((jqXHR, textStatus) => {
-            $('#tsv').parent()
-                .addClass("has-danger")
-                .removeClass("has-success");
-            Error.addError('#file-error', "[FAILED] get file: " + textStatus);
+            $('#tsv').parent().setValid(false);
+            $('#file-error').addError("[FAILED] get file: " + textStatus);
         });
         this.display();
     }
@@ -321,10 +295,13 @@ class LiveApp {
         $('#other')
             .val('none')
             .selectpicker('refresh');
-        this.focusPoll(false);
+        this.focusPoll();
 
-        this.slobs.displayItem('countdown', 60);
-        this.slobs.displayItem(this.ldvelh.polls[pollId].question, 30);
+        this.slobs.displayItem('countdown', 60)
+            .then(() =>
+                this.slobs.displayItem(this.ldvelh.polls[pollId].question, 30).then(catcher).catch(catcher)
+            )
+            .catch(catcher);
 
         setTimeout(() =>
             FB.api('/' + pollId, 'post', { action: 'SHOW_VOTING', access_token: this.ldvelh.accessToken }, this.fbError),
@@ -338,33 +315,32 @@ class LiveApp {
         }, 60 * 1000);
     }
 
-    focusPoll(resetSelection, refresh) {
+    focusPoll(refresh) {
         var $q = $('#question');
-        if (resetSelection) $q.val('none');
-        if (refresh) $q.selectpicker('refresh');
+        if (refresh) $q.val('none').selectpicker('refresh');
         $q.focus();
     }
 
     poll() {
         let question = this.ldvelh.lines[$('#question').val()];
-        this.focusPoll();
 
-        this.slobs.displayItem('countdown', 60);
+        this.slobs.displayItem('countdown', 60).then(catcher).catch(catcher);
 
-        setTimeout(() => {
-            FB.api('/' + this.ldvelh.config.liveId + '/polls', 'post', question, (response) => {
-                this.fbError(response);
-                if (!response || !response.id) return;
+        setTimeout(
+            () => {
+                FB.api('/' + this.ldvelh.config.liveId + '/polls', 'post', question, (response) => {
+                    this.fbError(response);
+                    if (!response || !response.id) return;
 
-                let pollId = response.id;
-                setTimeout(() => {
-                    FB.api('/' + pollId, 'post', { action: 'SHOW_RESULTS', access_token: this.ldvelh.accessToken }, this.fbError);
+                    let pollId = response.id;
+                    setTimeout(() => {
+                        FB.api('/' + pollId, 'post', { action: 'SHOW_RESULTS', access_token: this.ldvelh.accessToken }, this.fbError);
 
-                    setTimeout(() => FB.api('/' + pollId, 'post', { action: 'CLOSE', access_token: this.ldvelh.accessToken }, this.fbError)
-                        , 30 * 1000);
-                }, 60 * 1000);
-            });
-        },
+                        setTimeout(() => FB.api('/' + pollId, 'post', { action: 'CLOSE', access_token: this.ldvelh.accessToken }, this.fbError)
+                            , 30 * 1000);
+                    }, 60 * 1000);
+                });
+            },
             this.ldvelh.config.delay * 1000);
 
         $('#display-options').html("");
@@ -372,10 +348,11 @@ class LiveApp {
         $('#display-pic').html("");
         $('#display-smallpic').html("");
         $('#display-question').text("");
+        this.focusPoll(true);
     }
 
     picture(format) {
-        this.focusPoll(false);
+        this.focusPoll();
         let src = $('#display-pic img').attr('src');
         let placeholder = "placeholder";
         let folder = false;
@@ -392,9 +369,12 @@ class LiveApp {
         }
         if (src) {
             src = encodeURIComponent(src);
-            this.slobs.setItemSource(placeholder, src);
-            if (folder) this.slobs.displayItem(folder, timing);
-            else this.slobs.displayItem(placeholder, timing);
+            this.slobs.setItemSource(placeholder, src)
+                .then(() => {
+                    if (folder) this.slobs.displayItem(folder, timing).then(catcher).catch(catcher);
+                    else this.slobs.displayItem(placeholder, timing).then(catcher).catch(catcher);
+                })
+                .catch(catcher);
         }
     }
 }
