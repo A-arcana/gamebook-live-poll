@@ -2,6 +2,7 @@ body {
     font-family: arial;
     font-size: 18px;
     line-height: 1.3em;
+    background-repeat:no-repeat;
 }
 
 input, button, select {
