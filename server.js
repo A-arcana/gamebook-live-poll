@@ -14,7 +14,17 @@ function include(file_) {
     };
 };
 
-dotenv.config();
+if (process.env.NODE_ENV) {
+    dotenv.config(
+        {
+            path: path.resolve(process.cwd(), '.env') +
+                '.' + process.env.NODE_ENV
+        }
+    );
+}
+else {
+    dotenv.config();
+}
 
 const app = express();
 app.use(express.static(process.env.SERVE_DIRECTORY || 'dist'));
@@ -26,13 +36,20 @@ slobs = new Slobs();
 include('server/routes.js');
 
 const options = {
-	key: fs.readFileSync('key.pem', 'utf8'),
-	cert: fs.readFileSync('cert.pem', 'utf8'),
-	passphrase: process.env.HTTPS_PASSPHRASE || ''
+    key: fs.readFileSync('key.pem', 'utf8'),
+    cert: fs.readFileSync('cert.pem', 'utf8'),
+    passphrase: process.env.HTTPS_PASSPHRASE || ''
 };
-const server = https.createServer(options, app);
 
-const port = process.env.SERVER_PORT || 8443;
-server.listen(port, () => {
-    console.log("Server listening on " + port);
+const port = process.env.PORT ||
+    process.env.SERVER_PORT ||
+    8443;
+
+// listen for requests :)
+const listener = app.listen(port, () => {
+    console.log("Your app is listening on port " + listener.address().port);
 });
+
+setInterval(() => {
+    http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
+}, 280000);

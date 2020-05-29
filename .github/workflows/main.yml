@@ -25,3 +25,6 @@ jobs:
     # Runs a single command using the runners shell
     - name: Glitch Project Sync
       uses: kanadgupta/glitch-sync@v1.0
+      with:
+        project-id: '${{ secrets.glitchProjectId}}'
+        auth-token: '${{ secrets.glitchAuthToken }}'
