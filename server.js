@@ -15,14 +15,16 @@ function include(file_) {
 };
 
 if (process.env.NODE_ENV) {
+    var envFile = '.env' + '.' + process.env.NODE_ENV;
+    console.log("using " + envFile + " file");
     dotenv.config(
         {
-            path: path.resolve(process.cwd(), '.env') +
-                '.' + process.env.NODE_ENV
+            path: path.resolve(process.cwd(), envFile)
         }
     );
 }
 else {
+    console.log("using .env file");
     dotenv.config();
 }
 
@@ -43,10 +45,12 @@ const options = {
 
 const port = process.env.PORT ||
     process.env.SERVER_PORT ||
-    8443;
+    9443;
+
+var server = https.createServer(options, app);
 
 // listen for requests :)
-const listener = app.listen(port, () => {
+const listener = server.listen(port, () => {
     console.log("Your app is listening on port " + listener.address().port);
 });
 
