@@ -102,7 +102,7 @@ class LiveApp {
                 $('#other').append($opt);
             }
             let hide = $('#other').children().length <= 1;
-            $('#other').parents('.col-6').toggleClass("d-none", hide);
+            $('#other').parents('.form-group').toggleClass("d-none", hide);
             $('#live-polls').parents('.col-5').toggleClass("d-none", hide);
             $('#other').selectpicker('refresh');
 
@@ -147,6 +147,12 @@ class LiveApp {
                         $('#other').selectpicker('refresh');
                     }
                 }
+
+                let hide = $('#other').children().length <= 1;
+                $('#other').parents('.form-group').toggleClass("d-none", hide);
+                $('#live-polls').parents('.col-5').toggleClass("d-none", hide);
+                $('#other').selectpicker('refresh');
+
                 $('#requests-progress')
                     .toggleClass('d-none', false)
                     .find('.progress-bar')
