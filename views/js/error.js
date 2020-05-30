@@ -4,12 +4,14 @@ $.fn.addError = function (message) {
     this
         .html(html + message)
         .parents(".card").toggleClass("d-none", false);
+    $('#error-bar').toggleClass("d-none", false);
     return this;
 };
 $.fn.clearError = function () {
     this
         .html("")
         .parents(".card").toggleClass("d-none", true);
+    $('#error-bar').toggleClass("d-none", true);
     return this;
 };
 $.fn.setValid = function (isValid) {

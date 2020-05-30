@@ -18,7 +18,7 @@ class LiveApp {
             });
 
             this.fbConnect(true);
-            setInterval(this.fbConnect, 20 * 60 * 1000);
+            setInterval(() => this.fbConnect, 20 * 60 * 1000);
         });
         setTimeout(() => { if (this.ldvelh.config.tsv) this.readFile(); }, 1000);
     }
@@ -102,8 +102,8 @@ class LiveApp {
                 $('#other').append($opt);
             }
             let hide = $('#other').children().length <= 1;
-            $('#other').parents('.col-md-6').toggleClass("d-none", hide);
-            $('#live-polls').parents('.col-md-5').toggleClass("d-none", hide);
+            $('#other').parents('.col-6').toggleClass("d-none", hide);
+            $('#live-polls').parents('.col-5').toggleClass("d-none", hide);
             $('#other').selectpicker('refresh');
 
             this.displayOther();
@@ -225,7 +225,7 @@ class LiveApp {
             let question = poll.question;
             $('#live-poll-button .text').text(question);
             for (let i in poll.options) {
-                let $opt = $("<div class='row'><div class='col-md-10'><span class='small'>" + (parseInt(i) + 1) + "&nbsp;&nbsp;&nbsp;</span> " + poll.options[i].text + "</div></div>");
+                let $opt = $("<div class='row'><div class='col-10'><span class='small'>" + (parseInt(i) + 1) + "&nbsp;&nbsp;&nbsp;</span> " + poll.options[i].text + "</div></div>");
                 $('#live-display-options').append($opt);
             }
             $('#live-polls').toggleClass("d-none", poll.options.length === 0);
@@ -247,10 +247,12 @@ class LiveApp {
             let question = this.ldvelh.lines[section].question;
             $('#display-question').text(question);
             for (let i in this.ldvelh.lines[section].options) {
-                let $opt = $("<div class='row'><a onclick='app.deleteOpt(\"" + section + "\", " + i + ")' class='action delete'><i class='material-icons text-danger col-md-1'>clear</i></a> <div class='col-md-10'><span class='small'>" + (parseInt(i) + 1) + "&nbsp;&nbsp;&nbsp;</span> " + this.ldvelh.lines[section].options[i] + "</div></div>");
+                let $opt = $("<div class='row'><a onclick='app.deleteOpt(\"" + section + "\", " + i + ")' class='action delete col-1'><i class='material-icons text-danger'>clear</i></a><div class='small col-1'>" + (parseInt(i) + 1) + "</div> <div class='col-9'> " + this.ldvelh.lines[section].options[i] + "</div></div>");
                 $('#display-options').append($opt);
             }
-            $('#poll-button').toggleClass("d-none", this.ldvelh.lines[section].options.length === 0);
+            let hasOpt = this.ldvelh.lines[section].options.length === 0;
+            $('#poll-button').toggleClass("d-none", hasOpt);
+            $('#option-add').parent().toggleClass("d-none", hasOpt);
 
             $('#display-smallpic')
                 .html(this.ldvelh.lines[section].picture.small)
@@ -261,6 +263,12 @@ class LiveApp {
             $('#display-xlpic')
                 .html(this.ldvelh.lines[section].picture.xlarge)
                 .toggleClass("d-none", !this.ldvelh.lines[section].picture.xlarge);
+
+            $('#display-pic-helper')
+                .toggleClass(
+                    "d-none",
+                    !this.ldvelh.lines[section].picture.xlarge && !this.ldvelh.lines[section].picture.large && !this.ldvelh.lines[section].picture.small
+                );
         }
     }
 

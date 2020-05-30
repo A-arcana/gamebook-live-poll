@@ -50,11 +50,11 @@
     <div class="header-filter" data-parallax="true">
         <div class="container">
             <div class="row">
-                <div class="col-md-8 ml-auto mr-auto">
+                <div class="col-8 ml-auto mr-auto">
                     <div class="brand text-center">
                         <div class="container">
                             <div class="section text-center">
-                                <h1 id="gamebook-title" contenteditable="true" oninput="app.saveTitle()">Editable Title</h1>
+                                <h1 id="gamebook-title" class="gamebook-title" contenteditable="true" oninput="app.saveTitle()">Editable Title</h1>
                             </div>
                         </div>
                     </div>
@@ -68,7 +68,7 @@
             <div class="container">
                 <div class="row justify-content-center"></div>&nbsp;
                 <div class="row justify-content-center">
-                    <div class=" col-md-7">
+                    <div class=" col-7">
                         <div class="card">
                             <div class="progress progress-line-primary d-none" id="requests-progress">
                                 <div class="progress-bar progress-bar-primary "
@@ -78,10 +78,13 @@
                                     <span class="sr-only">60% Complete</span>
                                 </div>
                             </div>
+                            <div class="progress d-none" id="error-bar">
+                                <div class="progress-bar bg-danger" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
                             <div class="card-body text-center">
                                 <h4 class="card-title">Gamebook Live Streamer</h4>
                                 <div class="row justify-content-center">
-                                    <div class="form-group label-floating col-md-6">
+                                    <div class="form-group label-floating col-6">
                                         <label for="question">Section</label>
                                         <select class="form-control selectpiker"
                                                 data-live-search="true"
@@ -89,7 +92,7 @@
                                                 id="question"
                                                 onchange="app.display()"></select>
                                     </div>
-                                    <div class="form-group label-floating col-md-6 d-none">
+                                    <div class="form-group label-floating col-6 d-none">
                                         <label for="question">Other</label>
                                         <select class="form-control selectpiker"
                                                 data-live-search="true"
@@ -101,7 +104,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-5 d-none">
+                    <div class="col-5 d-none">
                         <div class="card" id="live-polls">
                             <div class="card-header card-header-icon card-header-info">
                                 <div class="nav-tabs-navigation">
@@ -136,18 +139,18 @@
                         <div class="nav-tabs-navigation">
                             <div class="nav-tabs-wrapper">
                                 <ul class="nav nav-tabs">
-                                    <li class="nav-item col-md-7">
+                                    <li class="nav-item col-sm-7">
                                         <a class="nav-link">
                                             Display Question : <b id="display-question"></b>
                                         </a>
                                     </li>
-                                    <li class="nav-item col-md-3">
-                                        <a class="nav-link active d-none" href="#" onclick="app.poll()" id="poll-button">
+                                    <li class="nav-item col-sm-3 col-auto">
+                                        <a class="nav-link active btn-inline d-none" href="#" onclick="app.poll()" id="poll-button">
                                             <i class="material-icons">poll</i>
                                             Poll
                                         </a>
                                     </li>
-                                    <li class="nav-item col-md-2">
+                                    <li class="nav-item col-sm-2 col-auto">
                                         <a class="nav-link active btn-inline" href="#" onclick="app.roll();" id="roll-button">
                                             <i class="material-icons">casino</i>
                                         </a>
@@ -161,16 +164,16 @@
                             <div class="form-group col label-floating align-self-center">
                                 <div id="display-options" class="display-option"></div>
                                 <div class="display-option">
-                                    <div class="row">
-                                        <a onclick="app.addOpt()" class="action add col-md-1"><i class="material-icons text-success">add</i></a>
-                                        <input type="text" id="option-add" class="form-control col-md-8" placeholder="Option to add" onkeypress="app.optPressed(event)">
+                                    <div class="row d-none">
+                                        <a onclick="app.addOpt()" class="action add col-2"><i class="material-icons text-success">add</i></a>
+                                        <input type="text" id="option-add" class="form-control col-8" placeholder="Option to add" onkeypress="app.optPressed(event)">
                                     </div>
                                 </div>
                                 <div class="row justify-content-center">
                                     <div id="display-xlpic" class="action card d-none" onclick="app.picture('xl')"></div>
                                     <div id="display-pic" class="action card d-none" onclick="app.picture('l')"></div>
                                     <div id="display-smallpic" class="action card d-none" onclick="app.picture('s')"></div>
-                                    <div class="col-md-12 text-center">Click on picture to display</div>
+                                    <div class="col-12 text-center d-none" id="display-pic-helper">Click on picture to display</div>
                                 </div>
                             </div>
                         </div>
@@ -244,7 +247,7 @@
                 </div>
                 <div class="modal-body container">
                     <div class="row">
-                        <div class="form-group label-floating col-md-8 bmd-form-group">
+                        <div class="form-group label-floating col-7 col-sm-8 bmd-form-group">
                             <label for="live-id" class="bmd-label-floating">Facebook Live Id</label>
                             <input type="text" id="live-id" class="form-control" placeholder="123456789" />
                             <span class="form-control-feedback success">
@@ -254,13 +257,13 @@
                                 <i class="material-icons">clear</i>
                             </span>
                         </div>
-                        <div class="form-group col-md-4 label-floating  bmd-form-group">
+                        <div class="form-group col-4 label-floating  bmd-form-group">
                             <button onclick="app.fbConnect(true)" class="btn btn-info">Connect</button>
                         </div>
                     </div>
                     <div class="row">
                         <!-- https://stream-labs.github.io/streamlabs-obs-api-docs/ -->
-                        <div class="form-group label-floating col-md-8 bmd-form-group">
+                        <div class="form-group label-floating col-7 col-sm-8 bmd-form-group">
                             <label for="live-id" class="bmd-label-floating">Streamlabs OBS url</label>
                             <input type="text" id="slobs-url" class="form-control" placeholder="http://127.0.0.1:59650" />
                             <span class="form-control-feedback success">
@@ -272,7 +275,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="form-group label-floating col-md-8 bmd-form-group">
+                        <div class="form-group label-floating col-7 col-sm-8 bmd-form-group">
                             <label for="live-id" class="bmd-label-floating">Streamlabs OBS Auth Token</label>
                             <input type="text" id="slobs-token" class="form-control" placeholder="a8649154c541b927d0d29cc54adb0c53efc2ba7" />
                             <span class="form-control-feedback success">
@@ -282,30 +285,36 @@
                                 <i class="material-icons">clear</i>
                             </span>
                         </div>
-                        <div class="form-group col-md-4 label-floating  bmd-form-group">
+                        <div class="form-group col-4 label-floating  bmd-form-group">
                             <button onclick="app.slobsConnect()" class="btn btn-info">Connect</button>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="form-group label-floating col-md-8 bmd-form-group">
+                        <div class="form-group label-floating col-7 col-sm-8 bmd-form-group">
                             <label for="book-no" class="bmd-label-floating">Delay after showing poll (seconds)</label>
                             <input type="number" id="countdown-delay" class="form-control" placeholder="3" />
                         </div>
                     </div>
                     <div class="row">
-                        <div class="form-group label-floating col-md-8 bmd-form-group">
+                        <div class="form-group label-floating col-7 col-sm-8 bmd-form-group">
                             <label for="book-no" class="bmd-label-floating">Book no for projectaon.org</label>
                             <input type="text" id="book-no" class="form-control" placeholder="05sots" />
                         </div>
-                        <div class="form-group col-md-4 label-floating  bmd-form-group">
-                            <a href="https://www.projectaon.org/en/Main/Books" target="_blank" class="btn btn-secondary">References</a>
+                        <div class="form-group col-4 label-floating  bmd-form-group">
+                            <a href="https://www.projectaon.org/en/Main/Books" target="_blank" class="btn btn-secondary">Ref.</a>
                         </div>
                     </div>
 
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="app.ldvelh.load()">Close</button>
-                    <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="app.ldvelh.save()">Save changes</button>
+                    <div class="row">
+                        <div class="col-auto">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="app.ldvelh.load()">Close</button>
+                        </div>
+                        <div class="col-auto">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="app.ldvelh.save()">Save changes</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -322,7 +331,7 @@
                 </div>
                 <div class="modal-body">
                     <div class="row">
-                        <div class="form-group label-floating col-md-8 bmd-form-group">
+                        <div class="form-group label-floating col-7 col-sm-8 bmd-form-group">
                             <label for="tsv" class="bmd-label-floating">TSV file name</label>
                             <input type="text" id="tsv" class="form-control" placeholder="ls1.tsv" />
                             <span class="form-control-feedback success">
@@ -332,26 +341,26 @@
                                 <i class="material-icons">clear</i>
                             </span>
                         </div>
-                        <div class="form-group col-md-4 label-floating  bmd-form-group">
+                        <div class="form-group col-4 label-floating  bmd-form-group">
                             <button onclick="app.readFile()" class="btn btn-info">Read</button>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="form-group label-floating col-md-8 bmd-form-group">
+                        <div class="form-group label-floating col-7 col-sm-8 bmd-form-group">
                             <label for="last-no" class="bmd-label-floating">Last no</label>
                             <input type="text" id="last-no" class="form-control" placeholder="350" />
                         </div>
                     </div>
                     <div class="row">
-                        <div class="form-group label-floating col-md bmd-form-group">
+                        <div class="form-group label-floating col-4 bmd-form-group">
                             <label for="colId" class="bmd-label-floating">Id Col</label>
                             <input type="number" id="colId" class="form-control" value="1" min="0" max="30" placeholder="1" />
                         </div>
-                        <div class="form-group label-floating col-md bmd-form-group">
+                        <div class="form-group label-floating col-4 bmd-form-group">
                             <label for="colQuestion" class="bmd-label-floating">Question Col</label>
                             <input type="number" id="colQuestion" class="form-control" value="1" min="0" max="30" placeholder="1" />
                         </div>
-                        <div class="form-group label-floating col-md bmd-form-group">
+                        <div class="form-group label-floating col-4 bmd-form-group">
                             <label for="colOption" class="bmd-label-floating">Option Col</label>
                             <input type="number" id="colOption" class="form-control" value="1" min="0" max="30" placeholder="5" />
                         </div>
