@@ -21,10 +21,12 @@ class LDVELH {
     lines = {};
     polls = {};
 
-    save() {
+    save(nofocus) {
         this.saveDOM();
         Cookie.setCookie('ldvelh-app', JSON.stringify(this.config));
-        app.focusPoll(false);
+        if (!nofocus) {
+            app.focusPoll(false);
+        }
     }
     saveDOM() {
         this.config.title = $('#gamebook-title').text();

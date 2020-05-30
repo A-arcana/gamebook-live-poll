@@ -8,25 +8,34 @@ app.post('/slobs', (req, res) => {
 		.catch((reason) => res.status(500).send({ connected: false, reason: reason.label, message: reason.message, object: reason.object}));
 });
 
-app.get('/slobs/scenes/:id', (req, res) => {
-	let method = req.params.method;
-	let id = req.params.id;
+app.get('/slobs/scenes/:name', (req, res) => {
+	let name = req.params.name;
 
 	slobs
 		.request("ScenesService", "getScenes")
 		.then(scenes => {
-			res.send(scenes.find(scene => scene.name === id));
+			res.send(scenes.find(scene => scene.name === name));
 		})
 		.catch((reason) => res.status(500).send(reason));
 });
 
-app.get('/slobs/set-source/:id/:file', (req, res) => {
-	let method = req.params.method;
+app.get('/slobs/scenes/:id/activate', (req, res) => {
 	let id = req.params.id;
-	let file = req.params.file;
 
 	slobs
-		.request('Source["' + id + '"]', "updateSettings", { file: file })
+		.request("ScenesService", "makeSceneActive", id)
+		.then(resp => {
+			res.send(resp);
+		})
+		.catch((reason) => res.status(500).send(reason));
+});
+
+app.get('/slobs/sources/:id/set-source/:src', (req, res) => {
+	let id = req.params.id;
+	let src = req.params.src;
+
+	slobs
+		.request('Source["' + id + '"]', "updateSettings", { file: src })
 		.then(data => {
 			console.log(data);
 			res.send(data);
@@ -34,8 +43,7 @@ app.get('/slobs/set-source/:id/:file', (req, res) => {
 		.catch((reason) => res.status(500).send(reason));
 });
 
-app.get('/slobs/set-visibility/:id/:arg', (req, res) => {
-	let method = req.params.method;
+app.get('/slobs/sources/:id/set-visibility/:arg', (req, res) => {
 	let id = req.params.id;
 	let arg = req.params.arg;
 

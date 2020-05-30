@@ -21,6 +21,10 @@ input, button, select {
     margin-right: -50%;
 }
 
+.main.main-raised .progress.progress-line-info {
+    margin-bottom: 0;
+}
+
 @media (max-width: 576px) {
     .brand h1.gamebook-title {
         margin-top: 5px;
@@ -28,82 +32,83 @@ input, button, select {
         font-size: 3em;
     }
 }
-    .action {
-        cursor: pointer;
-    }
 
-        .action.card {
-            display: inline-block;
-            width: auto;
-            box-shadow: 0 5px 5px 0 rgba(0, 0, 0, .60), 0 5px 15px -2px rgba(0, 0, 0, 0.2), 0 1px 15px 0 rgba(0, 0, 0, 0.22);
-        }
+.action {
+    cursor: pointer;
+}
 
-            .action.card img {
-                width: 100%;
-                height: auto;
-            }
-
-    .has-success .form-control-feedback.danger,
-    .has-danger .form-control-feedback.success {
-        display: none;
-    }
-
-    .card-header.card-small {
-        padding-top: 0px;
-        padding-bottom: 7px;
-    }
-
-        .card-header.card-small .form-group {
-            margin: 0;
-        }
-
-    @media (min-width: 576px) {
-        .container {
-            max-width: 720px;
-        }
-    }
-
-    @media (min-width: 768px) {
-        .container {
-            max-width: 720px;
-        }
-    }
-
-    @media (min-width: 992px) {
-        .container {
-            max-width: 720px;
-        }
-    }
-
-    @media (min-width: 1200px) {
-        .container {
-            max-width: 720px;
-        }
-    }
-
-    .bootstrap-select .btn.btn-link.dropdown-toggle {
-        background-color: transparent;
-        color: #555;
-        box-shadow: none;
-    }
-
-    .bootstrap-select .dropdown-item.selected {
-        background-color: #eee;
-    }
-
-    .bootstrap-select .dropdown-menu .dropdown-item:hover,
-    .bootstrap-select .dropdown-menu .dropdown-item:focus,
-    .bootstrap-select .dropdown-menu a:hover,
-    .bootstrap-select .dropdown-menu a:focus,
-    .bootstrap-select .dropdown-menu a:active {
-        background-color: #00aec5;
-    }
-
-    .btn-inline {
+    .action.card {
         display: inline-block;
+        width: auto;
+        box-shadow: 0 5px 5px 0 rgba(0, 0, 0, .60), 0 5px 15px -2px rgba(0, 0, 0, 0.2), 0 1px 15px 0 rgba(0, 0, 0, 0.22);
     }
 
-        .nav-tabs .nav-item .btn-inline i.material-icons,
-        .btn-inline span {
-            margin: 0;
+        .action.card img {
+            width: 100%;
+            height: auto;
         }
+
+.has-success .form-control-feedback.danger,
+.has-danger .form-control-feedback.success {
+    display: none;
+}
+
+.card-header.card-small {
+    padding-top: 0px;
+    padding-bottom: 7px;
+}
+
+    .card-header.card-small .form-group {
+        margin: 0;
+    }
+
+@media (min-width: 576px) {
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 720px;
+    }
+}
+
+.bootstrap-select .btn.btn-link.dropdown-toggle {
+    background-color: transparent;
+    color: #555;
+    box-shadow: none;
+}
+
+.bootstrap-select .dropdown-item.selected {
+    background-color: #eee;
+}
+
+.bootstrap-select .dropdown-menu .dropdown-item:hover,
+.bootstrap-select .dropdown-menu .dropdown-item:focus,
+.bootstrap-select .dropdown-menu a:hover,
+.bootstrap-select .dropdown-menu a:focus,
+.bootstrap-select .dropdown-menu a:active {
+    background-color: #00aec5;
+}
+
+.btn-inline {
+    display: inline-block;
+}
+
+    .nav-tabs .nav-item .btn-inline i.material-icons,
+    .btn-inline span {
+        margin: 0;
+    }

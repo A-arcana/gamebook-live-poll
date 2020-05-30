@@ -4,9 +4,9 @@ class Slobs {
     scene = null;
     lastTime = 0;
 
-    init(force) {
+    init(force, sceneName) {
         return new Promise((resolve, reject) => {
-            this.getLiveScene(force)
+            this.getLiveScene(force, sceneName)
                 .then(scene => {
                     $('#slobs-url').parent().setValid(true);
                     $('#slobs-token').parent().setValid(true);
@@ -25,6 +25,23 @@ class Slobs {
                     $('#live-error').addError("Streamlabs OBS " + resp.message);
                     reject(resp);
                 });
+        });
+    }
+    switchScene(sceneName) {
+        return new Promise((resolve, reject) => {
+            this.init(false, sceneName)
+                .then(scene => {
+                    $.get('/slobs/scenes/' + scene.id + '/activate',
+                        res => {
+                            if (res) {
+                                this.lastTime = new Date().getTime();
+                                this.scene = scene;
+                                resolve(this.scene);
+                            }
+                        });
+                    resolve(scene);
+                })
+                .catch(reject);
         });
     }
 
@@ -49,13 +66,13 @@ class Slobs {
                         clearTimeout(this.timeouts[name]);
                         this.timeouts[name] = null;
                     }
-                    this.timeouts[name] = setTimeout(() => {
+                    this.timeouts[name] = app.addTimer(() => {
                         this.toggleItem(name, false)
                             .then(resolve)
                             .catch(reject);
                         clearTimeout(this.timeouts[name]);
                         this.timeouts[name] = null;
-                    }, time * 1000);
+                    }, time);
                 }).catch(reject);
         });
     }
@@ -64,22 +81,23 @@ class Slobs {
             this.init(false)
                 .then((scene) => {
                     let item = scene.nodes.find(n => n.name === name);
-                    $.get('/slobs/set-source/' + item.sourceId + '/' + src);
+                    $.get('/slobs/sources/' + item.sourceId + '/set-source/' + src);
                     resolve(scene);
                 })
                 .catch(reject);
         });
     }
-    getLiveScene(force) {
+    getLiveScene(force, sceneName) {
+        if (!sceneName) sceneName = 'Live Scene';
         return new Promise((resolve, reject) => {
-            if (!force && !!this.scene && this.lastTime + 60000 > new Date().getTime()) {
+            if (!force && !!this.scene && this.scene.name === sceneName && this.lastTime + 60000 > new Date().getTime()) {
                 resolve(this.scene);
             }
             else {
                 $.post('/slobs', { url: app.ldvelh.config.slobs.url, token: app.ldvelh.config.slobs.token },
                     resp => {
                         if (resp.connected) {
-                            $.get('/slobs/scenes/Live Scene',
+                            $.get('/slobs/scenes/' + sceneName,
                                 scene => {
                                     if (scene) {
                                         this.lastTime = new Date().getTime();
@@ -117,7 +135,7 @@ class Slobs {
             this.scene.nodes.filter(n => n.parentId === item.id).forEach(n => this.toggleItemInSceneByItem(n, show));
         }
         else {
-            $.get('/slobs/set-visibility/"' + item.sceneId + '","' + item.id + '","' + item.sourceId + '"/' + (show ? 'true' : 'false'));
+            $.get('/slobs/sources/"' + item.sceneId + '","' + item.id + '","' + item.sourceId + '"/set-visibility/' + (show ? 'true' : 'false'));
         }
     }
 }

@@ -78,7 +78,7 @@ class Slobs {
         const result = message.result;
         if (!result) return;
 
-        console.log('response', result);
+        console.log('response', message.id, result);
 
         if (result._type === 'EVENT' && result.emitter === 'STREAM') {
             this.subscriptions[message.result.resourceId](result.data);
@@ -111,7 +111,7 @@ class Slobs {
             return;
         }
 
-        console.log('request', requestBody.id);
+        console.log('request', requestBody.id, requestBody.method, requestBody.params.resource, requestBody.params.args);
 
         return new Promise((resolve, reject) => {
             this.requests[requestBody.id] = {

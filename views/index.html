@@ -22,7 +22,7 @@
                     Gamebook Live Streamer
                 </a>
 
-                <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="true" aria-label="Toggle navigation">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="navbar-toggler-icon"></span>
                     <span class="navbar-toggler-icon"></span>
@@ -42,6 +42,16 @@
                             <i class="material-icons">view_list</i> File Settings
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a href="#" data-toggle="modal" data-target="#settingsOtherModal" class="nav-link">
+                            <i class="material-icons">settings</i> Others
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" onclick="app.launchIntro()" class="nav-link">
+                            <i class="material-icons">movie</i>Launch Intro
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -54,7 +64,7 @@
                     <div class="brand text-center">
                         <div class="container">
                             <div class="section text-center">
-                                <h1 id="gamebook-title" class="gamebook-title" contenteditable="true" oninput="app.saveTitle()">Editable Title</h1>
+                                <h1 id="gamebook-title" class="gamebook-title" contenteditable="true" oninput="app.saveTitle(true)">Editable Title</h1>
                             </div>
                         </div>
                     </div>
@@ -64,7 +74,7 @@
     </div>
 
     <div class="container">
-        <div class="main main-raised">
+        <div class="main main-raised" id="main">
             <div class="container">
                 <div class="row justify-content-center"></div>&nbsp;
                 <div class="row justify-content-center">

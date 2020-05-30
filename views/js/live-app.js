@@ -23,8 +23,8 @@ class LiveApp {
         setTimeout(() => { if (this.ldvelh.config.tsv) this.readFile(); }, 1000);
     }
 
-    saveTitle() {
-        this.ldvelh.save();
+    saveTitle(nofocus) {
+        this.ldvelh.save(nofocus);
     }
 
     fbConnect(tryConnectPoll) {
@@ -315,12 +315,41 @@ class LiveApp {
             FB.api('/' + pollId, 'post', { action: 'SHOW_VOTING', access_token: this.ldvelh.accessToken }, this.fbError),
             this.ldvelh.config.delay * 1000);
 
-        setTimeout(() => {
+        this.addTimer(() => {
             FB.api('/' + pollId, 'post', { action: 'SHOW_RESULTS', access_token: this.ldvelh.accessToken }, this.fbError);
 
-            setTimeout(() => FB.api('/' + pollId, 'post', { action: 'CLOSE', access_token: this.ldvelh.accessToken }, this.fbError)
-                , 30 * 1000);
-        }, 60 * 1000);
+            this.addTimer(() => FB.api('/' + pollId, 'post', { action: 'CLOSE', access_token: this.ldvelh.accessToken }, this.fbError)
+                , 30);
+        }, 60);
+    }
+
+    addTimer(callback, timeInSeconds) {
+        let progressbarupdate = 700;
+        let $bar = $('<div class="progress-bar progress-bar-line" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:0%;"></div>');
+        let $progress = $('<div class="progress progress-line-info"></div>').append($bar);
+        $('#main').prepend($progress);
+        let count = 1;
+        let interval = setInterval(() => {
+            count++;
+            let perc = (count * progressbarupdate * 100) / (timeInSeconds * 1000);
+            $bar.css('width', perc + '%');
+            if (perc >= 100) {
+                clearInterval(interval);
+                setTimeout(() => {
+                    $progress.remove();
+                }, progressbarupdate);
+            }
+        }, progressbarupdate);
+
+        return setTimeout(() => {
+            callback();
+        }, timeInSeconds * 1000);
+    }
+
+    launchIntro() {
+        this.slobs.switchScene('Intro')
+            .then(() => this.addTimer(() => this.slobs.switchScene('Live Scene').then(catcher).catch(catcher), 62))
+            .catch(catcher);
     }
 
     focusPoll(refresh) {
@@ -341,12 +370,12 @@ class LiveApp {
                     if (!response || !response.id) return;
 
                     let pollId = response.id;
-                    setTimeout(() => {
+                    this.addTimer(() => {
                         FB.api('/' + pollId, 'post', { action: 'SHOW_RESULTS', access_token: this.ldvelh.accessToken }, this.fbError);
 
-                        setTimeout(() => FB.api('/' + pollId, 'post', { action: 'CLOSE', access_token: this.ldvelh.accessToken }, this.fbError)
-                            , 30 * 1000);
-                    }, 60 * 1000);
+                        this.addTimer(() => FB.api('/' + pollId, 'post', { action: 'CLOSE', access_token: this.ldvelh.accessToken }, this.fbError)
+                            , 30);
+                    }, 60);
                 });
             },
             this.ldvelh.config.delay * 1000);
