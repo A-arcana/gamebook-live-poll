@@ -1,119 +1,151 @@
- <html>
+<html>
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
     <title>LDVELH Section converter</title>
-	
+
     <script>
-		const app = {
-			sections: {}
-		};
-		const sectionPattern = '<span class="{0}">\s*([0-9]+)\s*<\/span>';
-		const textRegex = /<[^>]*>?/gm;
-		const textNoChoicesPattern = '(?!<span class="{0}">[0-9]+)<[^>]*>?'
-		const choiceRegex = /[.!?»] ([a-z0-9\s-,áàâäãåçéèêëíìîïñóòôöõúùûüýÿæœÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ'"()<>=\/]+((((rendez[-\s]+vous)|(rendant)|(rendre))\s+au)|(alle[rz]\s+[àa]u?))\s+[0-9]+)/gmi
-        
-		function convert(){
-			var sectionRegex = new RegExp(sectionPattern.replace('{0}', $('#cls-sct').val()), 'gmi');
-			var textNoChoicesRegex = new RegExp(textNoChoicesPattern.replace('{0}', $('#cls-cho').val()), 'gmi');
-		
-			$.get('get-file/'+$('#pdf').val(), function (data) {
-				var result = {};
-				var lines = data.split("\n");
-				var lastSection = 0;
-				for (var i in lines) {
-					var sectionMatch = sectionRegex.exec(lines[i]);
-					if(sectionMatch){
-						var section = parseInt(sectionMatch[1]);
-						if(lastSection + 1 == section){
-							lastSection = section;
-							result[section] = {
-								text: "",
-								raw: "",
-								choices: {}
-							};
-							continue;
-						}
-					}
-					
-					if(lastSection > 0){
-						result[lastSection].text += " " + lines[i].replace(textRegex, '').replace('\n', '').replace('\t', '').trim();
-						result[lastSection].raw += " " + lines[i].replace(textNoChoicesRegex, '').replace('\n', '').replace('\t', '').trim();
-					}
-				}
-				
-				for(var i in result){
-					var index = -1;
-					while((index = result[i].raw.indexOf('<span class="'+$('#cls-cho').val()+'">', index+1)) >= 0){
-						var txtIndex = result[i].raw.lastIndexOf(".", index);
-						var substr = result[i].raw.substring(txtIndex+1, index+25).replace(textRegex, '');
-						result[i].choices[txtIndex] = substr;
-					}
-					
-					var choiceMatch;
-					while ((choiceMatch = choiceRegex.exec(result[i].raw)) !== null) {
-						// This is necessary to avoid infinite loops with zero-width matches
-						if (choiceMatch.index === choiceRegex.lastIndex) {
-							choiceRegex.lastIndex++;
-						}
-						if(choiceMatch){
-							console.log("SECTION "+i+": choice found without class", choiceMatch[1]);
-							result[i].choices[choiceMatch.index] = choiceMatch[1];
-						}
-					}
-				}
-				
-				app.sections = result;
-				exportCsv();
-				
-				$('#sections').children().remove();
-				$('#sections').append("<option value='none'>Choose...</option>");
-				for(var i in app.sections){
-					$('#sections').append($("<option>"+i+"</option>"));
-				}
-			});
-		}
-		
-		function display(){
-			var section = $('#sections').val();
-			$('#choices').html("");
-			if(section != "none"){
-				$('#display').html(app.sections[section].text);
-				for (var i in app.sections[section].choices){
-					$('#choices').append($('<li>'+app.sections[section].choices[i]+'</li>'));
-				}
-			}
-			else{
-				$('#display').html("");
-			}
-		}
-		
-		function exportCsv(){
-			var exportData = [];
-			for(var i in app.sections){
-				var section = app.sections[i];
-				for(var j in section.choices){
-					exportData.push(i+"\t"+section.choices[j]+"\t"+section.text);
-				}
-			}
-			
-		  var uri = 'data:application/tsv;charset=UTF-8,' + encodeURIComponent(exportData.join('\n'));
-		  $('#export').attr("href", uri);
-		  $('#export').attr("download", $('#pdf').val().replace('.html', '.tsv'));
-		}
-		
-		$(document).ready(convert);
+        const app = {
+            sections: {}
+        };
+        const sectionPattern = '<span class="{0}">\s*([0-9]+)\s*<\/span>';
+        const textRegex = /<[^>]*>?/gm;
+        const choiceRegex = /[.!?»] ([a-z0-9\s-,áàâäãåçéèêëíìîïñóòôöõúùûüýÿæœÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ'"()<>=\/]+((((rendez[-\s]+vous)|(rendant)|(rendre))\s+au)|(alle[rz]\s+[àa]u?))\s+[0-9]+)/gmi
+
+        function convert() {
+            let sectionRegex = new RegExp(sectionPattern.replace('{0}', $('#cls-sct').val()), 'gmi');
+
+            $.get('get-file/' + $('#pdf').val(), function (data) {
+                app.sections = {};
+                let lines = data.split("\n");
+                let lastSection = 0;
+                for (let i in lines) {
+                    let sectionMatch = sectionRegex.exec(lines[i]);
+                    if (sectionMatch) {
+                        let section = parseInt(sectionMatch[1]);
+                        if (lastSection + 1 == section) {
+                            lastSection = section;
+                            app.sections[section + ""] = {
+                                text: "",
+                                aon: {
+                                    text: "",
+                                    choices: []
+                                },
+                                choices: []
+                            };
+                            continue;
+                        }
+                    }
+
+                    if (lastSection > 0) {
+                        app.sections[lastSection + ""].text += " " + lines[i].replace(textRegex, '').replace(/[\n\t\r]/gmi, '').replace(/(  +)/gmi, ' ').trim();
+                    }
+                }
+                $.get('get-html?url=https://www.projectaon.org/en/xhtml-less-simple/lw/' + $('#book-label').val() + '/title.htm', aon => {
+                    let htmlDoc = $((new DOMParser()).parseFromString(aon, "text/xml").documentElement);
+
+                    htmlDoc.find('a[name*=sect]:not([href])').each((i, a) => {
+                        let $a = $(a);
+                        let sectionId = $a.text();
+                        let section = app.sections[sectionId];
+                        if (!section) {
+                            console.log("PDF section not found", sectionId)
+                            return;
+                        }
+
+                        let paragraphs = $a.parent().nextUntil('h3');
+                        let choices = paragraphs.wrap('<div></div>').parent().find('p.choice')
+                        section.aon.text = paragraphs.text();
+                        section.aon.choices = [];
+                        choices.each((i, p) => section.aon.choices.push({ text: $(p).text(), section: $(p).find('a').attr('href').replace('#sect', '') }));
+                    });
+
+                    for (let i in app.sections) {
+                        let section = app.sections[i];
+                        section.aon.choices.forEach((c, idx) => {
+                            let index = -1;
+                            let choiceIndex = false;
+                            let found = 0;
+                            while ((index = section.text.indexOf(c.section, index + 1)) >= 0) {
+                                let finalIndex = choiceIndex || index;
+                                let txtIndex = Math.max(section.text.lastIndexOf(".", finalIndex),
+                                    section.text.lastIndexOf("’", finalIndex),
+                                    section.text.lastIndexOf("”", finalIndex),
+                                    section.text.lastIndexOf("!", finalIndex),
+                                    section.text.lastIndexOf("?", finalIndex),
+                                    section.text.lastIndexOf("»", finalIndex));
+                                let substr = section.text.substring(txtIndex + 1, index + c.section.length).trim();
+                                if (/^[.’”!?»]*\s*rendez-vous au [0-9]+$/gmi.exec(substr)) {
+                                    choiceIndex = txtIndex - 2;
+                                    index--;
+                                    continue;
+                                }
+                                choiceIndex = false;
+                                if (!section.choices[idx]) section.choices[idx] = { section: c.section, texts: [] };
+                                section.choices[idx].texts.push(substr);
+                                if (found++ > 0) {
+                                    console.log('Multiple choices found for the same link', { sectionId: i, sectionTo: c.section, object: section });
+                                }
+                            }
+                        });
+                    }
+
+                    exportCsv();
+
+                    $('#sections').children().remove();
+                    $('#sections').append("<option value='none'>Choose...</option>");
+                    for (let i in app.sections) {
+                        $('#sections').append($("<option>" + i + "</option>"));
+                    }
+                });
+            });
+        }
+
+        function display() {
+            let section = $('#sections').val();
+            $('#choices').html("");
+            if (section != "none") {
+                $('#display').html(app.sections[section].text);
+                app.sections[section].choices.forEach(c =>
+                    c.texts.forEach(t =>
+                        $('#choices').append($('<li>(' + c.section + ') ' + t + '</li>'))
+                    )
+                );
+            }
+            else {
+                $('#display').html("");
+            }
+        }
+
+        function exportCsv() {
+            let exportData = [];
+            for (let i in app.sections) {
+                let section = app.sections[i];
+
+                section.choices.forEach(c =>
+                    c.texts.forEach(t =>
+                        exportData.push(i + "\t" + section.text + "\t" + c.section + '\t' + t)
+                    )
+                );
+            }
+
+            let uri = 'data:application/tsv;charset=UTF-8,' + encodeURIComponent(exportData.join('\n'));
+            $('#export').attr("href", uri);
+            $('#export').attr("download", $('#pdf').val().replace('.html', '.tsv'));
+        }
+
+        $(document).ready(convert);
     </script>
 </head>
 <body>
-	PDF TO HTML filename : <input type="text" id="pdf" value="t06-pdf.html" /> <button onclick="convert()">Convert to sections</button>
-	<br />
-	Section class : <input type="text" id="cls-sct" value="cls_014" />
-	Choice class : <input type="text" id="cls-cho" value="cls_020">
-	<br />
-	book label projectaon.org : <input type="text" id="book-label" value="cls_020">
-	<br /><hr /><br />
-	<select id="sections" onchange="display()"></select> <a id="export">ExportCsv</a>
-	<div style="border: 1px solid grey; background: #DDD; padding: 15px;" id="display"></div>
-	<ul style="border: 1px solid grey; background: #EEE; padding: 15px;" id="choices"></ul>
+    PDF TO HTML filename : <input type="text" id="pdf" value="t05-pdf.html" /> <button onclick="convert()">Convert to sections</button>
+    <br />
+    Section class : <input type="text" id="cls-sct" value="cls_011" />
+    Choice class : <input type="text" id="cls-cho" value="cls_020">
+    <br />
+    book label projectaon.org : <input type="text" id="book-label" value="05sots">
+    <br /><hr /><br />
+    <select id="sections" onchange="display()"></select> <a id="export">ExportCsv</a>
+    <div style="border: 1px solid grey; background: #DDD; padding: 15px;" id="display"></div>
+    <ul style="border: 1px solid grey; background: #EEE; padding: 15px;" id="choices"></ul>
 </body>
 </html>

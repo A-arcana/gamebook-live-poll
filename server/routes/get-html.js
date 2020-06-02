@@ -1,28 +1,28 @@
 
 
 app.get('/get-html', (req, res) => {
-	var url = req.query.url;
+    var url = req.query.url;
 
-	let client = http;
+    let client = http;
 
-	if (url.toString().indexOf("https") === 0) {
-		client = https;
-	}
+    if (url.toString().indexOf("https") === 0) {
+        client = https;
+    }
 
-	client.get(url, (resp) => {
-		let data = '';
+    client.get(url, { rejectUnauthorized: false }, (resp) => {
+        let data = '';
 
-		// A chunk of data has been recieved.
-		resp.on('data', (chunk) => {
-			data += chunk;
-		});
+        // A chunk of data has been recieved.
+        resp.on('data', (chunk) => {
+            data += chunk;
+        });
 
-		// The whole response has been received. Print out the result.
-		resp.on('end', () => {
-			res.send(data);
-		});
+        // The whole response has been received. Print out the result.
+        resp.on('end', () => {
+            res.send(data);
+        });
 
-	}).on("error", (err) => {
-		res.send(err);
-	});
+    }).on("error", (err) => {
+        res.send(err);
+    });
 });
