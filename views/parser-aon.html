@@ -65,7 +65,8 @@
                             let index = -1;
                             let choiceIndex = false;
                             let found = 0;
-                            while ((index = section.text.indexOf(c.section, index + 1)) >= 0) {
+                            let search = ' ' + c.section + '.';
+                            while ((index = section.text.indexOf(search, index + 1)) >= 0) {
                                 let finalIndex = choiceIndex || index;
                                 let txtIndex = Math.max(section.text.lastIndexOf(".", finalIndex),
                                     section.text.lastIndexOf("’", finalIndex),
@@ -73,8 +74,8 @@
                                     section.text.lastIndexOf("!", finalIndex),
                                     section.text.lastIndexOf("?", finalIndex),
                                     section.text.lastIndexOf("»", finalIndex));
-                                let substr = section.text.substring(txtIndex + 1, index + c.section.length).trim();
-                                if (/^[.’”!?»]*\s*rendez-vous au [0-9]+$/gmi.exec(substr)) {
+                                let substr = section.text.substring(txtIndex + 1, index + search.length).trim();
+                                if (/^[.’”!?»]*\s*rendez-vous au [0-9]+[.’”!?»]$/gmi.exec(substr)) {
                                     choiceIndex = txtIndex - 2;
                                     index--;
                                     continue;
@@ -121,28 +122,28 @@
             for (let i in app.sections) {
                 let section = app.sections[i];
 
-                section.choices.forEach(c =>
-                    c.texts.forEach(t =>
-                        exportData.push(i + "\t" + section.text + "\t" + c.section + '\t' + t)
-                    )
-                );
+                section.choices.forEach(c => {
+                    let data = i + "\t" + section.text + "\t" + c.section;
+                    c.texts.reverse().forEach(t => data += '\t' + t);
+                    exportData.push(data);
+                });
             }
 
             let uri = 'data:application/tsv;charset=UTF-8,' + encodeURIComponent(exportData.join('\n'));
             $('#export').attr("href", uri);
-            $('#export').attr("download", $('#pdf').val().replace('.html', '.tsv'));
+            $('#export').attr("download", $('#pdf').val().replace('.html', '-aon.tsv'));
         }
 
         $(document).ready(convert);
     </script>
 </head>
 <body>
-    PDF TO HTML filename : <input type="text" id="pdf" value="t05-pdf.html" /> <button onclick="convert()">Convert to sections</button>
+    PDF TO HTML filename : <input type="text" id="pdf" value="t06-pdf.html" /> <button onclick="convert()">Convert to sections</button>
     <br />
-    Section class : <input type="text" id="cls-sct" value="cls_011" />
+    Section class : <input type="text" id="cls-sct" value="cls_014" />
     Choice class : <input type="text" id="cls-cho" value="cls_020">
     <br />
-    book label projectaon.org : <input type="text" id="book-label" value="05sots">
+    book label projectaon.org : <input type="text" id="book-label" value="06tkot">
     <br /><hr /><br />
     <select id="sections" onchange="display()"></select> <a id="export">ExportCsv</a>
     <div style="border: 1px solid grey; background: #DDD; padding: 15px;" id="display"></div>
