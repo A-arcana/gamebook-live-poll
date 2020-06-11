@@ -55,5 +55,5 @@ if (process.env.NODE_ENV) {
 }
 
 setInterval(() => {
-    http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
+    try { http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`); } catch { }
 }, 280000);

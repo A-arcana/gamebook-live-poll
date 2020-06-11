@@ -383,6 +383,37 @@
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="settingsOtherModal" tabindex="-1" role="dialog" aria-labelledby="settingsOtherLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="settingsFileLabel">Other Settings</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="form-group label-floating col-2 col-sm-3 bmd-form-group">
+                            <label for="deaths" class="bmd-label-floating">Deaths</label>
+                            <input type="number" id="deaths" class="form-control" placeholder="0" value="0" min="0" max="3" />
+                        </div>
+                        <div class="form-group label-floating col bmd-form-group">
+                            <label for="deaths" class="bmd-label-floating">/ 3</label>
+                        </div>
+                        <div class="form-group col-4 label-floating  bmd-form-group">
+                            <button onclick="app.deathsChange()" class="btn btn-info">Change</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="app.ldvelh.load()">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!--   Core JS Files   -->
     <script src="node_modules/material-kit/assets/js/core/jquery.min.js" type="text/javascript"></script>
     <script src="node_modules/material-kit/assets/js/core/popper.min.js" type="text/javascript"></script>

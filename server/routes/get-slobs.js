@@ -30,12 +30,15 @@ app.get('/slobs/scenes/:id/activate', (req, res) => {
 		.catch((reason) => res.status(500).send(reason));
 });
 
-app.get('/slobs/sources/:id/set-source/:src', (req, res) => {
+app.get('/slobs/sources/:id/set-source/:parameterName/:src', (req, res) => {
 	let id = req.params.id;
+	let parameterName = req.params.parameterName;
 	let src = req.params.src;
 
+	let settings = {};
+	settings[parameterName] = src;
 	slobs
-		.request('Source["' + id + '"]', "updateSettings", { file: src })
+		.request('Source["' + id + '"]', "updateSettings", settings)
 		.then(data => {
 			console.log(data);
 			res.send(data);

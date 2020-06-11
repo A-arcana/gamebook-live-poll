@@ -110,6 +110,10 @@ class LiveApp {
         });
     }
 
+    deathsChange() {
+        this.slobs.setItemSource("Deaths", "text", $('#deaths').val());
+    }
+
     readFile() {
         this.ldvelh.saveDOM();
 
@@ -412,7 +416,7 @@ class LiveApp {
         }
         if (src) {
             src = encodeURIComponent(src);
-            this.slobs.setItemSource(placeholder, src)
+            this.slobs.setItemSource(placeholder, "file", src)
                 .then(() => {
                     if (folder) this.slobs.displayItem(folder, timing).then(catcher).catch(catcher);
                     else this.slobs.displayItem(placeholder, timing).then(catcher).catch(catcher);

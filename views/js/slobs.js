@@ -76,12 +76,12 @@ class Slobs {
                 }).catch(reject);
         });
     }
-    setItemSource(name, src) {
+    setItemSource(name, parameterName, src) {
         return new Promise((resolve, reject) => {
             this.init(false)
                 .then((scene) => {
                     let item = scene.nodes.find(n => n.name === name);
-                    $.get('/slobs/sources/' + item.sourceId + '/set-source/' + src);
+                    $.get('/slobs/sources/' + item.sourceId + '/set-source/' + parameterName + "/" + src);
                     resolve(scene);
                 })
                 .catch(reject);
