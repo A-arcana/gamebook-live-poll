@@ -181,25 +181,9 @@ class LiveApp {
                         if (!line) {
                             return;
                         }
-                        let icons = line.question + " ";
-                        icons += line.options.length > 0 ? '<i class="material-icons">poll</i>' : '';
-                        let $opt = $("<option value='" + section + "'>" + line.question + "</option>");
-                        $('#question').append($opt);
 
-                        let img = $a.parent().nextUntil('h3').find('img');
-                        if (img.is('img[alt="[illustration]"]') || img.is('img[alt="illustration"]')) {
-                            let elt = img[0].outerHTML
-                                .replace("src=\"", "src=\"https://www.projectaon.org/en/xhtml/lw/" + this.ldvelh.config.bookNo + "/");
-                            if (img.attr('width') > 400) {
-                                line.picture.xlarge = elt;
-                            } else if (img.attr('height') > 200) {
-                                line.picture.large = elt;
-                            } else {
-                                line.picture.small = elt;
-                            }
-                            icons += '<i class="material-icons">wallpaper</i>';
-                        }
-                        $opt.attr('data-content', icons);
+                        this.processPicture($a, section, line);
+                        this.processLinks($a, section, line);
                     });
 
                     clearInterval(waiter);
@@ -223,6 +207,35 @@ class LiveApp {
             $('#file-error').addError("[FAILED] get file: " + textStatus);
         });
         this.display();
+    }
+
+    processLinks($a, section, line) {
+        let choices = $a.parent().nextUntil('h3').find('p.choice a');
+        line.links = Object.keys(choices)
+            .map(k => $(choices[k]).attr('href')?.replace('#sect', ''))
+            .filter(link => link)
+    }
+
+    processPicture($a, section, line) {
+        let icons = line.question + " ";
+        icons += line.options.length > 0 ? '<i class="material-icons">poll</i>' : '';
+        let $opt = $("<option value='" + section + "'>" + line.question + "</option>");
+        $('#question').append($opt);
+
+        let img = $a.parent().nextUntil('h3').find('img');
+        if (img.is('img[alt="[illustration]"]') || img.is('img[alt="illustration"]')) {
+            let elt = img[0].outerHTML
+                .replace("src=\"", "src=\"https://www.projectaon.org/en/xhtml/lw/" + this.ldvelh.config.bookNo + "/");
+            if (img.attr('width') > 400) {
+                line.picture.xlarge = elt;
+            } else if (img.attr('height') > 200) {
+                line.picture.large = elt;
+            } else {
+                line.picture.small = elt;
+            }
+            icons += '<i class="material-icons">wallpaper</i>';
+        }
+        $opt.attr('data-content', icons);
     }
 
     displayOther() {
@@ -252,6 +265,7 @@ class LiveApp {
         $('#display-xlpic').html("");
         $('#display-question').text("");
         $('#option-add').val("");
+        $('#display-links').html("");
 
         if (section && section !== "none") {
             let question = this.ldvelh.lines[section].question;
@@ -263,6 +277,15 @@ class LiveApp {
             let hasOpt = this.ldvelh.lines[section].options.length === 0;
             $('#poll-button').toggleClass("d-none", hasOpt);
             $('#option-add').parent().toggleClass("d-none", hasOpt);
+
+            this.ldvelh.lines[section].links.forEach(link => {
+                let btn = $("<button class='btn btn-warning'>" + link + "</button>");
+                btn.click(() => {
+                    app.focusPoll(true, link);
+                    app.display();
+                });
+                $('#display-links').append(btn);
+            });
 
             $('#display-smallpic')
                 .html(this.ldvelh.lines[section].picture.small)
@@ -362,9 +385,10 @@ class LiveApp {
             .catch(catcher);
     }
 
-    focusPoll(refresh) {
+    focusPoll(refresh, value) {
+        if (!value) value = 'none';
         var $q = $('#question');
-        if (refresh) $q.val('none').selectpicker('refresh');
+        if (refresh) $q.val(value).selectpicker('refresh');
         $q.focus();
     }
 
