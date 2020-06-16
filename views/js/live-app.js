@@ -27,6 +27,16 @@ class LiveApp {
         this.ldvelh.save(nofocus);
     }
 
+    changeHealth(isMax) {
+        if (isMax) {
+            this.ldvelh.config.health.max = $('#health-counter-max').val();
+        }
+        else {
+            this.ldvelh.config.health.current = $('#health-counter-current').val();
+        }
+        this.ldvelh.save(true);
+    }
+
     fbConnect(tryConnectPoll) {
         this.ldvelh.saveDOM();
         FB.getLoginStatus((response) => {
@@ -281,6 +291,10 @@ class LiveApp {
             this.ldvelh.lines[section].links.forEach(link => {
                 let btn = $("<button class='btn btn-warning'>" + link + "</button>");
                 btn.click(() => {
+                    if (this.ldvelh.config.health.current < this.ldvelh.config.health.max) {
+                        $('#health-counter-current').text(++this.ldvelh.config.health.current);
+                        this.ldvelh.save(true)
+                    }
                     app.focusPoll(true, link);
                     app.display();
                 });

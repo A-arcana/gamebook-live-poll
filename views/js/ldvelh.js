@@ -15,7 +15,12 @@ class LDVELH {
             colOption: 3
         },
         bookNo: '',
-        lastNo: ''
+        lastNo: '',
+        health: {
+            current: 20,
+            max: 20,
+            isHealing: true
+        }
     };
 
     lines = {};
@@ -43,17 +48,23 @@ class LDVELH {
         this.config.bookNo = $('#book-no').val();
         this.config.lastNo = $('#last-no').val();
 
+        this.config.health.max = $('#health-counter-max').text();
+        this.config.health.current = $('#health-counter-current').text();
+
         this.config.tsv = $('#tsv').val();
         this.config.cols.colId = $('#colId').val();
         this.config.cols.colQuestion = $('#colQuestion').val();
         this.config.cols.colOption = $('#colOption').val();
+
     }
     load() {
-        this.config = JSON.parse(Cookie.getCookie('ldvelh-app')) || new LDVELH().config;
+        this.config = { ...this.config, ...(JSON.parse(Cookie.getCookie('ldvelh-app')) || new LDVELH().config) };
         this.loadDOM();
     }
     loadDOM() {
         $('#gamebook-title').text(this.config.title);
+        $('#health-counter-max').text(this.config.health.max);
+        $('#health-counter-current').text(this.config.health.current);
 
         $('#live-id')
             .val(this.config.liveId)
@@ -73,9 +84,15 @@ class LDVELH {
         $('#book-no')
             .val(this.config.bookNo)
             .parent().toggleClass('is-filled', true);
-
         $('#last-no')
             .val(this.config.lastNo)
+            .parent().toggleClass('is-filled', true);
+
+        $('#health.max')
+            .val(this.config.health.max)
+            .parent().toggleClass('is-filled', true);
+        $('#health.current')
+            .val(this.config.health.current)
             .parent().toggleClass('is-filled', true);
 
         $('#tsv')

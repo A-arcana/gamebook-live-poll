@@ -116,3 +116,7 @@ input, button, select {
     .btn-inline span {
         margin: 0;
     }
+
+.navbar-brand i.material-icons {
+    font-size: 1.6em;
+}
