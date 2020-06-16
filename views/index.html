@@ -18,8 +18,11 @@
     <nav class="navbar navbar-color-on-scroll navbar-transparent fixed-top navbar-expand-lg" color-on-scroll="100">
         <div class="container">
             <div class="navbar-translate">
-                <a class="navbar-brand" href="/index.html">
-                    Gamebook Live Streamer
+                <a class="navbar-brand">
+                    <i class="material-icons">local_hospital</i>
+                    <span id="health-counter-current" contenteditable="true" oninput="app.changeHealth()">15</span>
+                    /
+                    <span id="health-counter-max" contenteditable="true" oninput="app.changeHealth(true)">20</span>
                 </a>
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="true" aria-label="Toggle navigation">
